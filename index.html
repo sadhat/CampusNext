@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="campusNextApp">
+<head>
+    <title>Welcome to CampusNEXT</title>
+
+    <link rel="stylesheet" href="src/vendor/css/foundation.css" />
+    <link rel="stylesheet" href="src/vendor/css/metro-bootstrap.css">
+
+    <script src="src/vendor/js/modernizr.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
+    <script src="src/vendor/js/metro.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.js"></script>
+    <script type="text/javascript" src="src/app/js/app.js"></script>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #wrapper {
+            min-height: 100%;
+            position: relative;
+        }
+        #header {
+            padding: 10px;
+            background: #5ee;
+        }
+        #content {
+            padding: 10px;
+            padding-bottom: 80px; /* Height of the footer element */
+        }
+
+        #footer {
+            width: 100%;
+            height: 80px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: gainsboro;
+            color: #aaa;
+            text-align: center;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body class="metro">  
+    <div id="wrapper">
+            <div class="row">
+                      <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
+                          <div class="tile bg-amber">
+                              <div class="brand">
+                                  <div class="badge playing"></div>
+                              </div>
+                          </div>
+                          <h1>CampusNEXT</h1>
+                          &nbsp;Your next campus | <img ng-src='images/schools/logo/{{campus.logoUrl}}' /> {{campus.name}}
+                          (<a href="/#/change">change campus</a>)
+                      </div>
+                  </div>
+        <hr style="height: 7px"/>
+        <br />
+        <br />
+        <br />
+        <div id="content" class="row" ng-view>
+        </div>
+
+        <div id="footer">
+            &copy; CampusNEXT 2014 | CampusNEXT provides free service to students. 
+        </div>
+    </div>
+</body>
+</html> 
