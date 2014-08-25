@@ -71,6 +71,10 @@
     <Content Include="src\app\js\app.js" />
     <Content Include="src\vendor\css\foundation.css" />
     <Content Include="src\vendor\css\foundation.min.css" />
+    <Content Include="src\vendor\css\html5reset-1.6.1.css" />
+    <Content Include="src\vendor\css\html5reset-1.6.1.min.css">
+      <DependentUpon>html5reset-1.6.1.css</DependentUpon>
+    </Content>
     <Content Include="src\vendor\css\metro-bootstrap-responsive.css" />
     <Content Include="src\vendor\css\metro-bootstrap.css" />
     <Content Include="src\vendor\css\normalize.css" />
