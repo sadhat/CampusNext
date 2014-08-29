@@ -1,0 +1,26 @@
+﻿[
+    { "id": 1,
+      "name": "textbook search", 
+      "totalItems": "999+"
+    },
+    { "id": 2,
+      "name": "find tutor", 
+      "totalItems": "50" 
+    },
+    { "id": 3,
+      "name": "room for rent", 
+      "totalItems": "78" 
+    },
+    { "id": 4,
+      "name": "campus life events", 
+      "totalItems": "10" 
+    },
+    { "id": 5,
+      "name": "share a ride", 
+      "totalItems": "8" 
+    },
+    { "id": 6,
+      "name": "find study group", 
+      "totalItems": "59" 
+    }
+]
