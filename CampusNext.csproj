@@ -74,6 +74,8 @@
     <Content Include="index.html" />
     <Content Include="src\app\js\app.js" />
     <Content Include="src\app\js\controllers.js" />
+    <Content Include="src\app\js\directives.js" />
+    <Content Include="src\app\js\services.js" />
     <Content Include="src\vendor\css\foundation.css" />
     <Content Include="src\vendor\css\foundation.min.css" />
     <Content Include="src\vendor\css\html5reset-1.6.1.css" />
@@ -93,6 +95,7 @@
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
     <Content Include="views\home.html" />
+    <Content Include="views\products\textbook_search.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
