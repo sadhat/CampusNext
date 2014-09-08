@@ -52,16 +52,18 @@
 <body class="metro">  
     <div id="wrapper">
             <div class="row">
-                      <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
-                          <div class="tile bg-amber">
-                              <div class="brand">
-                                  <div class="badge playing"></div>
-                              </div>
-                          </div>
-                          <h1>CampusNEXT</h1>
-                          &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
-                          (<a href="/#/change">change campus</a>)
-                      </div>
+                <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
+                    <a href="/">
+                        <div class="tile bg-amber">
+                            <div class="brand">
+                                <div class="badge playing"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <h1>CampusNEXT</h1>
+                    &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
+                    (<a href="/#/change">change campus</a>)
+                </div>
                   </div>
         <hr style="height: 7px"/>
         <br />
@@ -69,7 +71,6 @@
         <br />
         <div id="content" class="row" ng-view>
         </div>
-        <product></product>
         <div id="footer">
             &copy; CampusNEXT 2014 | CampusNEXT provides free service to students. 
         </div>
