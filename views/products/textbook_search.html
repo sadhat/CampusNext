@@ -1,6 +1,13 @@
-﻿<div class ="large-12 medium-12 columns">
+﻿<div class="large-12 medium-12 columns">
     <h4>{{title}}</h4>
-    <span><input type="search"/></span><span><a>advance options</a></span>
-    <span>{{description}}</span><br/>
-    <span>{{price}}</span>
+    <span><input type="search" /></span><span><a>advance options</a></span>
+    <ol>
+        <li class="g" ng-repeat="result in searchResults">
+            <div>
+                <h3 class="g">{{result.name}}</h3>
+                <span class="isbn" ng-show="result.isbn">ISBN: {{result.isbn}}</span>
+                <section>{{result.description}}</section>
+            </div>
+        </li>
+    </ol>
 </div>

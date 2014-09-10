@@ -60,8 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\CampusNext.pubxml" />
+    <Content Include="app.css" />
+    <Content Include="app.min.css">
+      <DependentUpon>app.css</DependentUpon>
+    </Content>
+    <Content Include="main.css" />
+    <Content Include="main.min.css">
+      <DependentUpon>main.css</DependentUpon>
+    </Content>
     <Content Include="src\app\data\categories\catagories.json" />
     <Content Include="src\app\data\campuses\viewing_campus.json" />
+    <Content Include="src\app\data\products\textbook_search.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,9 +5,12 @@
     <link href="src/vendor/css/html5reset-1.6.1.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="src/vendor/css/foundation.css" />
     <link rel="stylesheet" href="src/vendor/css/metro-bootstrap.css">
+    <link href="app.min.css" rel="stylesheet" />
+    <link href="main.min.css" rel="stylesheet" />
+
 
     <script src="src/vendor/js/modernizr.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> 
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js"></script>
     <script src="src/vendor/js/metro.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
@@ -16,63 +19,28 @@
     <script src="src/app/js/services.js"></script>
     <script src="src/app/js/controllers.js"></script>
     <script src="src/app/js/directives.js"></script>
-    <style type="text/css">
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-        }
-        #wrapper {
-            min-height: 100%;
-            position: relative;
-        }
-        #header {
-            padding: 10px;
-            background: #5ee;
-        }
-        #content {
-            padding: 10px;
-            padding-bottom: 80px; /* Height of the footer element */
-        }
-
-        #footer {
-            width: 100%;
-            height: 80px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            background: gainsboro;
-            color: #aaa;
-            text-align: center;
-            padding-top: 10px;
-        }
-    </style>
 </head>
-<body class="metro">  
+<body class="metro">
     <div id="wrapper">
-            <div class="row">
-                <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
-                    <a href="/">
-                        <div class="tile bg-amber">
-                            <div class="brand">
-                                <div class="badge playing"></div>
-                            </div>
+        <div class="row">
+            <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
+                <a href="/">
+                    <div class="tile bg-amber">
+                        <div class="brand">
+                            <div class="badge playing"></div>
                         </div>
-                    </a>
-                    <h1>CampusNEXT</h1>
-                    &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
-                    (<a href="/#/change">change campus</a>)
-                </div>
-                  </div>
-        <hr style="height: 7px"/>
-        <br />
-        <br />
-        <br />
+                    </div>
+                </a>
+                <h1>CampusNEXT</h1>
+                &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
+                (<a href="/#/change">change campus</a>)
+            </div>
+        </div>
+        <hr style="height: 7px" />
         <div id="content" class="row" ng-view>
         </div>
         <div id="footer">
-            &copy; CampusNEXT 2014 | CampusNEXT provides free service to students. 
+            &copy; CampusNEXT 2014 | CampusNEXT provides free service to students.
         </div>
     </div>
 </body>
