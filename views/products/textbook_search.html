@@ -5,7 +5,7 @@
         <li class="g" ng-repeat="result in searchResults">
             <div>
                 <h3 class="g">{{result.name}}</h3>
-                <span class="isbn" ng-show="result.isbn">ISBN: {{result.isbn}}</span>
+                <span class="price" ng-show="result.price"> {{result.price}}</span><span class="isbn" ng-show="result.isbn"> ISBN: {{result.isbn}}</span> 
                 <section>{{result.description}}</section>
             </div>
         </li>
