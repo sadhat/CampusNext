@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext", "web\CampusNex
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CampusNext.Products", "database\CampusNext.Products.sqlproj", "{043D3F80-F33F-4835-B432-6BA9BD2A2804}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.Services", "..\Services\CampusNext.Services\CampusNext.Services.csproj", "{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{834C6358-CB07-4122-90A5-6021176AA867}"
 	ProjectSection(SolutionItems) = preProject
 		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
@@ -19,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configura
 	ProjectSection(SolutionItems) = preProject
 		PublishScripts\Configurations\CampusNextServices-WAWS-dev.json = PublishScripts\Configurations\CampusNextServices-WAWS-dev.json
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.Services", "services\CampusNext.Services.csproj", "{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
