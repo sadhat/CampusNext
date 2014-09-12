@@ -7,6 +7,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext", "web\CampusNex
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CampusNext.Products", "database\CampusNext.Products.sqlproj", "{043D3F80-F33F-4835-B432-6BA9BD2A2804}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.Services", "..\Services\CampusNext.Services\CampusNext.Services.csproj", "{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{834C6358-CB07-4122-90A5-6021176AA867}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureWebsitePublishModule.psm1 = PublishScripts\AzureWebsitePublishModule.psm1
+		PublishScripts\Publish-WebApplicationWebsite.ps1 = PublishScripts\Publish-WebApplicationWebsite.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{73B18B11-EBB9-4601-A061-11EFBE788545}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\CampusNextServices-WAWS-dev.json = PublishScripts\Configurations\CampusNextServices-WAWS-dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +36,15 @@ Global
 		{043D3F80-F33F-4835-B432-6BA9BD2A2804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043D3F80-F33F-4835-B432-6BA9BD2A2804}.Release|Any CPU.Build.0 = Release|Any CPU
 		{043D3F80-F33F-4835-B432-6BA9BD2A2804}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB15C7AC-8F7A-421B-9504-FC0D6183AB7D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73B18B11-EBB9-4601-A061-11EFBE788545} = {834C6358-CB07-4122-90A5-6021176AA867}
 	EndGlobalSection
 EndGlobal
