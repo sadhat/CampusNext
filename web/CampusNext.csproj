@@ -64,6 +64,8 @@
     <Content Include="app.min.css">
       <DependentUpon>app.css</DependentUpon>
     </Content>
+    <Content Include="images\products\textbook\1.jpg" />
+    <Content Include="images\products\textbook\2.jpg" />
     <Content Include="main.css" />
     <Content Include="main.min.css">
       <DependentUpon>main.css</DependentUpon>

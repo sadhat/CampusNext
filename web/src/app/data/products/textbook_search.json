@@ -3,7 +3,8 @@
         "name": "C# 5.0 in a Nutshell: The Definitive Reference",
         "description": "When you have a question about C# 5.0 or the .NET CLR, this bestselling guide has precisely the answers you need. Uniquely organized around concepts and use cases, this updated fifth edition features a reorganized section on concurrency, threading, and parallel programming—including in-depth coverage of C# 5.0’s new asynchronous functions.",
         "isbn": "978-1449320102",
-        "price": "$34.33"    
+        "price": "$34.33",
+        "images": ["1.jpg","2.jpg"] 
     },
     { 
         "name": "Software Metrics",
