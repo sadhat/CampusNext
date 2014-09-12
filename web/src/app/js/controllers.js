@@ -16,7 +16,7 @@ campusNextApp.controller("FindTextbookCtrl", ['$scope', '$http', function ($scop
 
 campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.title = "Textbook Search";
-    $http.get('src/app/data/products/textbook_search.json').success(function (data) {
-        $scope.searchResults = data;
+    $http.get('http://localhost:50000/odata/TextbookSearch').success(function (data) {
+        $scope.searchResults = data.value;
     });
 }]);
