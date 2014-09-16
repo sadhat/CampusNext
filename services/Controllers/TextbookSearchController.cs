@@ -1,19 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
+﻿using System.Linq;
 using System.Web.Http.Cors;
-using System.Web.Http.ModelBinding;
 using System.Web.Http.OData;
-using System.Web.Http.OData.Query;
-using System.Web.Http.OData.Routing;
 using CampusNext.Services.BusinessLayer;
-using CampusNext.Services.BusinessLayer.Memory;
 using CampusNext.Services.Models;
-using Microsoft.Data.OData;
 
 namespace CampusNext.Services.Controllers
 {
@@ -29,7 +18,6 @@ namespace CampusNext.Services.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class TextbookSearchController : ODataController
     {
-        private static ODataValidationSettings _validationSettings = new ODataValidationSettings();
         private readonly ITextbookRepository _textbookRepository;
         //Read Data from list    
 
