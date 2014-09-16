@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI.WebControls;
 using CampusNext.Services.Models;
 
-namespace CampusNext.Services.BusinessLayer
+namespace CampusNext.Services.BusinessLayer.Memory
 {
-    public interface ITextbookRepository
-    {
-        IQueryable<Textbook> All(TextbookSearchOption searchOptionOption);
-    }
-
     public class TextbookRepository : ITextbookRepository
     {
         public IQueryable<Textbook> All(TextbookSearchOption searchOptionOption)
@@ -27,9 +19,5 @@ namespace CampusNext.Services.BusinessLayer
 
             return items.AsQueryable();
         } 
-    }
-
-    public class TextbookSearchOption
-    {
     }
 }

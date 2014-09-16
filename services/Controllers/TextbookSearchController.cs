@@ -11,6 +11,7 @@ using System.Web.Http.OData;
 using System.Web.Http.OData.Query;
 using System.Web.Http.OData.Routing;
 using CampusNext.Services.BusinessLayer;
+using CampusNext.Services.BusinessLayer.Memory;
 using CampusNext.Services.Models;
 using Microsoft.Data.OData;
 
