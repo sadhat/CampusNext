@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http.Formatting;
-using System.Web.Http;
+﻿using System.Web.Http;
 using System.Web.Http.OData.Builder;
-using System.Web.Http.OData.Routing;
 using CampusNext.Services.Models;
 using Microsoft.Data.Edm;
 using Newtonsoft.Json;
@@ -31,7 +26,7 @@ namespace CampusNext.Services
             
             config.MapHttpAttributeRoutes();
 
-            ODataRoute mapODataServiceRoute = config.Routes.MapODataServiceRoute("odata", "odata", GenerateEdmModel());
+            config.Routes.MapODataServiceRoute("odata", "odata", GenerateEdmModel());
             var setting = new JsonSerializerSettings {ContractResolver = new CamelCasePropertyNamesContractResolver()};
             config.Formatters.JsonFormatter.SerializerSettings = setting;
 

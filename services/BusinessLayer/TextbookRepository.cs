@@ -7,9 +7,14 @@ using CampusNext.Services.Models;
 
 namespace CampusNext.Services.BusinessLayer
 {
-    public class TextbookRepository
+    public interface ITextbookRepository
     {
-        public static IQueryable<Textbook> All(TextbookSearchOption searchOptionOption)
+        IQueryable<Textbook> All(TextbookSearchOption searchOptionOption);
+    }
+
+    public class TextbookRepository : ITextbookRepository
+    {
+        public IQueryable<Textbook> All(TextbookSearchOption searchOptionOption)
         {
             var items = new List<Textbook>()
             {

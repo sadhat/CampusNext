@@ -29,13 +29,17 @@ namespace CampusNext.Services.Controllers
     public class TextbookSearchController : ODataController
     {
         private static ODataValidationSettings _validationSettings = new ODataValidationSettings();
-
+        private readonly ITextbookRepository _textbookRepository;
         //Read Data from list    
- 
+
+        public TextbookSearchController(ITextbookRepository textbookRepository)
+        {
+            _textbookRepository = textbookRepository;
+        }
         public IQueryable<Textbook> Get()    
 
         {    
-            return TextbookRepository.All(null);    
+            return _textbookRepository.All(null);    
         }
     }
 }
