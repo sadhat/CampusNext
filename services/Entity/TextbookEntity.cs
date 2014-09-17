@@ -9,10 +9,11 @@ namespace CampusNext.Services.Entity
 {
     public class TextbookEntity : TableEntity
     {
-        public TextbookEntity(string campusName)
+        public TextbookEntity(string campusName, Guid id)
         {
-            this.PartitionKey = campusName;
-            this.RowKey = Guid.NewGuid().ToString();
+            this.PartitionKey = this.CampusName = campusName;
+            this.Id = id;
+            this.RowKey = Id.ToString();
         }
 
         public TextbookEntity()
@@ -22,6 +23,8 @@ namespace CampusNext.Services.Entity
         public string Title { get; set; }
         public string Isbn { get; set; }
         public string Description { get; set; }
-        public decimal Price { get; set; }
+        public double Price { get; set; }
+        public Guid Id { get; private set; }
+        public string CampusName { get; set; }
     }
 }

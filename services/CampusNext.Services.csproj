@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Models\Textbook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableStorageSeeder.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="UnityResolver.cs" />
   </ItemGroup>

@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
+using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.OData;
 using CampusNext.Services.BusinessLayer;
@@ -29,6 +31,16 @@ namespace CampusNext.Services.Controllers
 
         {    
             return _textbookRepository.All(null);    
+        }
+
+        public IHttpActionResult Post(Textbook textbook)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            _textbookRepository.Add(textbook);
+            return Ok();
         }
     }
 }
