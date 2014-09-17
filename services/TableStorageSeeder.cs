@@ -29,11 +29,11 @@ namespace CampusNext.Services
 
             // Construct the query operation for all customer entities where PartitionKey="Smith".
             var query = new TableQuery<TextbookEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "NDSU"));
-            table.ExecuteQuery(query).ForEach((a) =>
+            table.ExecuteQuery(query).ForEach(delegate(TextbookEntity entity)
             {
-                var retrieveOperation = TableOperation.Retrieve<TextbookEntity>(a.PartitionKey, a.RowKey);
+                var retrieveOperation = TableOperation.Retrieve<TextbookEntity>(entity.PartitionKey, entity.RowKey);
                 var tableResult = table.Execute(retrieveOperation);
-                var deleteOperation = TableOperation.Delete((TextbookEntity)tableResult.Result);
+                var deleteOperation = TableOperation.Delete((TextbookEntity) tableResult.Result);
                 table.Execute(deleteOperation);
             });
 

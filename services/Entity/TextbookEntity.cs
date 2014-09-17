@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using CampusNext.Services.Models;
 using Microsoft.WindowsAzure.Storage.Table;
 
 namespace CampusNext.Services.Entity
@@ -11,9 +7,9 @@ namespace CampusNext.Services.Entity
     {
         public TextbookEntity(string campusName, Guid id)
         {
-            this.PartitionKey = this.CampusName = campusName;
-            this.Id = id;
-            this.RowKey = Id.ToString();
+            PartitionKey = CampusName = campusName;
+            Id = id;
+            RowKey = Id.ToString();
         }
 
         public TextbookEntity()

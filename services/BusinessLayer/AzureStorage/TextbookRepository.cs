@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net.Mime;
-using System.Runtime.Remoting.Messaging;
-using System.Threading.Tasks;
 using CampusNext.Services.Entity;
 using CampusNext.Services.Models;
-using Microsoft.Practices.ObjectBuilder2;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -16,13 +11,6 @@ namespace CampusNext.Services.BusinessLayer.AzureStorage
 {
     public class TextbookRepository : ITextbookRepository
     {
-
-        public TextbookRepository()
-        {
-            //Seed();
-        }
-
-        
         public void Add(Textbook textbook)
         {
             // Retrieve the storage account from the connection string.
@@ -58,24 +46,23 @@ namespace CampusNext.Services.BusinessLayer.AzureStorage
             // Create the CloudTable object that represents the "people" table.
             var table = tableClient.GetTableReference("textbook");
 
-            // Construct the query operation for all customer entities where PartitionKey="Smith".
+            // Construct the query operation for all customer entities where PartitionKey="NDSU".
             var query = new TableQuery<TextbookEntity>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "NDSU"));
-
 
             var items =
                 table.ExecuteQuery(query)
                     .Select(entity => entity)
                     .ToList()
                     .ConvertAll(
-                        (a) =>
-                            new Textbook()
+                        entity =>
+                            new Textbook
                             {
-                                Id = Guid.Parse(a.RowKey),
-                                Description = a.Description,
-                                Isbn = a.Isbn,
-                                Price = a.Price,
-                                Title = a.Title,
-                                CampusName = a.CampusName
+                                Id = Guid.Parse(entity.RowKey),
+                                Description = entity.Description,
+                                Isbn = entity.Isbn,
+                                Price = entity.Price,
+                                Title = entity.Title,
+                                CampusName = entity.CampusName
                             });
 
             return items.AsQueryable();
