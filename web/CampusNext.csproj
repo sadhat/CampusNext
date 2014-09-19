@@ -59,6 +59,11 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\toastr.css" />
+    <Content Include="content\toastr.min.css" />
+    <Content Include="packages.config" />
+    <Content Include="content\toastr.scss" />
+    <Content Include="content\toastr.less" />
     <None Include="Properties\PublishProfiles\CampusNext.pubxml" />
     <Content Include="app.css" />
     <Content Include="app.min.css">
@@ -70,9 +75,15 @@
     <Content Include="main.min.css">
       <DependentUpon>main.css</DependentUpon>
     </Content>
+    <None Include="Scripts\jquery-1.6.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.6.3.js" />
+    <Content Include="Scripts\jquery-1.6.3.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="src\app\data\categories\catagories.json" />
     <Content Include="src\app\data\campuses\viewing_campus.json" />
     <Content Include="src\app\data\products\textbook_search.json" />
+    <Content Include="Scripts\toastr.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -106,6 +117,7 @@
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
     <Content Include="views\home.html" />
+    <Content Include="views\products\textbook_add.html" />
     <Content Include="views\products\textbook_search.html" />
     <Content Include="Web.config" />
   </ItemGroup>

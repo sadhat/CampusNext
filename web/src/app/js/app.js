@@ -10,4 +10,9 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    templateUrl: './views/products/textbook_search.html',
 	    controller: 'TextbookSearchCtrl'
 	});
+
+	$routeProvider.when('/textbookadd', {
+	    templateUrl: './views/products/textbook_add.html',
+	    controller: 'TextbookAddCtrl'
+	});
 }]);

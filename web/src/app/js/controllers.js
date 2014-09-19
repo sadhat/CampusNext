@@ -14,6 +14,37 @@ campusNextApp.controller("FindTextbookCtrl", ['$scope', '$http', function ($scop
     $scope.title = "find textbook";
 }]);
 
+campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', function ($scope, $http) {
+    $scope.title = "";
+    $scope.isbn = "";
+    $scope.price = 0;
+    $scope.description = "";
+
+    $scope.submitForm = function (item, event) {
+        $scope.isSaving = true;
+        var textbook = {
+            CampusName: "NDSU",
+            Title: $scope.title,
+            Isbn: $scope.isbn,
+            Price: $scope.price,
+            Description: $scope.description
+        };
+        var responsePromise = $http.post("http://campusnextservices.azurewebsites.net/odata/TextbookSearch", textbook, {});
+
+        responsePromise.success(function (dataFromServer, status, headers, config) {
+            toastr.success('Your book added successfully', 'Congratulations!');
+        });
+
+        responsePromise.error(function (dataFromServer, status, headers, config) {
+            alert(status);
+        });
+    }
+
+    $scope.addAnother = function (item, event) {
+        $scope.isSaving = false;
+    }
+}]);
+
 campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.title = "Textbook Search";
     $http.get('http://campusnextservices.azurewebsites.net/odata/TextbookSearch').success(function (data) {
