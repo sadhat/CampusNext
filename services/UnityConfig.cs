@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using CampusNext.Services.BusinessLayer;
-using CampusNext.Services.BusinessLayer.AzureStorage;
+using CampusNext.Services.BusinessLayer.DocumentDb;
 using Microsoft.Practices.Unity;
 
 namespace CampusNext.Services

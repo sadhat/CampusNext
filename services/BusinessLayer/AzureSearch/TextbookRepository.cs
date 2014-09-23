@@ -7,7 +7,7 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
 
 
-namespace CampusNext.Services.BusinessLayer.AzureStorage
+namespace CampusNext.Services.BusinessLayer.AzureSearch
 {
     public class TextbookRepository : ITextbookRepository
     {

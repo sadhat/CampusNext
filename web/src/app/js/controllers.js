@@ -29,7 +29,7 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', function ($scope
             Price: $scope.price,
             Description: $scope.description
         };
-        var responsePromise = $http.post("http://campusnextservices.azurewebsites.net/odata/TextbookSearch", textbook, {});
+        var responsePromise = $http.post("http://localhost:50000/odata/TextbookSearch", textbook, {});
 
         responsePromise.success(function (dataFromServer, status, headers, config) {
             toastr.success('Your book added successfully', 'Congratulations!');
@@ -47,7 +47,7 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', function ($scope
 
 campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.title = "Textbook Search";
-    $http.get('http://campusnextservices.azurewebsites.net/odata/TextbookSearch').success(function (data) {
+    $http.get('http://localhost:50000/odata/TextbookSearch').success(function (data) {
         $scope.searchResults = data.value;
     });
 }]);

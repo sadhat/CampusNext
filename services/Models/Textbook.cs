@@ -12,5 +12,7 @@ namespace CampusNext.Services.Models
         public string Description { get; set; }
         public double Price { get; set; }
         public string CampusName { get; set; }
+        public DateTime CreatedDateTime { get; set; }
+        public DateTime ModifiedDateTime { get; set; }
     }
 }

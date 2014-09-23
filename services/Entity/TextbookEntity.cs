@@ -22,5 +22,7 @@ namespace CampusNext.Services.Entity
         public double Price { get; set; }
         public Guid Id { get; private set; }
         public string CampusName { get; set; }
+        public DateTime ModifiedDateTime { get; set; }
+        public DateTime CreatedDateTime { get; set; }
     }
 }

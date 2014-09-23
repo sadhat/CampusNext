@@ -8,7 +8,7 @@ namespace CampusNext.Services
         {
             UnityConfig.Register();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            TableStorageSeeder.Seed();
+            //DocumentDbSeeder.Seed();
         }
     }
 }

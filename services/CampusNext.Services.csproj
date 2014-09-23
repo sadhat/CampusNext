@@ -38,6 +38,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Azure.Documents.Client">
+      <HintPath>..\packages\Microsoft.Azure.Documents.Client.0.9.0-preview\lib\net40\Microsoft.Azure.Documents.Client.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -123,13 +126,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="AzureSearchHelper.cs" />
+    <Compile Include="AzureSearchSeeder.cs" />
+    <Compile Include="BusinessLayer\AzureSearch\TextbookRepository.cs" />
     <Compile Include="BusinessLayer\AzureStorage\TextbookRepository.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BusinessLayer\DocumentDb\TextbookRepository.cs" />
     <Compile Include="BusinessLayer\ITextbookRepository.cs" />
     <Compile Include="BusinessLayer\Memory\TextbookRepository.cs" />
     <Compile Include="BusinessLayer\TextbookSearchOption.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />
+    <Compile Include="DocumentDbSeeder.cs" />
     <Compile Include="Entity\TextbookEntity.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
