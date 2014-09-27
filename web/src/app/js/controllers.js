@@ -47,7 +47,12 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', function ($scope
 
 campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($scope, $http) {
     $scope.title = "Textbook Search";
-    $http.get('http://localhost:50000/odata/TextbookSearch').success(function (data) {
-        $scope.searchResults = data.value;
-    });
+    $scope.keyword = "";
+    $scope.campusName = "NDSU";
+    $scope.search = function () {
+        var filter = "?keyword=" + $scope.keyword + "&campusName=" + $scope.campusName;
+        $http.get('http://localhost:50000/odata/TextbookSearch/' + filter).success(function(data) {
+            $scope.searchResults = data.value;
+        });
+    }
 }]);

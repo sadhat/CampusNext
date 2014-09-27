@@ -17,10 +17,10 @@ namespace CampusNext.Services.Controllers
         {
             _textbookRepository = textbookRepository;
         }
-        public IQueryable<Textbook> Get()    
+        public IQueryable<Textbook> Get([FromUri] TextbookSearchOption searchOption)    
 
         {    
-            return _textbookRepository.All(null);    
+            return _textbookRepository.All(searchOption);    
         }
 
         public IHttpActionResult Post(Textbook textbook)

@@ -26,33 +26,33 @@ namespace CampusNext.Services.BusinessLayer.AzureSearch
         }
         public void Add(Textbook textbook)
         {
-            // Retrieve the storage account from the connection string.
-            var storageAccount = CloudStorageAccount.Parse(
-                CloudConfigurationManager.GetSetting("StorageConnectionString"));
-
-            // Create the table client.
-            var tableClient = storageAccount.CreateCloudTableClient();
-
-            // Create the table if it doesn't exist.
-            var table = tableClient.GetTableReference("Textbook");
-
-            var newTextbook = new TextbookEntity(textbook.CampusName, Guid.NewGuid())
+            var batch = new
             {
-                Description = textbook.Description,
-                Isbn = textbook.Isbn,
-                Price = textbook.Price,
-                Title = textbook.Title,
-                CreatedDateTime = DateTime.UtcNow,
-                ModifiedDateTime = DateTime.UtcNow
+                value = new[]
+                {
+                    new
+                    {
+                        id = Guid.NewGuid().ToString(),
+                        description = textbook.Description,
+                        isbn = textbook.Isbn,
+                        price = textbook.Price,
+                        title = textbook.Title,
+                        updatedDate = DateTime.UtcNow,
+                        createdDate = DateTime.UtcNow,
+                        campusName = textbook.CampusName
+                    }
+                }
             };
 
-            var insertOperation = TableOperation.Insert(newTextbook);
-            table.Execute(insertOperation);
+            Uri uri = new Uri(_serviceUri, "/indexes/textbook/docs/index");
+            string json = AzureSearchHelper.SerializeJson(batch);
+            HttpResponseMessage response = AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
+            response.EnsureSuccessStatusCode();
         }
 
         public IQueryable<Textbook> All(TextbookSearchOption searchOptionOption)
         {
-            var results = Search("0534956004", null, null, null, null, null);
+            var results = Search(searchOptionOption.Keyword, searchOptionOption.CampusName, null, null, null, null, null);
             
 
             var items = new List<Textbook>();
@@ -80,12 +80,12 @@ namespace CampusNext.Services.BusinessLayer.AzureSearch
             return items.AsQueryable();
         }
 
-        public dynamic Search(string searchText, string sort, string title, string description, double? priceFrom, double? priceTo)
+        public dynamic Search(string searchText, string campusName, string sort, string title, string description, double? priceFrom, double? priceTo)
         {
             string search = "&search=" + Uri.EscapeDataString(searchText);
             string facets = "&facet=title&facet=description&facet=isbn&facet=price,values:10|25|100|500|1000|2500";
             string paging = "&$top=10";
-            string filter = BuildFilter(title, description, priceFrom, priceTo);
+            string filter = BuildFilter(campusName, title, description, priceFrom, priceTo);
             string orderby = BuildSort(sort);
 
             Uri uri = new Uri(_serviceUri, "/indexes/textbook/docs?$count=true" + search + facets + paging + filter + orderby);
@@ -95,12 +95,12 @@ namespace CampusNext.Services.BusinessLayer.AzureSearch
             return AzureSearchHelper.DeserializeJson<dynamic>(response.Content.ReadAsStringAsync().Result);
         }
 
-        private string BuildFilter(string title, string description, double? priceFrom, double? priceTo)
+        private string BuildFilter(string campusName, string title, string description, double? priceFrom, double? priceTo)
         {
             // carefully escape and combine input for filters, injection attacks that are typical in SQL
             // also apply here. No "DROP TABLE" risk, but a well injected "or" can cause unwanted disclosure
 
-            string filter = "&$filter=campusName eq 'NDSU'";
+            string filter = String.Format("&$filter=campusName eq '{0}'", campusName);
 
             if (!string.IsNullOrWhiteSpace(title))
             {
