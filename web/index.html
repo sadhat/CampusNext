@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" ng-app="campusNextApp">
+<html class="no-js" lang="en" ng-app="campusNextApp" ng-controller="RootCtrl">
 <head>
     <title>Welcome to CampusNEXT</title>
     <link href="src/vendor/css/html5reset-1.6.1.min.css" rel="stylesheet" />
@@ -18,12 +18,20 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.js"></script>
     <script type="text/javascript" src="src/app/js/app.js"></script>
     <script src="src/app/js/services.js"></script>
+    <script src="src/vendor/js/facebookUtils.js"></script>
     <script src="src/app/js/controllers.js"></script>
     <script src="src/app/js/directives.js"></script>
 </head>
 <body class="metro">
     <div id="wrapper">
+        
         <div class="row">
+            <div style="z-index: 0; position: absolute; right:10px; top: 10px">
+                <span ng-show='loggedInUser.name'>
+                    <a href="/#/dashboard">{{loggedInUser.name}} <img src="images/edit_page.png" /></a>
+                </span>
+                <facebook-login-button></facebook-login-button>
+            </div>
             <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
                 <a href="/">
                     <div class="tile bg-amber">
@@ -34,7 +42,7 @@
                 </a>
                 <h1>CampusNEXT</h1>
                 &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
-                (<a href="/#/change">change campus</a>)
+                (<a href="/#/change">change campus</a>)    
             </div>
         </div>
         <hr style="height: 7px" />

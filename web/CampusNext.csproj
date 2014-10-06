@@ -63,8 +63,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="channel.html" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
+    <Content Include="images\edit_page.png" />
     <Content Include="packages.config" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
@@ -118,9 +120,13 @@
     <Content Include="src\vendor\images\link.png" />
     <Content Include="src\vendor\images\star.png" />
     <Content Include="src\vendor\images\users.png" />
+    <Content Include="src\vendor\js\facebookUtils.js" />
     <Content Include="src\vendor\js\foundation.min.js" />
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
+    <Content Include="views\authoring\textbook_all.html" />
+    <Content Include="views\dashboard.html" />
+    <Content Include="views\facebookLoginPartial.html" />
     <Content Include="views\home.html" />
     <Content Include="views\products\textbook_add.html" />
     <Content Include="views\products\textbook_search.html" />
@@ -129,7 +135,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

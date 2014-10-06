@@ -4,11 +4,7 @@ using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
-using CampusNext.Services.Entity;
 using CampusNext.Services.Models;
-using Microsoft.WindowsAzure;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Table;
 
 
 namespace CampusNext.Services.BusinessLayer.AzureSearch
