@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.Services", "serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.Products.Seeder", "..\CampusNext.Products.Seeder\CampusNext.Products.Seeder.csproj", "{3614B379-39C8-408A-AB33-3861F9BA07B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CampusNext.DataAccess", "CampusNext.DataAccess\CampusNext.DataAccess.csproj", "{46361320-FC56-4264-8BFD-D62FC87C99AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{3614B379-39C8-408A-AB33-3861F9BA07B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3614B379-39C8-408A-AB33-3861F9BA07B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3614B379-39C8-408A-AB33-3861F9BA07B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46361320-FC56-4264-8BFD-D62FC87C99AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46361320-FC56-4264-8BFD-D62FC87C99AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46361320-FC56-4264-8BFD-D62FC87C99AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46361320-FC56-4264-8BFD-D62FC87C99AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

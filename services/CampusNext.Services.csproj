@@ -38,6 +38,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Azure.Documents.Client">
       <HintPath>..\packages\Microsoft.Azure.Documents.Client.0.9.0-preview\lib\net40\Microsoft.Azure.Documents.Client.dll</HintPath>
     </Reference>
@@ -126,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\Authoring\TextbookController.cs" />
     <Compile Include="AzureSearchHelper.cs" />
     <Compile Include="AzureSearchSeeder.cs" />
     <Compile Include="BusinessLayer\AzureSearch\TextbookRepository.cs" />
@@ -161,6 +169,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DataLayer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CampusNext.DataAccess\CampusNext.DataAccess.csproj">
+      <Project>{46361320-fc56-4264-8bfd-d62fc87c99ad}</Project>
+      <Name>CampusNext.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
