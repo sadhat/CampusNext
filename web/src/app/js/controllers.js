@@ -76,27 +76,27 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'To
     }
 }]);
 
-campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($scope, $http) {
+campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', 'EnvConfig', function ($scope, $http, envConfig) {
     $scope.title = "Textbook Search";
     $scope.keyword = "";
     $scope.campusName = "NDSU";
     $scope.search = function () {
         var filter = "?keyword=" + $scope.keyword + "&campusName=" + $scope.campusName;
-        $http.get('http://campusnextservices.azurewebsites.net/odata/TextbookSearch/' + filter).success(function (data) {
+        $http.get(envConfig.get('apiroot') + 'odata/TextbookSearch/' + filter).success(function (data) {
             $scope.searchResults = data.value;
         });
     }
 }]);
 
 campusNextApp.controller("AuthorTextbookCtrl", [
-    '$scope', '$http', '$location', 'TokenService', function ($scope, $http, $location, tokenService) {
+    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', function ($scope, $http, $location, tokenService, envConfig) {
         tokenService.setAuthorizationHeader();
         var config = {
             headers: {
                 'accessToken': tokenService.accessToken
             }
         };
-        $http.get('http://localhost:50000/api/Textbook', config)
+        $http.get(envConfig.get('apiroot') + 'api/Textbook', config)
             .success(function (data) {
             $scope.searchResults = data;
         });
@@ -105,7 +105,7 @@ campusNextApp.controller("AuthorTextbookCtrl", [
             var result = confirm("Are you sure you want to delete? ");
             var book = $scope.searchResults[index];
             if (result) {
-                $http.delete('http://localhost:50000/api/Textbook/' + book.id);
+                $http.delete(envConfig.get('apiroot') + 'api/Textbook/' + book.id, config);
                 $scope.searchResults.splice(index, 1);
             }
         };

@@ -176,7 +176,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataLayer\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CampusNext.DataAccess\CampusNext.DataAccess.csproj">
