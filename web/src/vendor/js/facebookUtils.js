@@ -98,6 +98,9 @@
                 if (response.authResponse) {
                     response.userNotAuthorized = true;
                     _self.loggedIn = true;
+                    
+                    sessionStorage.setItem("accessToken", response.authResponse.accessToken);
+                    console.log(sessionStorage.getItem("accessToken"));
                     $rootScope.$broadcast("fbLoginSuccess", response);
                 } else {
                     _self.loggedIn = false;

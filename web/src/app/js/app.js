@@ -2,7 +2,8 @@ var campusNextApp = angular.module('campusNextApp', ['facebookUtils', 'ngRoute']
     .constant('facebookConfigSettings', {
         'routingEnabled': true,
         'channelFile': 'channel.html',
-        'appID': '739926446075188'
+        'appID': '739926446075188',
+        'permissions': 'email'
     });
 
 campusNextApp.config(['$routeProvider', function ($routeProvider) {

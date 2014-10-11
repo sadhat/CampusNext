@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
-    <TargetDatabaseName>CampusNext_db</TargetDatabaseName>
+    <TargetDatabaseName>CampusNextDb@j01zzeqn2c</TargetDatabaseName>
     <DeployScriptFileName>CampusNext.Products.sql</DeployScriptFileName>
     <TargetConnectionString>Data Source=tcp:j01zzeqn2c.database.windows.net,1433;Persist Security Info=True;User ID=CampusNextDb@j01zzeqn2c;Pooling=False</TargetConnectionString>
     <ProfileVersionNumber>1</ProfileVersionNumber>

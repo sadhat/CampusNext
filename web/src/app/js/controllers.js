@@ -32,25 +32,38 @@ campusNextApp.controller("FindTextbookCtrl", ['$scope', '$http', function ($scop
     $scope.title = "find textbook";
 }]);
 
-campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', function ($scope, $http) {
+campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'TokenService', function ($scope, $http, $location, tokenService) {
     $scope.title = "";
     $scope.isbn = "";
     $scope.price = 0;
     $scope.description = "";
+    $scope.userId = 123;
+
+    var config = {
+        headers: {
+            'accessToken': tokenService.accessToken
+        }
+    };
+
 
     $scope.submitForm = function (item, event) {
         $scope.isSaving = true;
         var textbook = {
             CampusName: "NDSU",
-            Title: $scope.title,
+            Name: $scope.title,
             Isbn: $scope.isbn,
             Price: $scope.price,
-            Description: $scope.description
+            Description: $scope.description,
+            UserId: $scope.userId
         };
-        var responsePromise = $http.post("http://campusnextservices.azurewebsites.net/odata/TextbookSearch", textbook, {});
+
+        tokenService.setAuthorizationHeader();
+
+        var responsePromise = $http.post("http://localhost:50000/api/Textbook", textbook, config);
 
         responsePromise.success(function (dataFromServer, status, headers, config) {
             toastr.success('Your book added successfully', 'Congratulations!');
+            $location.path('/auth/textbook/');
         });
 
         responsePromise.error(function (dataFromServer, status, headers, config) {
@@ -74,3 +87,31 @@ campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', function ($sc
         });
     }
 }]);
+
+campusNextApp.controller("AuthorTextbookCtrl", [
+    '$scope', '$http', '$location', 'TokenService', function ($scope, $http, $location, tokenService) {
+        tokenService.setAuthorizationHeader();
+        var config = {
+            headers: {
+                'accessToken': tokenService.accessToken
+            }
+        };
+        $http.get('http://localhost:50000/api/Textbook', config)
+            .success(function (data) {
+            $scope.searchResults = data;
+        });
+
+        $scope.delete = function(index) {
+            var result = confirm("Are you sure you want to delete? ");
+            var book = $scope.searchResults[index];
+            if (result) {
+                $http.delete('http://localhost:50000/api/Textbook/' + book.id);
+                $scope.searchResults.splice(index, 1);
+            }
+        };
+
+        $scope.add = function () {
+            $location.path('/textbookadd');
+        }
+    }
+]);

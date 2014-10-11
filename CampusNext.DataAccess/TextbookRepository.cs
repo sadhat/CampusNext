@@ -1,19 +1,29 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace CampusNext.DataAccess
 {
-    public class TextbookRepository
+    public abstract class RepositoryBase
     {
-        public async Task<List<Textbook>> GetTextbooksAsync(int userId)
+        protected IDbConnection Connection
         {
-            using (var context = new CampusNextContext())
+            get
             {
-                var result = await context.Textbooks.Where((t) => t.UserId == userId).ToListAsync();
-                return result;
+                return new SqlConnection(ConfigurationManager.ConnectionStrings["CampusNextContext"].ConnectionString);
             }
+        }
+    }
+    public class TextbookRepository : RepositoryBase
+    {
+        public IQueryable<Textbook> GetTextbook(string userId)
+        {
+            return Connection.Query<Textbook>("SELECT * FROM Textbook WHERE userId = @id", new {id = userId}).AsQueryable();
         }
 
         public async Task AddAsync(Textbook textbook)

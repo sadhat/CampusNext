@@ -1,28 +1,41 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
+using System.Web.Http.OData;
 using CampusNext.DataAccess;
+using CampusNext.Services.Attributes;
+using Facebook;
 
 namespace CampusNext.Services.Controllers.Authoring
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
+    [FacebookTokenValidation]
     public class TextbookController : ApiController
     {
         private CampusNextContext db = new CampusNextContext();
 
+        [EnableQuery]
         // GET: api/Textbooks
         public IQueryable<Textbook> GetTextbooks()
         {
-            return db.Textbooks;
+            return new TextbookRepository().GetTextbook(User.Identity.Name);
         }
 
         // GET: api/Textbooks/5
         [ResponseType(typeof(Textbook))]
         public async Task<IHttpActionResult> GetTextbook(int id)
         {
+            var accessToken = Request.Headers.GetValues("accessToken").FirstOrDefault();
+            if (String.IsNullOrWhiteSpace(accessToken))
+            {
+                return BadRequest("Access token is missing");
+            }
             Textbook textbook = await db.Textbooks.FindAsync(id);
             if (textbook == null)
             {
@@ -36,6 +49,20 @@ namespace CampusNext.Services.Controllers.Authoring
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutTextbook(int id, Textbook textbook)
         {
+            if (!Request.Headers.Contains("accessToken"))
+            {
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            }
+            var accessToken = Request.Headers.GetValues("accessToken").FirstOrDefault();
+            if (String.IsNullOrWhiteSpace(accessToken))
+            {
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            }
+
+            var client = new FacebookClient(accessToken);
+            dynamic result = client.Get("me", new { fields = "name,id" });
+            string userId = result.id;
+
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -45,6 +72,8 @@ namespace CampusNext.Services.Controllers.Authoring
             {
                 return BadRequest();
             }
+
+            textbook.UserId = userId;
 
             db.Entry(textbook).State = EntityState.Modified;
 
@@ -75,6 +104,23 @@ namespace CampusNext.Services.Controllers.Authoring
             {
                 return BadRequest(ModelState);
             }
+
+            if (!Request.Headers.Contains("accessToken"))
+            {
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            }
+            var accessToken = Request.Headers.GetValues("accessToken").FirstOrDefault();
+            if (String.IsNullOrWhiteSpace(accessToken))
+            {
+                throw new HttpResponseException(HttpStatusCode.Unauthorized);
+            }
+
+            var client = new FacebookClient(accessToken);
+            dynamic result = client.Get("me", new { fields = "name,id" });
+            string userId = result.id;
+
+            textbook.UserId = userId;
+            textbook.CreatedDate = textbook.ModifiedDate = DateTime.Now.Date;
 
             db.Textbooks.Add(textbook);
 

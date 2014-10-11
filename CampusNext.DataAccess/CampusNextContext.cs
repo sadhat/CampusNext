@@ -38,9 +38,9 @@ namespace CampusNext.DataAccess
         public string Isbn { get; set; }
         public string Course { get; set; }
         public double Price { get; set; }
-        public string PriceCode { get; set; }
-        public string Campus { get; set; }
-        public int UserId { get; set; }
+        public string CurrencyType { get; set; }
+        public string CampusCode { get; set; }
+        public string UserId { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime ModifiedDate { get; set; }
         public int LikeCount { get; set; }
