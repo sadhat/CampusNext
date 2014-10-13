@@ -89,17 +89,28 @@ campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', 'EnvConfig', 
 }]);
 
 campusNextApp.controller("AuthorTextbookCtrl", [
-    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', function ($scope, $http, $location, tokenService, envConfig) {
+    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', 'facebookUser', function ($scope, $http, $location, tokenService, envConfig, facebookUser) {
         tokenService.setAuthorizationHeader();
         var config = {
             headers: {
                 'accessToken': tokenService.accessToken
             }
         };
+
         $http.get(envConfig.get('apiroot') + 'api/Textbook', config)
-            .success(function (data) {
-            $scope.searchResults = data;
-        });
+            .success(function(data) {
+                $scope.searchResults = data;
+            })
+            .error(function(data) {
+                if (data.exceptionType == "Facebook.FacebookOAuthException") {
+                    toastr.error('Your session expired. Please login again');
+                    facebookUser.then(function (user) {
+                        user.logout();
+                    });
+                    $location.path('/');
+                }
+            });
+        
 
         $scope.delete = function(index) {
             var result = confirm("Are you sure you want to delete? ");

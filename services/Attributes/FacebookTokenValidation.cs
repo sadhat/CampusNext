@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
+using System.Web.Http.Results;
 using Facebook;
 
 namespace CampusNext.Services.Attributes
@@ -29,15 +30,15 @@ namespace CampusNext.Services.Attributes
             }
 
             var accessToken = authorization.Parameter;
-            
 
             var client = new FacebookClient(accessToken);
-            dynamic result = client.Get("me", new { fields = "name,id" });
+            dynamic result = client.Get("me", new {fields = "name,id"});
             string id = result.id;
-            string[] rolesArray = { };
+            string[] rolesArray = {};
             IPrincipal principal = new GenericPrincipal(new GenericIdentity(id, "facebook"), rolesArray);
             System.Threading.Thread.CurrentPrincipal = principal;
             HttpContext.Current.User = principal;
+
         }
     }
 }
