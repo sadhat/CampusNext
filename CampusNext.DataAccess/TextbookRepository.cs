@@ -1,11 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Configuration;
+﻿using System.Configuration;
 using System.Data;
-using System.Data.Entity;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using Dapper;
+using CampusNext.DataAccess.Entities;
+using DapperExtensions;
 
 namespace CampusNext.DataAccess
 {
@@ -21,36 +20,30 @@ namespace CampusNext.DataAccess
     }
     public class TextbookRepository : RepositoryBase
     {
-        public IQueryable<Textbook> GetTextbook(string userId)
+        public Task<IQueryable<Textbook>> GetAllFor(string userId)
         {
-            return Connection.Query<Textbook>("SELECT * FROM Textbook WHERE userId = @id", new {id = userId}).AsQueryable();
+            var predicate = Predicates.Field<Textbook>(t => t.UserId, Operator.Eq, userId);
+            return Task.FromResult(Connection.GetList<Textbook>(predicate).AsQueryable());
         }
 
-        public async Task AddAsync(Textbook textbook)
+        public Task<Textbook> Get(int id)
         {
-            using (var context = new CampusNextContext())
-            {
-                context.Entry(textbook).State = EntityState.Added;
-                await context.SaveChangesAsync();
-            }
+            return Task.FromResult(Connection.Get<Textbook>(id));
         }
 
-        public async Task SaveAsync(Textbook textbook)
+        public Task AddAsync(Textbook textbook)
         {
-            using (var context = new CampusNextContext())
-            {
-                context.Entry(textbook).State = EntityState.Modified;
-                await context.SaveChangesAsync();
-            }
+            return Task.FromResult(Connection.Insert(textbook));
         }
 
-        public async Task DeleteAsync(Textbook textbook)
+        public Task SaveAsync(Textbook textbook)
         {
-            using (var context = new CampusNextContext())
-            {
-                context.Entry(textbook).State = EntityState.Deleted;
-                await context.SaveChangesAsync();
-            }
+            return Task.FromResult(Connection.Update(textbook));
+        }
+
+        public Task DeleteAsync(Textbook textbook)
+        {
+            return Task.FromResult(Connection.Delete(textbook));
         }
 
     }
