@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using CampusNext.AzureSearch.Repository;
 using CampusNext.Services.BusinessLayer;
 using CampusNext.Services.BusinessLayer.AzureSearch;
 using Microsoft.Practices.Unity;
@@ -10,7 +11,7 @@ namespace CampusNext.Services
         public static void Register()
         {
             var container = new UnityContainer();
-            container.RegisterType<ITextbookRepository, TextbookRepository>(new HierarchicalLifetimeManager());
+            container.RegisterType<IAzureSearchRepository, AzureSearchTextbookRepository>(new HierarchicalLifetimeManager());
             GlobalConfiguration.Configuration.DependencyResolver = new UnityResolver(container);
         }
     }

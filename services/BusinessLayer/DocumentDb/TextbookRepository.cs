@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
-using CampusNext.Services.Models;
+using CampusNext.Entity;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -29,7 +27,7 @@ namespace CampusNext.Services.BusinessLayer.DocumentDb
                 from t in
                     Client.CreateDocumentQuery<Textbook>(documentCollection.SelfLink,
                         new FeedOptions {EnableScanInQuery = true})
-                where t.Title.StartsWith("Java")
+                where t.Name.StartsWith("Java")
                 select t;
                 
 

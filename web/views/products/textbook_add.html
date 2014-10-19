@@ -1,14 +1,31 @@
 ﻿<div>
-    <form>
+    <form name="addBook">
         <fieldset ng-disabled="isSaving">
             <div class="row">
                 <div class="medium-1 small-1 end columns">
                     <label for="title">Title:</label>
                 </div>
                 <div class="medium-11 small-11 columns">
-                    <input type="text" id="title" placeholder="Textbook title" ng-model="title">
+                    <input type="text" id="title" placeholder="Textbook title" ng-model="title" ng-required="true">
                 </div>
             </div>
+            <div class="row">
+                <div class="medium-1 small-1 end columns">
+                    <label for="course">Course:</label>
+                </div>
+                <div class="medium-2 small-3 end columns">
+                    <input type="text" id="course" placeholder="Course ID" maxlength="15" ng-model="course">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-1 small-1 end columns">
+                    <label for="authors">Authors:</label>
+                </div>
+                <div class="medium-11 small-11 columns">
+                    <input type="text" id="authors" placeholder="Textbook title" ng-model="authors">
+                </div>
+            </div>
+
             <div class="row">
                 <div class="medium-1 small-1 end columns">
                     <label for="isbn">ISBN:</label>
@@ -30,7 +47,7 @@
                     <label for="description">Description:</label>
                 </div>
                 <div class="medium-11 small-11 columns">
-                    <textarea class="error" id="description" rows="10" cols="20" placeholder="Textbook description. Provide descritive information that search will find your book" ng-model="description"></textarea>
+                    <textarea required class="error" id="description" rows="10" cols="20" placeholder="Textbook description. Provide descritive information that search will find your book" ng-model="description"></textarea>
                 </div>
             </div>
             <br />

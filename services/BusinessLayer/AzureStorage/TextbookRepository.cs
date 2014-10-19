@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
+using CampusNext.Entity;
 using CampusNext.Services.Entity;
-using CampusNext.Services.Models;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -23,12 +23,12 @@ namespace CampusNext.Services.BusinessLayer.AzureStorage
             // Create the table if it doesn't exist.
             var table = tableClient.GetTableReference("Textbook");
 
-            var newTextbook = new TextbookEntity(textbook.CampusName, Guid.NewGuid())
+            var newTextbook = new TextbookEntity(textbook.CampusCode, Guid.NewGuid())
             {
                 Description = textbook.Description,
                 Isbn = textbook.Isbn,
                 Price = textbook.Price,
-                Title = textbook.Title,
+                Title = textbook.Name,
                 CreatedDateTime = DateTime.UtcNow,
                 ModifiedDateTime = DateTime.UtcNow
             };
@@ -61,12 +61,12 @@ namespace CampusNext.Services.BusinessLayer.AzureStorage
                         entity =>
                             new Textbook
                             {
-                                Id = Guid.Parse(entity.RowKey),
+                                Id = Int32.Parse(entity.RowKey),
                                 Description = entity.Description,
                                 Isbn = entity.Isbn,
                                 Price = entity.Price,
-                                Title = entity.Title,
-                                CampusName = entity.CampusName
+                                Name = entity.Title,
+                                CampusCode = entity.CampusName
                             });
 
             return items.AsQueryable();

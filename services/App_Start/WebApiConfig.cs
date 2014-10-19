@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 using System.Web.Http.OData.Builder;
-using CampusNext.Services.Models;
+using CampusNext.Entity;
 using Microsoft.Data.Edm;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;

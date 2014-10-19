@@ -4,7 +4,7 @@ using System.Configuration;
 using System.Globalization;
 using System.Linq;
 using System.Net.Http;
-using CampusNext.Services.Models;
+using CampusNext.Entity;
 
 
 namespace CampusNext.Services.BusinessLayer.AzureSearch
@@ -28,14 +28,14 @@ namespace CampusNext.Services.BusinessLayer.AzureSearch
                 {
                     new
                     {
-                        id = Guid.NewGuid().ToString(),
+                        id = 1,
                         description = textbook.Description,
                         isbn = textbook.Isbn,
                         price = textbook.Price,
-                        title = textbook.Title,
+                        title = textbook.Name,
                         updatedDate = DateTime.UtcNow,
                         createdDate = DateTime.UtcNow,
-                        campusName = textbook.CampusName
+                        campusName = textbook.CampusCode
                     }
                 }
             };
@@ -63,7 +63,7 @@ namespace CampusNext.Services.BusinessLayer.AzureSearch
                 items.Add(new Textbook
                 {
                     Id = id,
-                    Title = title,
+                    Name = title,
                     Description =  description,
                     Price = price,
                     Isbn = isbn

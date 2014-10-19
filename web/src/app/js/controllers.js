@@ -38,6 +38,8 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'To
     $scope.price = 0;
     $scope.description = "";
     $scope.userId = 123;
+    $scope.authors = "";
+    $scope.course = "";
 
     var config = {
         headers: {
@@ -45,16 +47,17 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'To
         }
     };
 
-
     $scope.submitForm = function (item, event) {
         $scope.isSaving = true;
         var textbook = {
-            CampusName: "NDSU",
+            CampusCode: "NDSU",
             Name: $scope.title,
             Isbn: $scope.isbn,
             Price: $scope.price,
             Description: $scope.description,
-            UserId: $scope.userId
+            UserId: $scope.userId,
+            Authors: $scope.authors,
+            Course: $scope.course
         };
 
         tokenService.setAuthorizationHeader();
@@ -109,6 +112,7 @@ campusNextApp.controller("AuthorTextbookCtrl", [
                     });
                     $location.path('/');
                 }
+                
             });
         
 

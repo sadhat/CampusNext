@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{46361320-FC56-4264-8BFD-D62FC87C99AD}</ProjectGuid>
+    <ProjectGuid>{3D859AFD-6F83-404C-AF34-0CF8C6447300}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CampusNext.DataAccess</RootNamespace>
-    <AssemblyName>CampusNext.DataAccess</AssemblyName>
+    <RootNamespace>CampusNext.AzureSearch</RootNamespace>
+    <AssemblyName>CampusNext.AzureSearch</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,17 +30,23 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.12.1.1, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Dapper.Testable.1.15\lib\net45\Dapper.dll</HintPath>
+    <Reference Include="AzureSearchClient">
+      <HintPath>..\packages\AzureSearchClient.0.5.5355.2536\lib\net45\AzureSearchClient.dll</HintPath>
     </Reference>
-    <Reference Include="DapperExtensions">
-      <HintPath>..\packages\DapperExtensions.1.4.4\lib\net40\DapperExtensions.dll</HintPath>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RedDog.Search">
+      <HintPath>..\packages\RedDog.Search.0.4.0.0\lib\net45\RedDog.Search.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,11 +54,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AzureSearchHelper.cs" />
+    <Compile Include="Indexer\IIndexer.cs" />
+    <Compile Include="Indexer\IndexerBase.cs" />
+    <Compile Include="Indexer\TextbookIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextbookRepository.cs" />
+    <Compile Include="Repository\IAzureSearchRepository.cs" />
+    <Compile Include="Repository\AzureSearchRepositoryBase.cs" />
+    <Compile Include="Repository\AzureSearchTextbookRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

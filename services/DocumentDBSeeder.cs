@@ -2,7 +2,7 @@
 using System.Configuration;
 using System.Linq;
 using System.Threading.Tasks;
-using CampusNext.Services.Models;
+using CampusNext.Entity;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -62,28 +62,28 @@ namespace CampusNext.Services
         {
             var textbook1 = new Textbook
             {
-                Id = Guid.NewGuid(),
+                Id = 1,
                 Description =
                     "When you have a question about C# 5.0 or the .NET CLR, this bestselling guide has precisely the answers you need. Uniquely organized around concepts and use cases, this updated fifth edition features a reorganized section on concurrency, threading, and parallel programming—including in-depth coverage of C# 5.0’s new asynchronous functions.",
                 Isbn = "978-1449320102",
                 Price = 34.33,
-                Title = "C# 5.0 in a Nutshell: The Definitive Reference",
-                CreatedDateTime = DateTime.UtcNow,
-                ModifiedDateTime = DateTime.UtcNow
+                Name = "C# 5.0 in a Nutshell: The Definitive Reference",
+                CreatedDate = DateTime.UtcNow,
+                ModifiedDate = DateTime.UtcNow
             };
 
             await Client.CreateDocumentAsync(colSelfLink, textbook1);
 
             var textbook2 = new Textbook
             {
-                Id = Guid.NewGuid(),
+                Id = 2,
                 Description =
                     "This new edition of this invaluable reference brings the coverage of software metrics fully up to date. The book has been rewritten and redesigned to take into account the fast changing developments in software metrics, most notably their widespread penetration into industrial practice. New sections deal with prcess maturity and measurement, goal-question-metric, metrics plans, experimentation, empirical studies, object-oriented metrics, and metrics tools. 88 line illustrations.",
                 Isbn = "978-0534956004",
                 Price = 44.99,
-                Title = "Software Metrics",
-                CreatedDateTime = DateTime.UtcNow,
-                ModifiedDateTime = DateTime.UtcNow
+                Name = "Software Metrics",
+                CreatedDate = DateTime.UtcNow,
+                ModifiedDate = DateTime.UtcNow
             };
 
             await Client.CreateDocumentAsync(colSelfLink, textbook2);

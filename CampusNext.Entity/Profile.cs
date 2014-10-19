@@ -1,4 +1,4 @@
-namespace CampusNext.DataAccess.Entities
+namespace CampusNext.Entity
 {
     public class Profile
     {

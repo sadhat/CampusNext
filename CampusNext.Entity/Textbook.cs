@@ -1,9 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace CampusNext.DataAccess.Entities
+namespace CampusNext.Entity
 {
-    public class Textbook
+    public class Textbook : IEntity
     {
         [Key]
         public int Id { get; set; }
@@ -16,8 +16,8 @@ namespace CampusNext.DataAccess.Entities
         public string CurrencyType { get; set; }
         public string CampusCode { get; set; }
         public string UserId { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
+        public DateTime? CreatedDate { get; set; }
+        public DateTime? ModifiedDate { get; set; }
         public int LikeCount { get; set; }
         public string ContactInfo { get; set; }
     }

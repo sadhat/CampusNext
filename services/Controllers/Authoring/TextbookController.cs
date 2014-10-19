@@ -8,11 +8,10 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Http.OData;
+using CampusNext.AzureSearch.Repository;
 using CampusNext.DataAccess;
-using CampusNext.DataAccess.Entities;
+using CampusNext.Entity;
 using CampusNext.Services.Attributes;
-using CampusNext.Services.BusinessLayer;
-using Facebook;
 
 namespace CampusNext.Services.Controllers.Authoring
 {
@@ -62,6 +61,8 @@ namespace CampusNext.Services.Controllers.Authoring
 
             var textbookRepository = new TextbookRepository();
             await textbookRepository.SaveAsync(textbook);
+            var azureSearchTextbookRepository = new AzureSearchTextbookRepository();
+            azureSearchTextbookRepository.Update(textbook);
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -79,6 +80,8 @@ namespace CampusNext.Services.Controllers.Authoring
             textbook.CreatedDate = textbook.ModifiedDate = DateTime.Now.Date;
 
             await new TextbookRepository().AddAsync(textbook);
+            var azureSearchTextbookRepository = new AzureSearchTextbookRepository();
+            azureSearchTextbookRepository.Add(textbook);
 
             return CreatedAtRoute("DefaultApi", new { id = textbook.Id }, textbook);
         }

@@ -158,7 +158,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Textbook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TableStorageSeeder.cs" />
     <Compile Include="UnityConfig.cs" />
@@ -176,11 +175,20 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CampusNext.AzureSearch\CampusNext.AzureSearch.csproj">
+      <Project>{3d859afd-6f83-404c-af34-0cf8c6447300}</Project>
+      <Name>CampusNext.AzureSearch</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CampusNext.DataAccess\CampusNext.DataAccess.csproj">
       <Project>{46361320-fc56-4264-8bfd-d62fc87c99ad}</Project>
       <Name>CampusNext.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CampusNext.Entity\CampusNext.Entity.csproj">
+      <Project>{F5FE4EB9-D381-407A-8FA2-2C302540CCB8}</Project>
+      <Name>CampusNext.Entity</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

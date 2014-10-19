@@ -1,5 +1,5 @@
 using System.Linq;
-using CampusNext.Services.Models;
+using CampusNext.Entity;
 
 namespace CampusNext.Services.BusinessLayer
 {

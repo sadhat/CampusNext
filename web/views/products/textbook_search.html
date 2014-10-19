@@ -13,7 +13,7 @@
         <ol>
             <li class="g" ng-repeat="result in searchResults">
                 <div>
-                    <h3 class="g">{{result.Title}}</h3>
+                    <h3 class="g">{{result.Name}}</h3>
                     <span class="price" ng-show="result.Price"> {{result.CurrencySymbol||'$'}}{{result.Price}}</span><span class="isbn" ng-show="result.Isbn"> ISBN: {{result.Isbn}}</span>
                     <section>{{result.Description}}</section>
                     <button class="primary">Contact Seller </button>

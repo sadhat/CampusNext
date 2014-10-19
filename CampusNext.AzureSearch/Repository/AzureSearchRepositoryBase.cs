@@ -1,0 +1,100 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using CampusNext.Entity;
+
+namespace CampusNext.AzureSearch.Repository
+{
+    public abstract class AzureSearchRepositoryBase : IAzureSearchRepository
+    {
+        private static Uri _serviceUri;
+        private static HttpClient _httpClient;
+        private readonly string _indexName;
+        protected readonly string ServiceName;
+        protected readonly string ServiceApiKey;
+       
+        protected AzureSearchRepositoryBase(string serviceName, string serviceApiKey, string indexName)
+        {
+            _indexName = indexName;
+            ServiceName = serviceName;
+            ServiceApiKey = serviceApiKey;
+            _serviceUri = new Uri("https://" + serviceName + ".search.windows.net");
+            _httpClient = new HttpClient();
+            // Get the search service connection information from the App.config
+            _httpClient.DefaultRequestHeaders.Add("api-key", serviceApiKey);
+            _serviceUri = new Uri(_serviceUri, "/indexes");
+        }
+
+        public async Task Add(IEntity entity)
+        {
+            Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
+            string json = AzureSearchHelper.SerializeJson(GetEntityDefinition(entity));
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task Delete(IEntity entity)
+        {
+            Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
+            string json = AzureSearchHelper.SerializeJson(TransformEntityForDelete(entity));
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Delete, uri, json);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task Update(IEntity entity)
+        {
+            Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
+            string json = AzureSearchHelper.SerializeJson(GetEntityDefinition(entity));
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Put, uri, json);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public async Task<int> Count()
+        {
+            Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/$count");
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Get, uri);
+            int count = AzureSearchHelper.DeserializeJson<int>(response.Content.ReadAsStringAsync().Result);
+            return count;
+        }
+
+        public async Task<T> Get<T>(string key)
+        {
+            Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/" + key);
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Get, uri);
+            var document = AzureSearchHelper.DeserializeJson<T>(response.Content.ReadAsStringAsync().Result);
+            return document;
+        }
+
+        public abstract Task<IList<IEntity>> Search(string keyword, string campus = null,
+            IDictionary<string, string> filterDictionary = null);
+
+        public abstract dynamic TransformEntity(IEntity entity);
+
+        private dynamic GetEntityDefinition(IEntity entity)
+        {
+            return new
+            {
+                value = new[]
+                {
+                    TransformEntity(entity)
+                }
+            };
+        }
+
+        private dynamic TransformEntityForDelete(IEntity entity)
+        {
+            return new
+            {
+                value = new[]
+                {
+                    new
+                    {
+
+                        id = entity.Id.ToString()
+                    }
+                }
+            };
+        }
+    }
+}

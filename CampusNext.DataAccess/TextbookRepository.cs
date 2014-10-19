@@ -3,7 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-using CampusNext.DataAccess.Entities;
+using CampusNext.Entity;
 using DapperExtensions;
 
 namespace CampusNext.DataAccess
@@ -20,28 +20,28 @@ namespace CampusNext.DataAccess
     }
     public class TextbookRepository : RepositoryBase
     {
-        public Task<IQueryable<Textbook>> GetAllFor(string userId)
+        public Task<IQueryable<Entity.Textbook>> GetAllFor(string userId)
         {
-            var predicate = Predicates.Field<Textbook>(t => t.UserId, Operator.Eq, userId);
-            return Task.FromResult(Connection.GetList<Textbook>(predicate).AsQueryable());
+            var predicate = Predicates.Field<Entity.Textbook>(t => t.UserId, Operator.Eq, userId);
+            return Task.FromResult(Connection.GetList<Entity.Textbook>(predicate).AsQueryable());
         }
 
-        public Task<Textbook> Get(int id)
+        public Task<Entity.Textbook> Get(int id)
         {
-            return Task.FromResult(Connection.Get<Textbook>(id));
+            return Task.FromResult(Connection.Get<Entity.Textbook>(id));
         }
 
-        public Task AddAsync(Textbook textbook)
+        public Task AddAsync(Entity.Textbook textbook)
         {
             return Task.FromResult(Connection.Insert(textbook));
         }
 
-        public Task SaveAsync(Textbook textbook)
+        public Task SaveAsync(Entity.Textbook textbook)
         {
             return Task.FromResult(Connection.Update(textbook));
         }
 
-        public Task DeleteAsync(Textbook textbook)
+        public Task DeleteAsync(Entity.Textbook textbook)
         {
             return Task.FromResult(Connection.Delete(textbook));
         }
