@@ -24,8 +24,9 @@
     <ol>
         <li class="g" ng-repeat="result in searchResults">
             <div>
-                <h3 class="g">{{result.Name}}</h3>
+                <h3 class="g">{{result.Name}}</h3><span ng-show="result.Course">Course: </span><span>{{result.Course}}</span>
                 <span class="price" ng-show="result.Price"> {{result.CurrencySymbol||'$'}}{{result.Price}}</span><span class="isbn" ng-show="result.Isbn"> ISBN: {{result.Isbn}}</span>
+                <div ng-show="result.Authors">Author(s): {{result.Authors}}</div>
                 <section>{{result.Description}}</section>
                 <button class="primary">Contact Seller </button>
             </div>
