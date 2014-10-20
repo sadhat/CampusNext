@@ -60,7 +60,23 @@ namespace CampusNext.AzureSearch.Repository
                     CampusCode =
                         record.Properties["campusCode"] == null
                             ? string.Empty
-                            : record.Properties["campusCode"].ToString()
+                            : record.Properties["campusCode"].ToString(),
+                    Isbn =
+                        record.Properties["isbn"] == null
+                            ? string.Empty
+                            : record.Properties["isbn"].ToString(),
+                    Price =
+                        record.Properties["price"] == null
+                            ? 0
+                            : Double.Parse(record.Properties["price"].ToString()),
+                    Course =
+                        record.Properties["course"] == null
+                            ? string.Empty
+                            : record.Properties["course"].ToString(),
+                    Authors = 
+                        record.Properties["authors"] == null
+                            ? string.Empty
+                            : record.Properties["authors"].ToString()
                 };
                 list.Add(textbook);
             }

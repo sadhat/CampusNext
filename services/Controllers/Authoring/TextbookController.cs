@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Linq;
@@ -60,9 +61,15 @@ namespace CampusNext.Services.Controllers.Authoring
             textbook.UserId = userId;
 
             var textbookRepository = new TextbookRepository();
-            await textbookRepository.SaveAsync(textbook);
             var azureSearchTextbookRepository = new AzureSearchTextbookRepository();
-            azureSearchTextbookRepository.Update(textbook);
+            
+            var tasks = new List<Task>
+            {
+                textbookRepository.SaveAsync(textbook),
+                azureSearchTextbookRepository.UpdateAsync(textbook)
+            };
+
+            await Task.WhenAll(tasks);
 
             return StatusCode(HttpStatusCode.NoContent);
         }
@@ -78,10 +85,16 @@ namespace CampusNext.Services.Controllers.Authoring
 
             textbook.UserId = User.Identity.Name;
             textbook.CreatedDate = textbook.ModifiedDate = DateTime.Now.Date;
-
-            await new TextbookRepository().AddAsync(textbook);
+            var textbookRepository = new TextbookRepository();
             var azureSearchTextbookRepository = new AzureSearchTextbookRepository();
-            azureSearchTextbookRepository.Add(textbook);
+
+            var tasks = new List<Task>
+            {
+                textbookRepository.AddAsync(textbook),
+                azureSearchTextbookRepository.AddAsync(textbook)
+            };
+
+            await Task.WhenAll(tasks);
 
             return CreatedAtRoute("DefaultApi", new { id = textbook.Id }, textbook);
         }
@@ -93,8 +106,15 @@ namespace CampusNext.Services.Controllers.Authoring
             var textbook = new Textbook {Id = id};
 
             var textbookRepository = new TextbookRepository();
+            var azureSearchTextbookRepository = new AzureSearchTextbookRepository();
+            
+            var tasks = new List<Task>
+            {
+                textbookRepository.DeleteAsync(textbook),
+                azureSearchTextbookRepository.DeleteAsync(textbook)
+            };
 
-            await textbookRepository.DeleteAsync(textbook);
+            await Task.WhenAll(tasks);
 
             return Ok(textbook);
         }

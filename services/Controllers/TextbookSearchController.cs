@@ -27,13 +27,13 @@ namespace CampusNext.Services.Controllers
                 result.Cast<Textbook>().AsQueryable();
         }
 
-        public IHttpActionResult Post(Textbook textbook)
+        public async Task<IHttpActionResult> Post(Textbook textbook)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            _textbookRepository.Add(textbook);
+            await _textbookRepository.AddAsync(textbook);
             return Ok();
         }
     }

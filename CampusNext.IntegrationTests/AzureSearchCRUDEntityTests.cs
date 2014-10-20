@@ -21,13 +21,13 @@ namespace CampusNext.IntegrationTests
                 Id = 1,
                 Authors = "Megal",
                 CampusCode = "NDSU",
-                Course = "899",
+                Course = "899A",
                 Description = "Description",
                 Name = "My Book",
                 Price = 12.00
             };
 
-            azureTextbookRepository.Add(newTextboook);
+            azureTextbookRepository.AddAsync(newTextboook);
         }
 
         [TestMethod]
@@ -39,13 +39,13 @@ namespace CampusNext.IntegrationTests
                 Id = 1,
                 Authors = "Megal",
                 CampusCode = "NDSU",
-                Course = "899",
+                Course = "899A",
                 Description = "This is quite nice description",
-                Name = "My Book",
+                Name = "My Book2",
                 Price = 12.00
             };
 
-            azureTextbookRepository.Add(newTextboook);
+            var result = azureTextbookRepository.UpdateAsync(newTextboook).Result;
         }
 
         [TestMethod]
@@ -63,7 +63,7 @@ namespace CampusNext.IntegrationTests
                 Price = 12.00
             };
 
-            azureTextbookRepository.Delete(newTextboook);
+            var result = azureTextbookRepository.DeleteAsync(newTextboook).Result;
         }
 
         [TestMethod]
@@ -78,7 +78,7 @@ namespace CampusNext.IntegrationTests
         public void GetTextbook()
         {
             IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
-            var result = azureTextbookRepository.Get<Textbook>("1");
+            var result = azureTextbookRepository.Get<Textbook>("1").Result;
 
         }
 

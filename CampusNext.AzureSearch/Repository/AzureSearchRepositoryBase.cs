@@ -26,28 +26,28 @@ namespace CampusNext.AzureSearch.Repository
             _serviceUri = new Uri(_serviceUri, "/indexes");
         }
 
-        public async Task Add(IEntity entity)
+        public async Task<HttpResponseMessage> AddAsync(IEntity entity)
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
             string json = AzureSearchHelper.SerializeJson(GetEntityDefinition(entity));
             HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
-            response.EnsureSuccessStatusCode();
+            return response.EnsureSuccessStatusCode();
         }
 
-        public async Task Delete(IEntity entity)
+        public async Task<HttpResponseMessage> DeleteAsync(IEntity entity)
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
             string json = AzureSearchHelper.SerializeJson(TransformEntityForDelete(entity));
             HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Delete, uri, json);
-            response.EnsureSuccessStatusCode();
+            return response.EnsureSuccessStatusCode();
         }
 
-        public async Task Update(IEntity entity)
+        public async Task<HttpResponseMessage> UpdateAsync(IEntity entity)
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
             string json = AzureSearchHelper.SerializeJson(GetEntityDefinition(entity));
-            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Put, uri, json);
-            response.EnsureSuccessStatusCode();
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
+            return response.EnsureSuccessStatusCode();
         }
 
         public async Task<int> Count()

@@ -31,3 +31,11 @@ body {
     text-align: center;
     padding-top: 10px;
 }
+
+input[type], textarea, label {
+    font-size: 14px;
+}
+
+input[type=search] {
+    font-size: 20px;
+}

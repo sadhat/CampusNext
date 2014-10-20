@@ -32,7 +32,7 @@ campusNextApp.controller("FindTextbookCtrl", ['$scope', '$http', function ($scop
     $scope.title = "find textbook";
 }]);
 
-campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'TokenService', function ($scope, $http, $location, tokenService) {
+campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'TokenService', 'EnvConfig', function ($scope, $http, $location, tokenService, envConfig) {
     $scope.title = "";
     $scope.isbn = "";
     $scope.price = 0;
@@ -62,7 +62,7 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'To
 
         tokenService.setAuthorizationHeader();
 
-        var responsePromise = $http.post("http://localhost:50000/api/Textbook", textbook, config);
+        var responsePromise = $http.post(envConfig.get('apiroot') + "api/Textbook", textbook, config);
 
         responsePromise.success(function (dataFromServer, status, headers, config) {
             toastr.success('Your book added successfully', 'Congratulations!');
@@ -75,6 +75,59 @@ campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'To
     }
 
     $scope.addAnother = function (item, event) {
+        $scope.isSaving = false;
+    }
+}]);
+
+campusNextApp.controller("TextbookEditCtrl", ['$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig'
+    , function ($scope, $http, $location, routeParams, tokenService, envConfig) {
+    var config = {
+        headers: {
+            'accessToken': tokenService.accessToken
+        }
+    };
+    tokenService.setAuthorizationHeader();
+
+    $http.get(envConfig.get('apiroot') + "api/Textbook/" + routeParams.id, config)
+        .success(function(textbook) {
+            $scope.id = routeParams.id;
+            $scope.title = textbook.name;
+            $scope.isbn = textbook.isbn;
+            $scope.price = textbook.price;
+            $scope.description = textbook.description;
+            $scope.userId = textbook.userId;
+            $scope.authors = textbook.authors;
+            $scope.course = textbook.course;
+
+        });
+   
+    $scope.submitForm = function (item, event) {
+        $scope.isSaving = true;
+        var textbook = {
+            Id: $scope.id,
+            CampusCode: "NDSU",
+            Name: $scope.title,
+            Isbn: $scope.isbn,
+            Price: $scope.price,
+            Description: $scope.description,
+            UserId: $scope.userId,
+            Authors: $scope.authors,
+            Course: $scope.course
+        };
+
+        var responsePromise = $http.put(envConfig.get('apiroot') + "api/Textbook/" + $scope.id, textbook, config);
+
+        responsePromise.success(function () {
+            toastr.success('Your book edited successfully', 'Congratulations!');
+            $location.path('/auth/textbook/');
+        });
+
+        responsePromise.error(function (dataFromServer, status) {
+            toastr.error(status);
+        });
+    }
+
+    $scope.addAnother = function () {
         $scope.isSaving = false;
     }
 }]);
@@ -115,7 +168,6 @@ campusNextApp.controller("AuthorTextbookCtrl", [
                 
             });
         
-
         $scope.delete = function(index) {
             var result = confirm("Are you sure you want to delete? ");
             var book = $scope.searchResults[index];
@@ -125,8 +177,13 @@ campusNextApp.controller("AuthorTextbookCtrl", [
             }
         };
 
-        $scope.add = function () {
+        $scope.add = function() {
             $location.path('/textbookadd');
+        };
+
+        $scope.edit = function (index) {
+            var book = $scope.searchResults[index];
+            $location.path('/textbookedit/' + book.id);
         }
     }
 ]);

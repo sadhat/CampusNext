@@ -10,7 +10,7 @@
                     <h3 class="g">{{result.name}}</h3>
                     <span class="price" ng-show="result.price"> {{result.CurrencySymbol||'$'}}{{result.price}}</span><span class="isbn" ng-show="result.Isbn"> ISBN: {{result.isbn}}</span>
                     <section>{{result.description}}</section>
-                    <button class="primary">Edit </button> <button class="alert" ng-click="delete($index)">Delete </button>
+                    <button class="primary" ng-click="edit($index)">Edit </button> <button class="alert" ng-click="delete($index)">Delete </button>
                 </div>
             </li>
         </ol>

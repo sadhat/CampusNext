@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using AzureSearchClient;
@@ -10,9 +11,9 @@ namespace CampusNext.AzureSearch.Repository
 {
     public interface IAzureSearchRepository
     {
-        Task Add(IEntity entity);
-        Task Delete(IEntity entity);
-        Task Update(IEntity entity);
+        Task<HttpResponseMessage> AddAsync(IEntity entity);
+        Task<HttpResponseMessage> DeleteAsync(IEntity entity);
+        Task<HttpResponseMessage> UpdateAsync(IEntity entity);
         Task<int> Count();
         Task<T> Get<T>(string key);
 

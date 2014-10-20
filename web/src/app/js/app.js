@@ -30,6 +30,11 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    templateUrl: './views/products/textbook_add.html',
 	    controller: 'TextbookAddCtrl'
 	});
+
+	$routeProvider.when('/textbookedit/:id', {
+	    templateUrl: './views/products/textbook_edit.html',
+	    controller: 'TextbookEditCtrl'
+	});
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location','facebookUser', function ($q, $location, facebookUser) {
 return {
