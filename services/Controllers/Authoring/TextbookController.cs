@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -10,7 +8,7 @@ using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Http.OData;
 using CampusNext.AzureSearch.Repository;
-using CampusNext.DataAccess;
+using CampusNext.DataAccess.Repository;
 using CampusNext.Entity;
 using CampusNext.Services.Attributes;
 
@@ -117,8 +115,6 @@ namespace CampusNext.Services.Controllers.Authoring
             await Task.WhenAll(tasks);
 
             return Ok(textbook);
-        }
-
-        
+        }      
     }
 }

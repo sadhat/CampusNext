@@ -13,26 +13,27 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	});
 
 	$routeProvider.when('/dashboard', {
-	    templateUrl: './views/dashboard.html',
+	    templateUrl: './views/authoring/dashboard.html',
 	    controller: 'HomeCtrl'
 	});
 
     $routeProvider.when('/auth/textbook/', {
-        templateUrl: './views/authoring/textbook_all.html'
+        templateUrl: './views/authoring/textbook/dashboard_textbook.html',
+        controller: 'TextbookDashboardCtrl'
     });
 
 	$routeProvider.when('/textbooksearch', {
-	    templateUrl: './views/products/textbook_search.html',
+	    templateUrl: './views/search/textbook/textbook_search.html',
 	    controller: 'TextbookSearchCtrl'
 	});
 
 	$routeProvider.when('/textbookadd', {
-	    templateUrl: './views/products/textbook_add.html',
+	    templateUrl: './views/authoring/textbook/textbook_add.html',
 	    controller: 'TextbookAddCtrl'
 	});
 
 	$routeProvider.when('/textbookedit/:id', {
-	    templateUrl: './views/products/textbook_edit.html',
+	    templateUrl: './views/authoring/textbook/textbook_edit.html',
 	    controller: 'TextbookEditCtrl'
 	});
 }])

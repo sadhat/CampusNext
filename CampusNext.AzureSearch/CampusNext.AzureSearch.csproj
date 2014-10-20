@@ -54,7 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AzureSearchHelper.cs" />
+    <Compile Include="Utility\AzureSearchHelper.cs" />
     <Compile Include="Indexer\IIndexer.cs" />
     <Compile Include="Indexer\IndexerBase.cs" />
     <Compile Include="Indexer\TextbookIndex.cs" />

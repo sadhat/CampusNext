@@ -1,29 +1,15 @@
-﻿campusNextApp.service('ProductService', function () {
-    this.name = function (category) {
-        return "MY";
-    }
-});
-
-campusNextApp.service('TokenService',['$http', function ($http) {
-    this.accessToken = sessionStorage.getItem("accessToken");
-    this.setAuthorizationHeader = function () {
-        if(this.accessToken)
-            $http.defaults.headers.common.Authorization = "Bearer " + this.accessToken;
-    }
-}]);
-
-campusNextApp.service('EnvConfig', function() {
+﻿campusNextApp.service('EnvConfig', function() {
         /**
-     * You can have as many environments as you like in here
-     * just make sure the host matches up to your hostname including port
-     */
+ * You can have as many environments as you like in here
+ * just make sure the host matches up to your hostname including port
+ */
         var _environments = {
                 local: {
                     host: 'localhost:40000',
                     config: {
                         /**
-                     * Add any config properties you want in here for this environment
-                     */
+             * Add any config properties you want in here for this environment
+             */
                         apiroot: 'http://localhost:50000/'
                     }
                 },
@@ -31,8 +17,8 @@ campusNextApp.service('EnvConfig', function() {
                     host: 'campusnext.azurewebsites.net',
                     config: {
                         /**
-                     * Add any config properties you want in here for this environment
-                     */
+             * Add any config properties you want in here for this environment
+             */
                         apiroot: 'http://campusnextservices.azurewebsites.net/'
                     }
                 }

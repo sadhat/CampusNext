@@ -1,4 +1,4 @@
-namespace CampusNext.Services.BusinessLayer
+namespace CampusNext.Services.Controllers
 {
     public class TextbookSearchOption
     {

@@ -5,7 +5,6 @@ using System.Web.Http.Cors;
 using System.Web.Http.OData;
 using CampusNext.AzureSearch.Repository;
 using CampusNext.Entity;
-using CampusNext.Services.BusinessLayer;
 
 namespace CampusNext.Services.Controllers
 {

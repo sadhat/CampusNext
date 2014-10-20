@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextbookRepository.cs" />
+    <Compile Include="Repository\TextbookRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

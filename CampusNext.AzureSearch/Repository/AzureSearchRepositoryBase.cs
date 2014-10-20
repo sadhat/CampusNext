@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Net.Http;
 using System.Threading.Tasks;
+using CampusNext.AzureSearch.Utility;
 using CampusNext.Entity;
 
 namespace CampusNext.AzureSearch.Repository
@@ -91,7 +93,7 @@ namespace CampusNext.AzureSearch.Repository
                     new
                     {
 
-                        id = entity.Id.ToString()
+                        id = entity.Id.ToString(CultureInfo.InvariantCulture)
                     }
                 }
             };

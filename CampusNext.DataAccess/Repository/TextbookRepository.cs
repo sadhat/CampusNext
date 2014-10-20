@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DapperExtensions;
 
-namespace CampusNext.DataAccess
+namespace CampusNext.DataAccess.Repository
 {
     public abstract class RepositoryBase
     {

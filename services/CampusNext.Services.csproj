@@ -142,24 +142,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\FacebookTokenValidation.cs" />
     <Compile Include="Controllers\Authoring\TextbookController.cs" />
-    <Compile Include="AzureSearchHelper.cs" />
-    <Compile Include="AzureSearchSeeder.cs" />
-    <Compile Include="BusinessLayer\AzureSearch\TextbookRepository.cs" />
-    <Compile Include="BusinessLayer\AzureStorage\TextbookRepository.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="BusinessLayer\DocumentDb\TextbookRepository.cs" />
-    <Compile Include="BusinessLayer\ITextbookRepository.cs" />
-    <Compile Include="BusinessLayer\Memory\TextbookRepository.cs" />
-    <Compile Include="BusinessLayer\TextbookSearchOption.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />
-    <Compile Include="DocumentDbSeeder.cs" />
-    <Compile Include="Entity\TextbookEntity.cs" />
+    <Compile Include="Controllers\TextbookSearchOption.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TableStorageSeeder.cs" />
     <Compile Include="UnityConfig.cs" />
     <Compile Include="UnityResolver.cs" />
   </ItemGroup>
@@ -175,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CampusNext.AzureSearch\CampusNext.AzureSearch.csproj">

@@ -6,34 +6,34 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
-namespace CampusNext.AzureSearch
+namespace CampusNext.AzureSearch.Utility
 {
     public class AzureSearchHelper
     {
         public const string ApiVersionString = "api-version=2014-07-31-Preview";
 
-        private static readonly JsonSerializerSettings _jsonSettings;
+        private static readonly JsonSerializerSettings JsonSettings;
 
         static AzureSearchHelper()
         {
-            _jsonSettings = new JsonSerializerSettings
+            JsonSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented, // for readability, change to None for compactness
                 ContractResolver = new CamelCasePropertyNamesContractResolver(),
                 DateTimeZoneHandling = DateTimeZoneHandling.Utc
             };
 
-            _jsonSettings.Converters.Add(new StringEnumConverter());
+            JsonSettings.Converters.Add(new StringEnumConverter());
         }
 
         public static string SerializeJson(object value)
         {
-            return JsonConvert.SerializeObject(value, _jsonSettings);
+            return JsonConvert.SerializeObject(value, JsonSettings);
         }
 
         public static T DeserializeJson<T>(string json)
         {
-            return JsonConvert.DeserializeObject<T>(json, _jsonSettings);
+            return JsonConvert.DeserializeObject<T>(json, JsonSettings);
         }
 
         public static async Task<HttpResponseMessage> SendSearchRequest(HttpClient client, HttpMethod method, Uri uri, string json = null)

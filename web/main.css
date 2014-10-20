@@ -39,3 +39,13 @@ input[type], textarea, label {
 input[type=search] {
     font-size: 20px;
 }
+
+h4, span{
+display: inline;
+}
+
+span.searchStatus {
+    color: white;
+    font-size:medium;
+    background-color: grey;
+}

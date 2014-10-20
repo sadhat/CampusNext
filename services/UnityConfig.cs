@@ -1,7 +1,5 @@
 ﻿using System.Web.Http;
 using CampusNext.AzureSearch.Repository;
-using CampusNext.Services.BusinessLayer;
-using CampusNext.Services.BusinessLayer.AzureSearch;
 using Microsoft.Practices.Unity;
 
 namespace CampusNext.Services
