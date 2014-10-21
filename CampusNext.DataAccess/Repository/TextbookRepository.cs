@@ -1,22 +1,9 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using DapperExtensions;
 
 namespace CampusNext.DataAccess.Repository
 {
-    public abstract class RepositoryBase
-    {
-        protected IDbConnection Connection
-        {
-            get
-            {
-                return new SqlConnection(ConfigurationManager.ConnectionStrings["CampusNextContext"].ConnectionString);
-            }
-        }
-    }
     public class TextbookRepository : RepositoryBase
     {
         public Task<IQueryable<Entity.Textbook>> GetAllFor(string userId)

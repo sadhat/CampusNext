@@ -92,6 +92,7 @@
     <Content Include="src\app\data\products\textbook_search.json" />
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="src\app\data\campuses\campuses.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,12 +106,14 @@
     <Content Include="src\app\js\app.js" />
     <Content Include="src\app\js\controllers\CampusChooser.js" />
     <Content Include="src\app\js\controllers\Home.js" />
+    <Content Include="src\app\js\controllers\ProfileEdit.js" />
     <Content Include="src\app\js\controllers\Root.js" />
     <Content Include="src\app\js\controllers\TextbookAdd.js" />
     <Content Include="src\app\js\controllers\TextbookDashboard.js" />
     <Content Include="src\app\js\controllers\TextbookEdit.js" />
     <Content Include="src\app\js\controllers\TextbookSearch.js" />
     <Content Include="src\app\js\services\EnvConfig.js" />
+    <Content Include="src\app\js\services\ProfileService.js" />
     <Content Include="src\app\js\services\TokenService.js" />
     <Content Include="src\vendor\css\foundation.css" />
     <Content Include="src\vendor\css\foundation.min.css" />
@@ -133,6 +136,7 @@
     <Content Include="src\vendor\js\foundation.min.js" />
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
+    <Content Include="views\authoring\profile\profile_edit.html" />
     <Content Include="views\authoring\textbook\dashboard_textbook.html" />
     <Content Include="views\authoring\dashboard.html" />
     <Content Include="views\facebookLoginPartial.html" />

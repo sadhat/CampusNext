@@ -1,0 +1,31 @@
+﻿<div>
+    <form name="editProfile">
+        <fieldset ng-disabled="isSaving">
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="campus">Campus:</label>
+                </div>
+                <div class="medium-10 small-11 columns" ng-controller="CampusCtrl">
+                    <select ng-model="$parent.campusCode" ng-options="campus for campus in campuses">
+                        <option value="">-- choose campus --</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" id="email" placeholder="Email address" maxlength="150" ng-model="email">
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="medium-12 small-12 columns">
+                    <a ng-click="submitForm()" class="button right">Save</a>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

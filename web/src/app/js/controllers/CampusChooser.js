@@ -3,3 +3,9 @@
         $scope.campus = data;
     });
 }]);
+
+campusNextApp.controller("CampusCtrl", ['$scope', '$http', function ($scope, $http) {
+    $http.get('src/app/data/campuses/campuses.json').success(function (data) {
+        $scope.campuses = data;
+    });
+}]);

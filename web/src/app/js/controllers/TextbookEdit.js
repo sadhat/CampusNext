@@ -1,5 +1,8 @@
-﻿campusNextApp.controller("TextbookEditCtrl", ['$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig'
-    , function ($scope, $http, $location, routeParams, tokenService, envConfig) {
+﻿campusNextApp.controller("TextbookEditCtrl", ['$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig', 'ProfileService'
+    , function ($scope, $http, $location, routeParams, tokenService, envConfig, profileService) {
+        //Check whether profile is complete before authoring
+        profileService.gaurdAuthoring();
+
         var config = {
             headers: {
                 'accessToken': tokenService.accessToken

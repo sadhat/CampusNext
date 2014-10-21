@@ -1,46 +1,52 @@
-﻿campusNextApp.controller("TextbookAddCtrl", ['$scope', '$http', '$location', 'TokenService', 'EnvConfig', function ($scope, $http, $location, tokenService, envConfig) {
-    $scope.title = "";
-    $scope.isbn = "";
-    $scope.price = 0;
-    $scope.description = "";
-    $scope.userId = 123;
-    $scope.authors = "";
-    $scope.course = "";
+﻿campusNextApp.controller("TextbookAddCtrl", [
+    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', 'ProfileService',
+    function ($scope, $http, $location, tokenService, envConfig, profileService) {
+        //Check whether profile is complete before authoring
+        profileService.gaurdAuthoring();
 
-    var config = {
-        headers: {
-            'accessToken': tokenService.accessToken
-        }
-    };
+        $scope.title = "";
+        $scope.isbn = "";
+        $scope.price = 0;
+        $scope.description = "";
+        $scope.userId = 123;
+        $scope.authors = "";
+        $scope.course = "";
 
-    $scope.submitForm = function (item, event) {
-        $scope.isSaving = true;
-        var textbook = {
-            CampusCode: "NDSU",
-            Name: $scope.title,
-            Isbn: $scope.isbn,
-            Price: $scope.price,
-            Description: $scope.description,
-            UserId: $scope.userId,
-            Authors: $scope.authors,
-            Course: $scope.course
+        var config = {
+            headers: {
+                'accessToken': tokenService.accessToken
+            }
         };
 
-        tokenService.setAuthorizationHeader();
+        $scope.submitForm = function(item, event) {
+            $scope.isSaving = true;
+            var textbook = {
+                CampusCode: "NDSU",
+                Name: $scope.title,
+                Isbn: $scope.isbn,
+                Price: $scope.price,
+                Description: $scope.description,
+                UserId: $scope.userId,
+                Authors: $scope.authors,
+                Course: $scope.course
+            };
 
-        var responsePromise = $http.post(envConfig.get('apiroot') + "api/Textbook", textbook, config);
+            tokenService.setAuthorizationHeader();
 
-        responsePromise.success(function (dataFromServer, status, headers, config) {
-            toastr.success('Your book added successfully', 'Congratulations!');
-            $location.path('/auth/textbook/');
-        });
+            var responsePromise = $http.post(envConfig.get('apiroot') + "api/Textbook", textbook, config);
 
-        responsePromise.error(function (dataFromServer, status, headers, config) {
-            alert(status);
-        });
+            responsePromise.success(function(dataFromServer, status, headers, config) {
+                toastr.success('Your book added successfully', 'Congratulations!');
+                $location.path('/auth/textbook/');
+            });
+
+            responsePromise.error(function(dataFromServer, status, headers, config) {
+                alert(status);
+            });
+        }
+
+        $scope.addAnother = function(item, event) {
+            $scope.isSaving = false;
+        }
     }
-
-    $scope.addAnother = function (item, event) {
-        $scope.isSaving = false;
-    }
-}]);
+]);
