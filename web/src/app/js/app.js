@@ -48,7 +48,7 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	});
 
 }])
-.factory('authHttpResponseInterceptor', ['$q', '$location','facebookUser', function ($q, $location, facebookUser) {
+.factory('authHttpResponseInterceptor', ['$q', '$location', function ($q, $location) {
 return {
     response: function (response) {
         if (response.status === 401) {
@@ -60,15 +60,9 @@ return {
         if (rejection.status === 401) {
             console.log("Response Error 401", rejection);
             toastr.error("Unauthorized access. Please login again. Remember to close all your browser!");
-            facebookUser.then(function (user) {
-                user.logout();
-            });
         }
         if (rejection.exceptionType == "Facebook.FacebookOAuthException") {
             toastr.error('Your session expired. Please login again');
-            facebookUser.then(function(user) {
-                user.logout();
-            });
             $location.path('/');
         }
         return $q.reject(rejection);

@@ -1,5 +1,5 @@
 ﻿campusNextApp.controller("TextbookDashboardCtrl", [
-    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', 'facebookUser', function ($scope, $http, $location, tokenService, envConfig, facebookUser) {
+    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', function ($scope, $http, $location, tokenService, envConfig) {
         tokenService.setAuthorizationHeader();
         var config = {
             headers: {
@@ -8,18 +8,8 @@
         };
 
         $http.get(envConfig.get('apiroot') + 'api/Textbook', config)
-            .success(function (data) {
+            .success(function(data) {
                 $scope.searchResults = data;
-            })
-            .error(function (data) {
-                if (data.exceptionType == "Facebook.FacebookOAuthException") {
-                    toastr.error('Your session expired. Please login again');
-                    facebookUser.then(function (user) {
-                        user.logout();
-                    });
-                    $location.path('/');
-                }
-
             });
 
         $scope.delete = function (index) {
