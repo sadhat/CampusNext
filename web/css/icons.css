@@ -1,0 +1,169 @@
+﻿
+.icon {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0 .2em .60em;
+}
+.icon::before, .icon::after {
+  content: "";
+  position: absolute;
+}
+
+.icon_hamburger {
+  width: 1.625em;
+  height: .313em;
+  background: #8599f6;
+  margin-top: 20px;
+}
+.icon_hamburger::before {
+  position: absolute;
+  top: -.625em;
+  width: 1.625em;
+  height: .313em;
+  background: #8599f6;
+}
+.icon_hamburger::after {
+  position: absolute;
+  bottom: -.625em;
+  width: 1.625em;
+  height: .313em;
+  background: #8599f6;
+}
+
+.icon_mail {
+  border-top: 1.063em solid transparent;
+  border-right: 1.25em solid #8599f6;
+  border-bottom: .5em solid #8599f6;
+  border-left: 1.25em solid #8599f6;
+}
+.icon_mail::before {
+  top: -1.25em;
+  left: -1.25em;
+  border-top: 1.063em solid #8599f6;
+  border-right: 1.25em solid transparent;
+  border-left: 1.25em solid transparent;
+}
+
+.icon_heart {
+  margin-top: .5em;
+}
+.icon_heart::before {
+  width: 1em;
+  height: 1.563em;
+  background: #8599f6;
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -moz-border-radius-bottomleft: 0.5em;
+  -webkit-border-bottom-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  -moz-border-radius-bottomright: 0.5em;
+  -webkit-border-bottom-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+.icon_heart::after {
+  width: 1em;
+  height: 1.563em;
+  background: #8599f6;
+  left: .375em;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -moz-border-radius-topleft: 0.5em;
+  -webkit-border-top-left-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  -moz-border-radius-topright: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+}
+
+.icon_home {
+  border-bottom: .938em solid #8599f6;
+  border-left: .938em solid transparent;
+  border-right: .938em solid transparent;
+
+}
+.icon_home::before {
+  width: .563em;
+  height: .625em;
+  background: #8599f6;
+  margin: .938em 0 0 -.688em;
+}
+.icon_home::after {
+  width: .563em;
+  height: .625em;
+  background: #8599f6;
+  margin: .938em 0 0 .125em;
+}
+
+.icon_camera {
+  width: 1.938em;
+  height: 1.375em;
+  margin-top: .813em;
+  background: #8599f6;
+  -moz-border-radius: 0.125em;
+  -webkit-border-radius: 0.125em;
+  border-radius: 0.125em;
+}
+.icon_camera::before {
+  margin: -.313em 0 0 .313em;
+  border-bottom: .313em solid #8599f6;
+  border-left: .188em solid transparent;
+  border-right: .188em solid transparent;
+  height: 0;
+  width: .938em;
+}
+.icon_camera::after {
+  width: .438em;
+  height: .438em;
+  border: .25em solid white;
+  -moz-border-radius: 0.438em;
+  -webkit-border-radius: 0.438em;
+  border-radius: 0.438em;
+  margin: .125em 0 0 .5em;
+}
+
+.icon_chart {
+  width: .375em;
+  height: 1.125em;
+  background: #8599f6;
+  margin: 1.063em .938em 0 .938em;
+}
+.icon_chart::before {
+  width: .375em;
+  height: .563em;
+  background: #8599f6;
+  margin-left: -.563em;
+  bottom: 0;
+}
+.icon_chart::after {
+  width: .375em;
+  height: 1.563em;
+  background: #8599f6;
+  margin-left: .563em;
+  bottom: 0;
+}
+
+.icon_search {
+  width: .75em;
+  height: .75em;
+  background: white;
+  border: .25em solid #8599f6;
+  margin-left: .938em;
+  -moz-border-radius: 0.625em;
+  -webkit-border-radius: 0.625em;
+  border-radius: 0.625em;
+}
+.icon_search::before {
+  width: .25em;
+  height: .875em;
+  margin: .5em 0 0 -.375em;
+  background: #8599f6;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}

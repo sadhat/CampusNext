@@ -66,6 +66,7 @@
     <Content Include="channel.html" />
     <Content Include="content\toastr.css" />
     <Content Include="content\toastr.min.css" />
+    <Content Include="css\icons.css" />
     <Content Include="css\spinner.css" />
     <Content Include="images\edit_page.png" />
     <Content Include="images\schools\logo\UND.jpg" />
