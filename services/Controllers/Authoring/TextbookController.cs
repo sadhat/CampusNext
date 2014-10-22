@@ -4,21 +4,16 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Http.OData;
 using CampusNext.AzureSearch.Repository;
 using CampusNext.DataAccess.Repository;
 using CampusNext.Entity;
-using CampusNext.Services.Attributes;
 
 namespace CampusNext.Services.Controllers.Authoring
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [FacebookTokenValidation]
-    public class TextbookController : ApiController
+    public class TextbookController : ApiControllerWithFacebookAuthorization
     {
-        
         [EnableQuery]
         // GET: api/Textbooks
         public async Task<IQueryable<Textbook>> GetTextbooks()
@@ -42,10 +37,7 @@ namespace CampusNext.Services.Controllers.Authoring
         // PUT: api/Textbooks/5
         [ResponseType(typeof(void))]
         public async Task<IHttpActionResult> PutTextbook(int id, Textbook textbook)
-        {
-            
-            string userId = User.Identity.Name;
-
+        { 
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -55,8 +47,10 @@ namespace CampusNext.Services.Controllers.Authoring
             {
                 return BadRequest();
             }
+            
 
-            textbook.UserId = userId;
+            textbook.CampusCode = Profile.CampusCode;
+            textbook.UserId = Profile.UserId;
 
             var textbookRepository = new TextbookRepository();
             var azureSearchTextbookRepository = new AzureSearchTextbookRepository();

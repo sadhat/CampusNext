@@ -68,6 +68,7 @@
     <Content Include="content\toastr.min.css" />
     <Content Include="css\spinner.css" />
     <Content Include="images\edit_page.png" />
+    <Content Include="images\schools\logo\UND.jpg" />
     <Content Include="packages.config" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
@@ -104,7 +105,7 @@
     <Content Include="images\schools\logo\NDSU.jpg" />
     <Content Include="index.html" />
     <Content Include="src\app\js\app.js" />
-    <Content Include="src\app\js\controllers\CampusChooser.js" />
+    <Content Include="src\app\js\controllers\Campus.js" />
     <Content Include="src\app\js\controllers\Home.js" />
     <Content Include="src\app\js\controllers\ProfileEdit.js" />
     <Content Include="src\app\js\controllers\Root.js" />
@@ -112,6 +113,7 @@
     <Content Include="src\app\js\controllers\TextbookDashboard.js" />
     <Content Include="src\app\js\controllers\TextbookEdit.js" />
     <Content Include="src\app\js\controllers\TextbookSearch.js" />
+    <Content Include="src\app\js\services\CampusService.js" />
     <Content Include="src\app\js\services\EnvConfig.js" />
     <Content Include="src\app\js\services\ProfileService.js" />
     <Content Include="src\app\js\services\TokenService.js" />
@@ -136,6 +138,7 @@
     <Content Include="src\vendor\js\foundation.min.js" />
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
+    <Content Include="views\authoring\profile\campus_selected.html" />
     <Content Include="views\authoring\profile\profile_edit.html" />
     <Content Include="views\authoring\textbook\dashboard_textbook.html" />
     <Content Include="views\authoring\dashboard.html" />

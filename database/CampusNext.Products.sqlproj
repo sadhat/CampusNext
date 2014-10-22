@@ -63,6 +63,7 @@
   <ItemGroup>
     <Build Include="scripts\tables\Textbook.sql" />
     <Build Include="scripts\tables\Profile.sql" />
+    <Build Include="scripts\tables\Campus.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CampusNext.Products.local.xml" />

@@ -1,22 +1,14 @@
 ﻿<div>
-    <form name="editProfile">
+    <form name="selectCampus">
         <fieldset ng-disabled="isSaving">
             <div class="row">
                 <div class="medium-2 small-1 end columns">
                     <label for="campus">Campus:</label>
                 </div>
-                <div class="medium-10 small-11 columns" ng-controller="CampusCtrl">
-                    <select id="campus" ng-model="$parent.campusCode" ng-options="campus for campus in campusCodes">
+                <div class="medium-10 small-11 columns">
+                    <select id="campus" ng-model="campus" ng-options="campus.name for campus in campuses">
                         <option value="">-- choose campus --</option>
                     </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="medium-2 small-1 end columns">
-                    <label for="email">Email:</label>
-                </div>
-                <div class="medium-10 small-3 end columns">
-                    <input type="text" id="email" placeholder="Email address" maxlength="150" ng-model="email">
                 </div>
             </div>
             <br />

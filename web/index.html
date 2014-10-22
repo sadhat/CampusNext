@@ -23,6 +23,7 @@
     <script src="src/app/js/services/EnvConfig.js"></script>
     <script src="src/app/js/services/TokenService.js"></script>
     <script src="src/app/js/services/ProfileService.js"></script>
+    <script src="src/app/js/services/CampusService.js"></script>
 
     <!--Facebook Util-->
     <script src="src/vendor/js/facebookUtils.js"></script>
@@ -31,7 +32,7 @@
     <script src="src/app/js/controllers/Root.js"></script>
     <script src="src/app/js/controllers/Home.js"></script>
     <script src="src/app/js/controllers/ProfileEdit.js"></script>
-    <script src="src/app/js/controllers/CampusChooser.js"></script>
+    <script src="src/app/js/controllers/Campus.js"></script>
     <script src="src/app/js/controllers/TextbookDashboard.js"></script>
     <script src="src/app/js/controllers/TextbookAdd.js"></script>
     <script src="src/app/js/controllers/TextbookEdit.js"></script>
@@ -48,7 +49,7 @@
                 </span>
                 <facebook-login-button></facebook-login-button>
             </div>
-            <div ng-controller="CampusChooserCtrl" style="font-family: segoe ui" class="large-12 columns">
+            <div ng-controller="CampusCtrl" style="font-family: segoe ui" class="large-12 columns">
                 <a href="/">
                     <div class="tile bg-amber">
                         <div class="brand">
@@ -58,7 +59,7 @@
                 </a>
                 <h1>CampusNEXT</h1>
                 &nbsp;Your next campus | <img ng-src='{{campus && "images/schools/logo/" + campus.logoUrl}}' /> <span ng-bind="campus.name"></span>
-                (<a href="/#/change">change campus</a>)
+                (<a href="/#/changeCampus">change campus</a>)
             </div>
         </div>
         <hr style="height: 7px" />

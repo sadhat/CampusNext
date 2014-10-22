@@ -1,3 +1,14 @@
 ﻿[
-    "NDSU", "UND"
+    { 
+        "campusId": 1,
+        "name": "NDSU", 
+        "logoUrl": "NDSU.jpg",
+        "rank": 12
+    },
+    { 
+        "campusId": 2,
+        "name": "UND", 
+        "logoUrl": "UND.jpg",
+        "rank": 18
+    }
 ]

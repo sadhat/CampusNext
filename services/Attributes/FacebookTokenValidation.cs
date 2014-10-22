@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
-using System.Security.Claims;
 using System.Security.Principal;
-using System.Text;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Filters;
-using System.Web.Http.Results;
+using CampusNext.DataAccess.Repository;
+using CampusNext.Entity;
 using Facebook;
 
 namespace CampusNext.Services.Attributes
@@ -35,10 +34,22 @@ namespace CampusNext.Services.Attributes
             dynamic result = client.Get("me", new {fields = "name,id"});
             string id = result.id;
             string[] rolesArray = {};
-            IPrincipal principal = new GenericPrincipal(new GenericIdentity(id, "facebook"), rolesArray);
+            IPrincipal principal = new CampusNextPrincipal(new GenericIdentity(id, "facebook"), rolesArray);
             System.Threading.Thread.CurrentPrincipal = principal;
             HttpContext.Current.User = principal;
-
         }
+    }
+
+    public class CampusNextPrincipal : GenericPrincipal
+    {
+        private readonly Profile _profile;
+        public CampusNextPrincipal(IIdentity identity, string[] roles) : base(identity, roles)
+        {
+            var profileRepository = new ProfileRepository();
+            var result = profileRepository.Get(identity.Name).Result;
+            _profile = result.FirstOrDefault();
+        }
+
+        public Profile Profile { get { return _profile; } }
     }
 }

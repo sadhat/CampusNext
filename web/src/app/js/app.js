@@ -42,6 +42,11 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    controller: 'ProfileEditCtrl'
 	});
 
+	$routeProvider.when('/changeCampus', {
+	    templateUrl: './views/authoring/profile/campus_selected.html',
+	    controller: 'CampusCtrl'
+	});
+
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location','facebookUser', function ($q, $location, facebookUser) {
 return {

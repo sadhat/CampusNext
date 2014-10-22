@@ -196,8 +196,10 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\FacebookTokenValidation.cs" />
+    <Compile Include="Controllers\Authoring\ApiControllerWithFacebookAuthorization.cs" />
     <Compile Include="Controllers\Authoring\ProfileController.cs" />
     <Compile Include="Controllers\Authoring\TextbookController.cs" />
+    <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />
     <Compile Include="Controllers\TextbookSearchOption.cs" />
     <Compile Include="Global.asax.cs">

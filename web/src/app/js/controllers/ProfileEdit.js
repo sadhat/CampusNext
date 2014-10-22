@@ -47,6 +47,5 @@
                 toastr.error(status);
             });
         }
-
     }
 ]);
