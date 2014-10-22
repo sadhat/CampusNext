@@ -1,5 +1,5 @@
-﻿campusNextApp.controller("TextbookEditCtrl", ['$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig', 'ProfileService'
-    , function ($scope, $http, $location, routeParams, tokenService, envConfig, profileService) {
+﻿campusNextApp.controller("TextbookEditCtrl", ['$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig', 'ProfileService', 'CampusService',
+    , function ($scope, $http, $location, routeParams, tokenService, envConfig, profileService, campusService) {
         //Check whether profile is complete before authoring
         profileService.gaurdAuthoring();
 
@@ -20,14 +20,13 @@
                 $scope.userId = textbook.userId;
                 $scope.authors = textbook.authors;
                 $scope.course = textbook.course;
-
             });
 
-        $scope.submitForm = function (item, event) {
+        $scope.submitForm = function () {
             $scope.isSaving = true;
             var textbook = {
                 Id: $scope.id,
-                CampusCode: "NDSU",
+                CampusCode: campusService.getSelectedCampus().name,
                 Name: $scope.title,
                 Isbn: $scope.isbn,
                 Price: $scope.price,

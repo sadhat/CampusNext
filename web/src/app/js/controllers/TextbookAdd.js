@@ -1,6 +1,6 @@
 ﻿campusNextApp.controller("TextbookAddCtrl", [
-    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', 'ProfileService',
-    function ($scope, $http, $location, tokenService, envConfig, profileService) {
+    '$scope', '$http', '$location', 'TokenService', 'EnvConfig', 'ProfileService', 'CampusService',
+    function ($scope, $http, $location, tokenService, envConfig, profileService, campusService) {
         //Check whether profile is complete before authoring
         profileService.gaurdAuthoring();
 
@@ -18,10 +18,10 @@
             }
         };
 
-        $scope.submitForm = function(item, event) {
+        $scope.submitForm = function() {
             $scope.isSaving = true;
             var textbook = {
-                CampusCode: "NDSU",
+                CampusCode: campusService.getSelectedCampus().name,
                 Name: $scope.title,
                 Isbn: $scope.isbn,
                 Price: $scope.price,
@@ -35,17 +35,17 @@
 
             var responsePromise = $http.post(envConfig.get('apiroot') + "api/Textbook", textbook, config);
 
-            responsePromise.success(function(dataFromServer, status, headers, config) {
+            responsePromise.success(function() {
                 toastr.success('Your book added successfully', 'Congratulations!');
                 $location.path('/auth/textbook/');
             });
 
-            responsePromise.error(function(dataFromServer, status, headers, config) {
+            responsePromise.error(function(dataFromServer, status) {
                 alert(status);
             });
         }
 
-        $scope.addAnother = function(item, event) {
+        $scope.addAnother = function() {
             $scope.isSaving = false;
         }
     }

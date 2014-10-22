@@ -89,7 +89,6 @@
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="src\app\data\categories\catagories.json" />
-    <Content Include="src\app\data\campuses\viewing_campus.json" />
     <Content Include="src\app\data\products\textbook_search.json" />
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />

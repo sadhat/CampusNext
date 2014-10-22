@@ -2,13 +2,17 @@
     $http.get('src/app/data/campuses/campuses.json').success(function (data) {
         var arr = new Array();
         for (var i = 0; i < data.length; i++) {
+            if (campusService.getSelectedCampus()) {
+                if (data[i].name === campusService.getSelectedCampus().name) {
+                    $scope.campus = data[i];
+                }
+            }
             arr.push(data[i].name);
         }
 
         $scope.campusCodes = arr;
         $scope.campuses = data;
-        $scope.campus = campusService.getSelectedCampus();
-
+        
         $scope.submitForm = function () {
             $scope.isSaving = true;
             campusService.setSelectedCampus($scope.campus);

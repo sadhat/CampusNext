@@ -1,7 +1,7 @@
 ﻿campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', 'EnvConfig', 'CampusService', function ($scope, $http, envConfig, campusService) {
+    $scope.campusName = campusService.getSelectedCampus().name;
     $scope.title = "Textbook Search";
     $scope.keyword = "";
-    $scope.campusName = campusService.getSelectedCampus().name;
     $scope.loading = false;
     $scope.search = function () {
         var filter = "?keyword=" + $scope.keyword + "&campusName=" + $scope.campusName;
