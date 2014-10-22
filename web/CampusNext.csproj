@@ -93,6 +93,17 @@
     <Content Include="Scripts\toastr.min.js.map" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="src\app\data\campuses\campuses.json" />
+    <Content Include="src\app\js\controllers\CategoryCatalog.js" />
+    <Content Include="src\vendor\fonts\iconFont.eot" />
+    <Content Include="src\vendor\fonts\iconFont.json" />
+    <Content Include="src\vendor\fonts\iconFont.ttf" />
+    <Content Include="src\vendor\fonts\iconFont.woff" />
+    <Content Include="src\vendor\fonts\metroSysIcons.ttf" />
+    <Content Include="src\vendor\fonts\metroSysIcons.woff" />
+    <Content Include="src\vendor\fonts\OpenSans-Bold.woff" />
+    <Content Include="src\vendor\fonts\OpenSans-Light.woff" />
+    <Content Include="src\vendor\fonts\OpenSans.woff" />
+    <Content Include="src\vendor\fonts\PTSerif-Caption.woff" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -122,9 +133,13 @@
     <Content Include="src\vendor\css\html5reset-1.6.1.min.css">
       <DependentUpon>html5reset-1.6.1.css</DependentUpon>
     </Content>
+    <Content Include="src\vendor\css\iconFont.css" />
     <Content Include="src\vendor\css\metro-bootstrap-responsive.css" />
     <Content Include="src\vendor\css\metro-bootstrap.css" />
     <Content Include="src\vendor\css\normalize.css" />
+    <Content Include="src\vendor\fonts\iconFont.dev.svg" />
+    <Content Include="src\vendor\fonts\iconFont.svg" />
+    <Content Include="src\vendor\fonts\metroSysIcons.svg" />
     <Content Include="src\vendor\images\book.png" />
     <Content Include="src\vendor\images\comments.png" />
     <Content Include="src\vendor\images\grid.png" />

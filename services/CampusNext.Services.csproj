@@ -200,6 +200,8 @@
     <Compile Include="Controllers\Authoring\ProfileController.cs" />
     <Compile Include="Controllers\Authoring\TextbookController.cs" />
     <Compile Include="Controllers\CampusController.cs" />
+    <Compile Include="Controllers\CategoryCatalogController.cs" />
+    <Compile Include="Controllers\CategoryCatalogOption.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />
     <Compile Include="Controllers\TextbookSearchOption.cs" />
     <Compile Include="Global.asax.cs">

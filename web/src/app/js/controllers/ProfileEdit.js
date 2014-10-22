@@ -25,7 +25,7 @@
             }
             });
 
-        $scope.submitForm = function(item, event) {
+        $scope.submitForm = function() {
             $scope.isSaving = true;
             var profile = {
                 Id: $scope.id,

@@ -71,7 +71,20 @@ namespace CampusNext.IntegrationTests
         {
             IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
             var result = azureTextbookRepository.Count();
+        }
 
+        [TestMethod]
+        public void CountTextbookForCampusNDSU()
+        {
+            IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
+            var result = azureTextbookRepository.Count("textbook", "NDSU").Result;
+        }
+
+        [TestMethod]
+        public void CountTextbookForCampusUND()
+        {
+            IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
+            var result = azureTextbookRepository.Count("textbook", "UND").Result;
         }
 
         [TestMethod]

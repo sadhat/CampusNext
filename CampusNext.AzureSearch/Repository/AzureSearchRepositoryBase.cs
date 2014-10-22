@@ -5,6 +5,9 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using CampusNext.AzureSearch.Utility;
 using CampusNext.Entity;
+using RedDog.Search;
+using RedDog.Search.Http;
+using RedDog.Search.Model;
 
 namespace CampusNext.AzureSearch.Repository
 {
@@ -58,6 +61,17 @@ namespace CampusNext.AzureSearch.Repository
             HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Get, uri);
             int count = AzureSearchHelper.DeserializeJson<int>(response.Content.ReadAsStringAsync().Result);
             return count;
+        }
+
+        public async Task<int> Count(string indexName, string campusCode)
+        {
+            var connection = ApiConnection.Create(ServiceName, ServiceApiKey);
+            var queryClient = new IndexQueryClient(connection);
+            var query = new SearchQuery();
+            query.Filter = String.Format("campusCode eq '{0}'", campusCode);
+
+            var result = await queryClient.SearchAsync(indexName, query.Count(true));
+            return result.Body.Count;
         }
 
         public async Task<T> Get<T>(string key)

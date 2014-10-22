@@ -9,7 +9,7 @@ var campusNextApp = angular.module('campusNextApp', ['facebookUtils', 'ngRoute']
 campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.when('/', {
 		templateUrl: './views/home.html',
-		controller: 'HomeCtrl'
+		controller: 'CategoryCatalogCtrl'
 	});
 
 	$routeProvider.when('/dashboard', {

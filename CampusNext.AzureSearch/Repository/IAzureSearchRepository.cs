@@ -15,6 +15,7 @@ namespace CampusNext.AzureSearch.Repository
         Task<HttpResponseMessage> DeleteAsync(IEntity entity);
         Task<HttpResponseMessage> UpdateAsync(IEntity entity);
         Task<int> Count();
+        Task<int> Count(string indexName, string campusCode);
         Task<T> Get<T>(string key);
 
         Task<IList<IEntity>> Search(string keyword, string campus = null, IDictionary<string, string> filterDictionary = null);

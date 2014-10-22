@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Campus.cs" />
+    <Compile Include="CategoryCatalog.cs" />
+    <Compile Include="CategoryInfo.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
