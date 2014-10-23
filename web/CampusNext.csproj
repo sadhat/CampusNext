@@ -95,6 +95,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.map" />
     <Content Include="src\app\data\campuses\campuses.json" />
     <Content Include="src\app\js\controllers\CategoryCatalog.js" />
+    <Content Include="src\app\js\directives\PreferredCampus.js" />
     <Content Include="src\vendor\fonts\iconFont.eot" />
     <Content Include="src\vendor\fonts\iconFont.json" />
     <Content Include="src\vendor\fonts\iconFont.ttf" />
@@ -167,9 +168,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="src\app\js\directives\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

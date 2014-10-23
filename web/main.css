@@ -53,3 +53,7 @@ span.searchStatus {
 select {
     font-size: 75%;
 }
+
+.selectedCampusMessage {
+    color: #aaa;
+}
