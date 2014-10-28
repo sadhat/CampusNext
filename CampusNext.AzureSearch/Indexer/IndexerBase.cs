@@ -24,26 +24,28 @@ namespace CampusNext.AzureSearch.Indexer
             _serviceUri = new Uri(_serviceUri, "/indexes");
         }
 
-        public virtual async Task Create()
+        public virtual void Create()
         {
             Uri uri = new Uri(_serviceUri, "/indexes");
             string json = AzureSearchHelper.SerializeJson(GetIndexDefinition());
-            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
+            HttpResponseMessage response = AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json).Result;
             response.EnsureSuccessStatusCode();
         }
 
-        public virtual async Task Update()
+        public virtual void Update()
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName);
             string json = AzureSearchHelper.SerializeJson(GetIndexDefinition());
-            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Put, uri, json);
+            HttpResponseMessage response =
+                AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Put, uri, json).Result;
             response.EnsureSuccessStatusCode();
         }
 
-        public virtual async Task<bool> Delete()
+        public virtual bool Delete()
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName);
-            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Delete, uri);
+            HttpResponseMessage response =
+                AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Delete, uri).Result;
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
                 return false;

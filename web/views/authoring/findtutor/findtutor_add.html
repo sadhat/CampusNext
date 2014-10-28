@@ -1,0 +1,34 @@
+﻿<div>
+    <form name="my">
+        <fieldset ng-disabled="isSaving">
+            <preferredcampus></preferredcampus>
+            <form-message></form-message>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="course">Course:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <input type="text" id="course" placeholder="Course to tutor" ng-model="course">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="rate">Rate:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" id="rate" placeholder="Rate per hour" maxlength="15" ng-model="rate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="description">Description:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <textarea required class="error" id="description" rows="10" cols="20" placeholder="Description how and what to offer during tutoring" ng-model="description"></textarea>
+                </div>
+            </div>
+            <br />
+            <submit></submit>
+        </fieldset>
+    </form>
+</div>

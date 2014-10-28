@@ -1,4 +1,4 @@
-<div>
+<div class="row">
     <div class="large-12 medium-12 columns">
         <div class="tile triple bg-cyan">
             <a href="#textbooksearch">
@@ -6,21 +6,23 @@
                     <img src="../src/vendor/images/book.png" />
                 </div>
                 <div class="brand bg-black">
-                    <span class="label fg-white">{{categoryCatalog.categoryTextbook.name}}</span>
-                    <div class="badge bg-cyan">{{categoryCatalog.categoryTextbook.count}}</div>
+                    <span class="label fg-white">textbook</span>
+                    <div class="badge bg-cyan" ng-bind="">{{categoryCatalog.categoryTextbook.count}}</div>
                 </div>
             </a>
         </div>
         
         <div class="tile bg-orange">
-            <div class="tile-content image">
-                <img src="../src/vendor/images/comments.png" />
-            </div>
+            <a href="#tutorsearch">
+                <div class="tile-content image">
+                    <img src="../src/vendor/images/comments.png" />
+                </div>
 
-            <div class="brand bg-black">
-                <span class="label fg-white">{{categoryCatalog.categoryFindTutor.name}}</span>
-                <div class="badge bg-orange">{{categoryCatalog.categoryFindTutor.count}}</div>
-            </div>
+                <div class="brand bg-black">
+                    <span class="label fg-white">find tutor</span>
+                    <div class="badge bg-orange">{{categoryCatalog.categoryFindTutor.count}}</div>
+                </div>
+            </a>
         </div>
         
         <div class="tile double bg-magenta">
@@ -29,7 +31,7 @@
             </div>
 
             <div class="brand bg-black">
-                <span class="label fg-white">{{categoryCatalog.categoryRoomForRent.name}}</span>
+                <span class="label fg-white">room for rent</span>
                 <div class="badge bg-magenta">{{categoryCatalog.categoryRoomForRent.count}}</div>
             </div>
         </div>
@@ -40,7 +42,7 @@
             </div>
 
             <div class="brand bg-black">
-                <span class="label fg-white">{{categoryCatalog.categoryCampusLifeEvents.name}}</span>
+                <span class="label fg-white">campus life events</span>
                 <div class="badge bg-lightGreen">{{categoryCatalog.categoryCampusLifeEvents.count}}</div>
             </div>
         </div>
@@ -51,7 +53,7 @@
             </div>
 
             <div class="brand bg-black">
-                <span class="label fg-white">{{categoryCatalog.categoryShareRide.name}}</span>
+                <span class="label fg-white">share a ride</span>
                 <div class="badge bg-indigo">{{categoryCatalog.categoryShareRide.count}}</div>
             </div>
         </div>
@@ -62,7 +64,7 @@
             </div>
 
             <div class="brand bg-black">
-                <span class="label fg-white">{{categoryCatalog.categoryFindStudyGroup.name}}</span>
+                <span class="label fg-white">find study group</span>
                 <div class="badge bg-lighterBlue">{{categoryCatalog.categoryFindStudyGroup.count}}</div>
             </div>
         </div>

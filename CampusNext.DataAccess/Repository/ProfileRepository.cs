@@ -1,5 +1,8 @@
-﻿using System.Linq;
+﻿using System;
+using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 using DapperExtensions;
 
 namespace CampusNext.DataAccess.Repository
@@ -20,6 +23,17 @@ namespace CampusNext.DataAccess.Repository
         public Task AddAsync(Entity.Profile profile)
         {
             return Task.FromResult(Connection.Insert(profile));
+        }
+
+        public async Task<string> GetEmailBy(string category, int id)
+        {
+            var sql = String.Format(@"SELECT Email
+                                        FROM Profile
+                                        JOIN {0} AS Category 
+	                                        ON Category.UserId = Profile.UserId
+                                        WHERE Category.Id = {1}", category, id);
+            var result = await OpenConnection.QueryAsync<String>(sql);
+            return result.SingleOrDefault();
         }
     }
 

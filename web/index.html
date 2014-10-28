@@ -39,19 +39,29 @@
     <script src="src/app/js/controllers/TextbookAdd.js"></script>
     <script src="src/app/js/controllers/TextbookEdit.js"></script>
     <script src="src/app/js/controllers/TextbookSearch.js"></script>
+    <script src="src/app/js/controllers/TutorSearch.js"></script>
+    <script src="src/app/js/controllers/Email.js"></script>
+    <script src="src/app/js/controllers/TutorAdd.js"></script>
+    <script src="src/app/js/controllers/TutorEdit.js"></script>
+    <script src="src/app/js/controllers/FindTutorDashboard.js"></script>
     
     <!--Angular Directives-->
     <script src="src/app/js/directives/PreferredCampus.js"></script>
-
+    <script src="src/app/js/directives/Submit.js"></script>
+    <script src="src/app/js/directives/FormMessage.js"></script>
 </head>
 <body class="metro">
     <div id="wrapper">
         <div class="row">
+            <div style="z-index: 0; position: absolute; left:10px; top: 10px">
+                <a href="/"><i class="icon icon_home"></i></a>
+            </div>
             <div style="z-index: 0; position: absolute; right:10px; top: 10px">
                 <span ng-show='loggedInUser.name'>
                     <a href="/#/dashboard">{{loggedInUser.name}} <img src="images/edit_page.png" /></a>
                 </span>
                 <facebook-login-button></facebook-login-button>
+                
             </div>
             <div ng-controller="CampusCtrl" style="font-family: segoe ui" class="large-12 columns">
                 <a href="/">

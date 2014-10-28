@@ -57,3 +57,17 @@ select {
 .selectedCampusMessage {
     color: #aaa;
 }
+
+form[name="my"] input.ng-invalid.ng-dirty {
+    background-color: #ff0000;
+}
+
+form[name="my"]  textarea.ng-invalid.ng-dirty {
+    background-color: #ff0000;
+}
+form[name="my"]  input.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}
+form[name="my"]  textarea.ng-valid.ng-dirty {
+    background-color: #78FA89;
+}

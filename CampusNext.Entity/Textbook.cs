@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CampusNext.Entity
 {
-    public class Textbook : IEntity
+    public class Textbook : ICampusEntity
     {
         [Key]
         public int Id { get; set; }

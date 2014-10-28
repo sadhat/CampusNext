@@ -13,7 +13,7 @@
 .icon_hamburger {
   width: 1.625em;
   height: .313em;
-  background: #8599f6;
+  background: #4061fb;
   margin-top: 20px;
 }
 .icon_hamburger::before {
@@ -21,26 +21,30 @@
   top: -.625em;
   width: 1.625em;
   height: .313em;
-  background: #8599f6;
+  background: #4061fb;
 }
 .icon_hamburger::after {
   position: absolute;
   bottom: -.625em;
   width: 1.625em;
   height: .313em;
-  background: #8599f6;
+  background: #4061fb;
 }
 
 .icon_mail {
+  width: .5em;
+  height: .6em;
   border-top: 1.063em solid transparent;
-  border-right: 1.25em solid #8599f6;
-  border-bottom: .5em solid #8599f6;
-  border-left: 1.25em solid #8599f6;
+  border-right: 1.25em solid #4061fb;
+  border-bottom: .5em solid #4061fb;
+  border-left: 1.25em solid #4061fb;
 }
 .icon_mail::before {
+    width: .5em;
+  height: .6em;
   top: -1.25em;
   left: -1.25em;
-  border-top: 1.063em solid #8599f6;
+  border-top: 1.063em solid #4061fb;
   border-right: 1.25em solid transparent;
   border-left: 1.25em solid transparent;
 }
@@ -51,7 +55,7 @@
 .icon_heart::before {
   width: 1em;
   height: 1.563em;
-  background: #8599f6;
+  background: #4061fb;
   -moz-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
@@ -66,7 +70,7 @@
 .icon_heart::after {
   width: 1em;
   height: 1.563em;
-  background: #8599f6;
+  background: #4061fb;
   left: .375em;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
@@ -81,7 +85,7 @@
 }
 
 .icon_home {
-  border-bottom: .938em solid #8599f6;
+  border-bottom: .938em solid #3b5999;
   border-left: .938em solid transparent;
   border-right: .938em solid transparent;
 
@@ -89,13 +93,13 @@
 .icon_home::before {
   width: .563em;
   height: .625em;
-  background: #8599f6;
+  background: #3b5999;
   margin: .938em 0 0 -.688em;
 }
 .icon_home::after {
   width: .563em;
   height: .625em;
-  background: #8599f6;
+  background: #3b5999;
   margin: .938em 0 0 .125em;
 }
 
@@ -103,14 +107,14 @@
   width: 1.938em;
   height: 1.375em;
   margin-top: .813em;
-  background: #8599f6;
+  background: #4061fb;
   -moz-border-radius: 0.125em;
   -webkit-border-radius: 0.125em;
   border-radius: 0.125em;
 }
 .icon_camera::before {
   margin: -.313em 0 0 .313em;
-  border-bottom: .313em solid #8599f6;
+  border-bottom: .313em solid #4061fb;
   border-left: .188em solid transparent;
   border-right: .188em solid transparent;
   height: 0;
@@ -129,20 +133,20 @@
 .icon_chart {
   width: .375em;
   height: 1.125em;
-  background: #8599f6;
+  background: #4061fb;
   margin: 1.063em .938em 0 .938em;
 }
 .icon_chart::before {
   width: .375em;
   height: .563em;
-  background: #8599f6;
+  background: #4061fb;
   margin-left: -.563em;
   bottom: 0;
 }
 .icon_chart::after {
   width: .375em;
   height: 1.563em;
-  background: #8599f6;
+  background: #4061fb;
   margin-left: .563em;
   bottom: 0;
 }
@@ -151,7 +155,7 @@
   width: .75em;
   height: .75em;
   background: white;
-  border: .25em solid #8599f6;
+  border: .25em solid #4061fb;
   margin-left: .938em;
   -moz-border-radius: 0.625em;
   -webkit-border-radius: 0.625em;
@@ -161,7 +165,7 @@
   width: .25em;
   height: .875em;
   margin: .5em 0 0 -.375em;
-  background: #8599f6;
+  background: #4061fb;
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);

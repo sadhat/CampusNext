@@ -27,6 +27,11 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    controller: 'TextbookSearchCtrl'
 	});
 
+	$routeProvider.when('/tutorsearch', {
+	    templateUrl: './views/search/findtutor/findtutor_search.html',
+	    controller: 'TutorSearchCtrl'
+	});
+
 	$routeProvider.when('/textbookadd', {
 	    templateUrl: './views/authoring/textbook/textbook_add.html',
 	    controller: 'TextbookAddCtrl'
@@ -35,6 +40,21 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	$routeProvider.when('/textbookedit/:id', {
 	    templateUrl: './views/authoring/textbook/textbook_edit.html',
 	    controller: 'TextbookEditCtrl'
+	});
+
+	$routeProvider.when('/auth/findtutor/', {
+	    templateUrl: './views/authoring/findtutor/dashboard_findtutor.html',
+	    controller: 'FindTutorDashboardCtrl'
+	});
+
+	$routeProvider.when('/tutoradd', {
+	    templateUrl: './views/authoring/findtutor/findtutor_add.html',
+	    controller: 'TutorAddCtrl'
+	});
+
+	$routeProvider.when('/tutoredit/:id', {
+	    templateUrl: './views/authoring/findtutor/findtutor_edit.html',
+	    controller: 'TutorEditCtrl'
 	});
 
 	$routeProvider.when('/profile', {
@@ -46,6 +66,13 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    templateUrl: './views/authoring/profile/campus_selected.html',
 	    controller: 'CampusCtrl'
 	});
+
+	$routeProvider.when('/email/:category/:id', {
+	    templateUrl: './views/authoring/communication/email.html',
+	    controller: 'EmailCtrl'
+	});
+
+
 
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location', function ($q, $location) {

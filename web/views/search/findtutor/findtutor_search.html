@@ -1,0 +1,33 @@
+﻿<div class="large-12 medium-12 columns">
+    <div>
+        <h4>{{title}}</h4>
+    </div>
+    <form ng-submit="search()">
+        <div class="row">
+            <div class="medium-11 small-11 end columns">
+                <input type="search" ng-model="keyword" placeholder="Search by anything such as Course, Rate etc" />
+            </div>
+            <div class="medium-1 small-1 columns">
+                <button class="large" id="search">Go</button>
+            </div>
+        </div>
+    </form>
+    <span class="searchStatus" ng-show="loading">
+        <div style="display:block" class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </span>
+    <ol>
+        <li class="g" ng-repeat="result in searchResults">
+            <div>
+                <h3 class="g">{{result.Course}}</h3><span ng-show="result.Course">Rate: </span><span>{{result.Rate}}</span>
+                <section>{{result.Description}}</section>
+                <button class="primary" ng-click="contactSeller('findtutor', result.Id)">Contact Tutor </button>
+            </div>
+        </li>
+    </ol>
+</div>

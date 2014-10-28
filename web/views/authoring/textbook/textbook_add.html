@@ -1,7 +1,8 @@
 ﻿<div>
-    <form name="addBook">
+    <form class="css-form" name="my">
         <fieldset ng-disabled="isSaving">
             <preferredcampus></preferredcampus>
+            <form-message></form-message>
             <div class="row">
                 <div class="medium-2 small-1 end columns">
                     <label for="title">Title:</label>
@@ -52,11 +53,7 @@
                 </div>
             </div>
             <br />
-            <div class="row">
-                <div class="medium-12 small-12 columns">
-                    <a ng-show="isSaving" ng-click="addAnother()" class="button right">Add another </a><a ng-show="!isSaving" ng-click="submitForm()" class="button right">Save</a>
-                </div>
-            </div>
+            <submit></submit>
         </fieldset>
     </form>
 </div>

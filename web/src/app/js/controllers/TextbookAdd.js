@@ -21,7 +21,7 @@
         $scope.submitForm = function() {
             $scope.isSaving = true;
             var textbook = {
-                CampusCode: campusService.getSelectedCampus().name,
+                CampusCode: profileService.profile.campusCode,
                 Name: $scope.title,
                 Isbn: $scope.isbn,
                 Price: $scope.price,

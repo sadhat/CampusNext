@@ -8,8 +8,8 @@ namespace CampusNext.AzureSearch.Indexer
 {
     public interface IIndexer
     {
-        Task Create();
-        Task Update();
-        Task<bool> Delete();
+        void Create();
+        void Update();
+        bool Delete();
     }
 }

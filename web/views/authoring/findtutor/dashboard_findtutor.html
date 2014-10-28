@@ -1,0 +1,18 @@
+﻿<div class="row">
+    <div>
+        Your all tutor entries are here...
+        <br />
+    </div>
+    <div>
+        <ol>
+            <li class="g" ng-repeat="result in searchResults">
+                <div>
+                    <h3 class="g">{{result.course}}</h3>
+                    <section>{{result.description}}</section>
+                    <button class="primary" ng-click="edit($index)">Edit </button> <button class="alert" ng-click="delete($index)">Delete </button>
+                </div>
+            </li>
+        </ol>
+        <button class="info large" ng-click="add()">Add New </button>
+    </div>
+</div>

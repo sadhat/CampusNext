@@ -8,6 +8,10 @@ using CampusNext.Entity;
 using RedDog.Search;
 using RedDog.Search.Http;
 using RedDog.Search.Model;
+using Index = AzureSearchClient.Index;
+using Newtonsoft.Json;
+using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace CampusNext.AzureSearch.Repository
 {
@@ -42,8 +46,8 @@ namespace CampusNext.AzureSearch.Repository
         public async Task<HttpResponseMessage> DeleteAsync(IEntity entity)
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/index");
-            string json = AzureSearchHelper.SerializeJson(TransformEntityForDelete(entity));
-            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Delete, uri, json);
+            string json = AzureSearchHelper.SerializeJson(TransformEntityForDelete(entity)).Replace("search_action", "@search.action");
+            HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Post, uri, json);
             return response.EnsureSuccessStatusCode();
         }
 
@@ -74,11 +78,19 @@ namespace CampusNext.AzureSearch.Repository
             return result.Body.Count;
         }
 
+        public RedDog.Search.Model.Index GetIndex(string indexName)
+        {
+            var connection = ApiConnection.Create(ServiceName, ServiceApiKey);
+            var managementClient = new IndexManagementClient(connection);
+            return managementClient.GetIndexAsync(indexName).Result.Body;
+        }
+
         public async Task<T> Get<T>(string key)
         {
             Uri uri = new Uri(_serviceUri, "/indexes/" + _indexName + "/docs/" + key);
             HttpResponseMessage response = await AzureSearchHelper.SendSearchRequest(_httpClient, HttpMethod.Get, uri);
-            var document = AzureSearchHelper.DeserializeJson<T>(response.Content.ReadAsStringAsync().Result);
+            string responseContent = response.Content.ReadAsStringAsync().Result;
+            var document = AzureSearchHelper.DeserializeJson<T>(responseContent);
             return document;
         }
 
@@ -106,8 +118,8 @@ namespace CampusNext.AzureSearch.Repository
                 {
                     new
                     {
-
-                        id = entity.Id.ToString(CultureInfo.InvariantCulture)
+                        search_action = "delete",
+                        id = entity.Id.ToString()
                     }
                 }
             };

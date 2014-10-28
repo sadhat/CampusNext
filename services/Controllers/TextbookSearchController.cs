@@ -25,15 +25,5 @@ namespace CampusNext.Services.Controllers
             return
                 result.Cast<Textbook>().AsQueryable();
         }
-
-        public async Task<IHttpActionResult> Post(Textbook textbook)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-            await _textbookRepository.AddAsync(textbook);
-            return Ok();
-        }
     }
 }

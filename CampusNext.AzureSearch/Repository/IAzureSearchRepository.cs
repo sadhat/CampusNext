@@ -17,7 +17,7 @@ namespace CampusNext.AzureSearch.Repository
         Task<int> Count();
         Task<int> Count(string indexName, string campusCode);
         Task<T> Get<T>(string key);
-
+        RedDog.Search.Model.Index GetIndex(string indexName);
         Task<IList<IEntity>> Search(string keyword, string campus = null, IDictionary<string, string> filterDictionary = null);
     }
 }

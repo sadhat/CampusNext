@@ -10,10 +10,15 @@ namespace CampusNext.DataAccess.Repository
         public async Task<CategoryCatalog> All(string campusCode)
         {
             IAzureSearchRepository azureSearchTextbookRepository = new AzureSearchTextbookRepository();
-            var tasks = new List<Task<int>> {azureSearchTextbookRepository.Count("textbook", campusCode)};
+            IAzureSearchRepository azureSearchFindTutorRepository = new AzureSearchFindTutorRepository();
+            var tasks = new List<Task<int>> {
+                azureSearchTextbookRepository.Count("textbook", campusCode), 
+                azureSearchFindTutorRepository.Count("findtutor",campusCode)
+            };
             var doneTasks = await Task.WhenAll(tasks);
             
             var countTextbook = doneTasks[0];
+            var countTutor = doneTasks[1];
 
             var categoryCatalog = new CategoryCatalog
             {
@@ -27,7 +32,7 @@ namespace CampusNext.DataAccess.Repository
                 {
                     Id =2,
                     Name = "find tutor",
-                    Count = 0
+                    Count = countTutor
                 },
                 CategoryRoomForRent = new CategoryInfo
                 {

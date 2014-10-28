@@ -13,5 +13,15 @@ namespace CampusNext.DataAccess.Repository
                 return new SqlConnection(ConfigurationManager.ConnectionStrings["CampusNextContext"].ConnectionString);
             }
         }
+
+        protected IDbConnection OpenConnection
+        {
+            get
+            {
+                var conn = new SqlConnection(ConfigurationManager.ConnectionStrings["CampusNextContext"].ConnectionString);
+                conn.Open();
+                return conn;
+            }
+        }
     }
 }

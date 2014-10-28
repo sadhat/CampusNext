@@ -43,7 +43,9 @@
     <Compile Include="Campus.cs" />
     <Compile Include="CategoryCatalog.cs" />
     <Compile Include="CategoryInfo.cs" />
+    <Compile Include="FindTutor.cs" />
     <Compile Include="IEntity.cs" />
+    <Compile Include="Message.cs" />
     <Compile Include="Profile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Textbook.cs" />

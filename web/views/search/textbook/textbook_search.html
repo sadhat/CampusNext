@@ -28,7 +28,7 @@
                 <span class="price" ng-show="result.Price"> {{result.CurrencySymbol||'$'}}{{result.Price}}</span><span class="isbn" ng-show="result.Isbn"> ISBN: {{result.Isbn}}</span>
                 <div ng-show="result.Authors">Author(s): {{result.Authors}}</div>
                 <section>{{result.Description}}</section>
-                <button class="primary">Contact Seller </button>
+                <button class="primary" ng-click="contactSeller('textbook', result.Id)">Contact Seller </button>
             </div>
         </li>
     </ol>

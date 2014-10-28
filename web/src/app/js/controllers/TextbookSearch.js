@@ -1,4 +1,4 @@
-﻿campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http', 'EnvConfig', 'CampusService', function ($scope, $http, envConfig, campusService) {
+﻿campusNextApp.controller("TextbookSearchCtrl", ['$scope', '$http','$location', 'EnvConfig', 'CampusService', function ($scope, $http, $location, envConfig, campusService) {
     $scope.campusName = campusService.getSelectedCampus().name;
     $scope.title = "Textbook Search";
     $scope.keyword = "";
@@ -14,5 +14,8 @@
             }
             $scope.loading = false;
         });
+        $scope.contactSeller = function (category, id) {
+            $location.path("/email/" + category + "/" + id);
+        }
     }
 }]);

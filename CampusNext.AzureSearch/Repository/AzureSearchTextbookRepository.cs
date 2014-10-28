@@ -12,8 +12,9 @@ namespace CampusNext.AzureSearch.Repository
 {
     public class AzureSearchTextbookRepository: AzureSearchRepositoryBase
     {
+        private const string IndexName = "textbook";
         public AzureSearchTextbookRepository(string serviceName, string serviceApiKey)
-            : base(serviceName, serviceApiKey, "textbook") {}
+            : base(serviceName, serviceApiKey, IndexName) {}
 
         public AzureSearchTextbookRepository()
             : this(ConfigurationManager.AppSettings["SearchServiceName"], ConfigurationManager.AppSettings["SearchServiceApiKey"])
@@ -48,7 +49,7 @@ namespace CampusNext.AzureSearch.Repository
             if(!String.IsNullOrWhiteSpace(campus))
                 query.Filter = String.Format("campusCode eq '{0}'", campus);
 
-            var result = await queryClient.SearchAsync("textbook", query);
+            var result = await queryClient.SearchAsync(IndexName, query);
             IList<IEntity> list = new List<IEntity>();
             foreach (var record in result.Body.Records)
             {

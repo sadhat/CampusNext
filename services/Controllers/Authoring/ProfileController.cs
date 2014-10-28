@@ -1,19 +1,14 @@
-﻿using System.Data.Entity;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using System.Web.Http.OData;
 using CampusNext.DataAccess.Repository;
 using CampusNext.Entity;
-using CampusNext.Services.Attributes;
 
 namespace CampusNext.Services.Controllers.Authoring
 {
-    [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [FacebookTokenValidation]
-    public class ProfileController : ApiController
+    public class ProfileController : ApiControllerWithFacebookAuthorization
     {
         // GET: api/Profiles
         [EnableQuery]

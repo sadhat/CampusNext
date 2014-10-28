@@ -51,6 +51,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\CampusRepository.cs" />
     <Compile Include="Repository\CategoryCatalogRepository.cs" />
+    <Compile Include="Repository\FindTutorRepository.cs" />
+    <Compile Include="Repository\MessageRepository.cs" />
     <Compile Include="Repository\ProfileRepository.cs" />
     <Compile Include="Repository\RepositoryBase.cs" />
     <Compile Include="Repository\TextbookRepository.cs" />

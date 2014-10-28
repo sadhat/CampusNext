@@ -19,7 +19,7 @@
                         /**
              * Add any config properties you want in here for this environment
              */
-                        apiroot: 'http://campusnextservices.azurewebsites.net/'
+                        apiroot: 'https://campusnextservices.azurewebsites.net/'
                     }
                 }
             },

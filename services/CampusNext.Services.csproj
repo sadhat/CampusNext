@@ -197,11 +197,16 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Attributes\FacebookTokenValidation.cs" />
     <Compile Include="Controllers\Authoring\ApiControllerWithFacebookAuthorization.cs" />
+    <Compile Include="Controllers\Authoring\EmailController.cs" />
+    <Compile Include="Controllers\Authoring\EmailOption.cs" />
     <Compile Include="Controllers\Authoring\ProfileController.cs" />
+    <Compile Include="Controllers\Authoring\TutorController.cs" />
     <Compile Include="Controllers\Authoring\TextbookController.cs" />
     <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\CategoryCatalogController.cs" />
     <Compile Include="Controllers\CategoryCatalogOption.cs" />
+    <Compile Include="Controllers\TutorSearchOption.cs" />
+    <Compile Include="Controllers\TutorSearchController.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />
     <Compile Include="Controllers\TextbookSearchOption.cs" />
     <Compile Include="Global.asax.cs">
@@ -231,13 +236,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Profile\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CampusNext.AzureSearch\CampusNext.AzureSearch.csproj">
       <Project>{3d859afd-6f83-404c-af34-0cf8c6447300}</Project>
       <Name>CampusNext.AzureSearch</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CampusNext.Communication\CampusNext.Communication.csproj">
+      <Project>{9B166CE1-CAD4-4F12-9EA3-FA76A51FF5EB}</Project>
+      <Name>CampusNext.Communication</Name>
     </ProjectReference>
     <ProjectReference Include="..\CampusNext.DataAccess\CampusNext.DataAccess.csproj">
       <Project>{46361320-fc56-4264-8bfd-d62fc87c99ad}</Project>

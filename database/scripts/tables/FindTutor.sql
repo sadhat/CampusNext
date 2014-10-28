@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[FindTutor]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[Description] NVARCHAR(2000) NOT NULL, 
+	[Rate] NVARCHAR(150) NULL,
+	[Course] NVARCHAR(100) NULL,
+    [UserId] VARCHAR(100) NOT NULL, 
+    [CampusCode] NCHAR(10) NULL, 
+    [CreatedDate] DATETIME NULL DEFAULT GETDATE(), 
+    [ModifiedDate] DATETIME NULL DEFAULT GETDATE(), 
+    [LikeCount] INT NOT NULL DEFAULT 0, 
+    [ContactInfo] NVARCHAR(100) NULL
+)

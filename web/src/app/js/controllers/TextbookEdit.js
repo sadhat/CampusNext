@@ -27,7 +27,7 @@
             $scope.isSaving = true;
             var textbook = {
                 Id: $scope.id,
-                CampusCode: campusService.getSelectedCampus().name,
+                CampusCode: profileService.profile.campusCode,
                 Name: $scope.title,
                 Isbn: $scope.isbn,
                 Price: $scope.price,

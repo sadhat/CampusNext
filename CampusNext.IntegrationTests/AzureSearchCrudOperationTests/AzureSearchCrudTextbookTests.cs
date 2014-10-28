@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using CampusNext.AzureSearch.Repository;
 using CampusNext.Entity;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CampusNext.IntegrationTests
+namespace CampusNext.IntegrationTests.AzureSearchCrudOperationTests
 {
     [TestClass]
-    public class AzureSearchCRUDEntityTests
+    public class AzureSearchCrudTextbookTests
     {
         string serviceName = "campusnext";
         string serviceApiKey = "2CD1601EF0EAB39FBBB84F2E95EA727F";
@@ -39,7 +38,7 @@ namespace CampusNext.IntegrationTests
                 Id = 1,
                 Authors = "Megal",
                 CampusCode = "NDSU",
-                Course = "899A",
+                Course = "899ABC",
                 Description = "This is quite nice description",
                 Name = "My Book2",
                 Price = 12.00
@@ -47,6 +46,15 @@ namespace CampusNext.IntegrationTests
 
             var result = azureTextbookRepository.UpdateAsync(newTextboook).Result;
         }
+
+        [TestMethod]
+        public void GetTextbook()
+        {
+            IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
+            var result = azureTextbookRepository.Get<Textbook>("1").Result;
+
+        }
+
 
         [TestMethod]
         public void DeleteTextbook()
@@ -87,13 +95,8 @@ namespace CampusNext.IntegrationTests
             var result = azureTextbookRepository.Count("textbook", "UND").Result;
         }
 
-        [TestMethod]
-        public void GetTextbook()
-        {
-            IAzureSearchRepository azureTextbookRepository = new AzureSearchTextbookRepository(serviceName, serviceApiKey);
-            var result = azureTextbookRepository.Get<Textbook>("1").Result;
 
-        }
+        
 
         [TestMethod]
         public void SearchTextbook()

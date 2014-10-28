@@ -1,0 +1,33 @@
+﻿<div>
+    <form name="my">
+        <fieldset ng-disabled="isSaving">
+            <form-message></form-message>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="subject">Subject:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <input id="subject" ng-minlength="5" type="text" placeholder="Enter subject (Must be at least 5 character long text)" required ng-model="subject" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="email">Email:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="email" id="email" placeholder="Your email address" required maxlength="150" ng-model="fromEmail" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="message">Message:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <textarea id="message" rows="10" cols="20" ng-minlength="10" placeholder="Enter message to send (Must be at least 10 character long text)" required ng-model="message"></textarea>
+                </div>
+            </div>
+            <br />
+            <submit></submit>
+        </fieldset>
+    </form>
+</div>
