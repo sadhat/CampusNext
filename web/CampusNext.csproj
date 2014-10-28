@@ -70,6 +70,7 @@
     <Content Include="css\spinner.css" />
     <Content Include="images\edit_page.png" />
     <Content Include="images\schools\logo\UND.jpg" />
+    <Content Include="images\schools\logo\UT.jpg" />
     <Content Include="packages.config" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />

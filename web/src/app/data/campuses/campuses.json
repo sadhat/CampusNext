@@ -10,5 +10,11 @@
         "name": "UND", 
         "logoUrl": "UND.jpg",
         "rank": 18
+    },
+    { 
+        "campusId": 3,
+        "name": "UofT", 
+        "logoUrl": "UT.jpg",
+        "rank": 5
     }
 ]
