@@ -65,11 +65,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AzureSearchCredential.cs" />
-    <Compile Include="AzureSearchCrudOperationTests\AzureSearchCrudFindTutorTests.cs" />
-    <Compile Include="AzureSearchIndexTests\AzureSearchTexFindTutorIndexTests.cs" />
+    <Compile Include="AzureSearchCrudOperationTests\FindTutorCrudTests.cs" />
+    <Compile Include="AzureSearchIndexTests\ShareRideIndexTests.cs" />
+    <Compile Include="AzureSearchIndexTests\FindTutorIndexTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AzureSearchIndexTests\AzureSearchTextbookIndexTests.cs" />
-    <Compile Include="AzureSearchCrudOperationTests\AzureSearchCrudTextbookTests.cs" />
+    <Compile Include="AzureSearchIndexTests\TextbookIndexTests.cs" />
+    <Compile Include="AzureSearchCrudOperationTests\TextbookCrudTests.cs" />
     <Compile Include="CommunicationTests.cs" />
   </ItemGroup>
   <ItemGroup>

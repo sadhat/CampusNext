@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CampusNext.IntegrationTests.AzureSearchIndexTests
 {
     [TestClass]
-    public class AzureSearchTextbookIndexTests
+    public class TextbookIndexTests
     {
         private IIndexer _textbookIndexer;
 

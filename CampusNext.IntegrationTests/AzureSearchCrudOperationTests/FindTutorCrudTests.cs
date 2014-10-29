@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CampusNext.IntegrationTests.AzureSearchCrudOperationTests
 {
     [TestClass]
-    public class AzureSearchCrudFindTutorTests
+    public class FindTutorCrudTests
     {
         private IAzureSearchRepository _azureSearchRepository;
 

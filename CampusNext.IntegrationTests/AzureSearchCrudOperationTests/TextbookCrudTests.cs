@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace CampusNext.IntegrationTests.AzureSearchCrudOperationTests
 {
     [TestClass]
-    public class AzureSearchCrudTextbookTests
+    public class TextbookCrudTests
     {
         string serviceName = "campusnext";
         string serviceApiKey = "2CD1601EF0EAB39FBBB84F2E95EA727F";
