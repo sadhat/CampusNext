@@ -200,6 +200,7 @@
     <Compile Include="Controllers\Authoring\EmailController.cs" />
     <Compile Include="Controllers\Authoring\EmailOption.cs" />
     <Compile Include="Controllers\Authoring\ProfileController.cs" />
+    <Compile Include="Controllers\Authoring\ShareRideController.cs" />
     <Compile Include="Controllers\Authoring\TutorController.cs" />
     <Compile Include="Controllers\Authoring\TextbookController.cs" />
     <Compile Include="Controllers\CampusController.cs" />

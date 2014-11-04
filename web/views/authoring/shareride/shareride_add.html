@@ -1,0 +1,57 @@
+﻿<div>
+    <form name="my">
+        <fieldset ng-disabled="isSaving">
+            <preferredcampus></preferredcampus>
+            <form-message></form-message>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="from">From:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <input type="text" id="from" ng-minlength="5" required placeholder="From where you will start..." maxlength="500" ng-model="fromLocation">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="to">To:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" id="to" ng-minlength="5" required placeholder="Where you going..." maxlength="500" ng-model="toLocation">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="startDate">Start:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" ng-minlength="5" required id="startDate" placeholder="Start date time." maxlength="500" ng-model="startDateTime">
+                </div>
+            </div>
+            <div class="row" ng-show="isRoundtrip">
+                <div class="medium-2 small-1 end columns">
+                    <label for="returnDate">Return:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" ng-minlength="5" ng-required="isRoundtrip === true" id="returnDate" placeholder="Return date time if it's a round trip'" maxlength="500" ng-model="returnDateTime">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">&nbsp;
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="checkbox" id="isRoundtrip" placeholder="Is this a round trip..." ng-model="isRoundtrip" /><label for="isRoundtrip">Is round trip?</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="additionalInfo">Additional Info:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <textarea id="additionalInfo" rows="10" cols="20" placeholder="Optionally additional information you may provide" ng-model="additionalInfo"></textarea>
+                </div>
+            </div>
+            <br />
+            <submit></submit>
+        </fieldset>
+    </form>
+</div>

@@ -1,6 +1,6 @@
 ﻿campusNextApp.controller("TutorEditCtrl", [
-    '$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig', 'ProfileService', 'CampusService',
-     function ($scope, $http, $location, routeParams, tokenService, envConfig, profileService, campusService) {
+    '$scope', '$http', '$location', '$routeParams', 'TokenService', 'EnvConfig', 'ProfileService',
+     function ($scope, $http, $location, routeParams, tokenService, envConfig, profileService) {
         //Check whether profile is complete before authoring
         profileService.gaurdAuthoring();
 

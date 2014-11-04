@@ -8,8 +8,6 @@ namespace CampusNext.Services
         {
             UnityConfig.Register();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            //DocumentDbSeeder.Seed();
-            //AzureSearchSeeder.Seed();
         }
     }
 }

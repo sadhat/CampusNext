@@ -40,6 +40,10 @@ input[type=search] {
     font-size: 20px;
 }
 
+input[type="checkbox"] {
+    margin: 0;
+}
+
 h4, span{
 display: inline;
 }

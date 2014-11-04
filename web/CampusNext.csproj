@@ -98,6 +98,9 @@
     <Content Include="src\app\js\controllers\CategoryCatalog.js" />
     <Content Include="src\app\js\controllers\Email.js" />
     <Content Include="src\app\js\controllers\FindTutorDashboard.js" />
+    <Content Include="src\app\js\controllers\ShareRideEdit.js" />
+    <Content Include="src\app\js\controllers\ShareRideDashboard.js" />
+    <Content Include="src\app\js\controllers\ShareRideAdd.js" />
     <Content Include="src\app\js\controllers\TutorEdit.js" />
     <Content Include="src\app\js\controllers\TutorSearch.js" />
     <Content Include="src\app\js\controllers\TutorAdd.js" />
@@ -168,6 +171,9 @@
     <Content Include="views\authoring\findtutor\findtutor_add.html" />
     <Content Include="views\authoring\profile\campus_selected.html" />
     <Content Include="views\authoring\profile\profile_edit.html" />
+    <Content Include="views\authoring\shareride\dashboard_shareride.html" />
+    <Content Include="views\authoring\shareride\shareride_edit.html" />
+    <Content Include="views\authoring\shareride\shareride_add.html" />
     <Content Include="views\authoring\textbook\dashboard_textbook.html" />
     <Content Include="views\authoring\dashboard.html" />
     <Content Include="views\facebookLoginPartial.html" />

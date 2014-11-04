@@ -65,6 +65,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AzureSearchCredential.cs" />
+    <Compile Include="AzureSearchCrudOperationTests\ShareRideCrudTests.cs" />
     <Compile Include="AzureSearchCrudOperationTests\FindTutorCrudTests.cs" />
     <Compile Include="AzureSearchIndexTests\ShareRideIndexTests.cs" />
     <Compile Include="AzureSearchIndexTests\FindTutorIndexTests.cs" />

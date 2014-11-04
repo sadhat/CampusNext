@@ -72,7 +72,20 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    controller: 'EmailCtrl'
 	});
 
+	$routeProvider.when('/auth/shareride/', {
+	    templateUrl: './views/authoring/shareride/dashboard_shareride.html',
+	    controller: 'ShareRideDashboardCtrl'
+	});
 
+	$routeProvider.when('/sharerideadd', {
+	    templateUrl: './views/authoring/shareride/shareride_add.html',
+	    controller: 'ShareRideAddCtrl'
+	});
+
+	$routeProvider.when('/sharerideedit/:id', {
+	    templateUrl: './views/authoring/shareride/shareride_edit.html',
+	    controller: 'ShareRideEditCtrl'
+	});
 
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location', function ($q, $location) {

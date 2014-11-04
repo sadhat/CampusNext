@@ -49,6 +49,18 @@ namespace CampusNext.AzureSearch.Indexer
                 },
                 new
                 {
+                    Name = "additionalInfo",
+                    Type = "Edm.String",
+                    Key = false,
+                    Searchable = true,
+                    Filterable = true,
+                    Sortable = true,
+                    Facetable = true,
+                    Retrievable = true,
+                    Suggestions = false
+                },
+                new
+                {
                     Name = "isRoundtrip",
                     Type = "Edm.Boolean",
                     Key = false,
@@ -62,9 +74,9 @@ namespace CampusNext.AzureSearch.Indexer
                 new
                 {
                     Name = "startDateTime",
-                    Type = "Edm.DateTimeOffset",
+                    Type = "Edm.String",
                     Key = false,
-                    Searchable = false,
+                    Searchable = true,
                     Filterable = true,
                     Sortable = false,
                     Facetable = false,
@@ -74,9 +86,9 @@ namespace CampusNext.AzureSearch.Indexer
                 new
                 {
                     Name = "returnDateTime",
-                    Type = "Edm.DateTimeOffset",
+                    Type = "Edm.String",
                     Key = false,
-                    Searchable = false,
+                    Searchable = true,
                     Filterable = true,
                     Sortable = false,
                     Facetable = false,
