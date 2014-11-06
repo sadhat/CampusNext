@@ -48,6 +48,32 @@ namespace CampusNext.AzureSearch.Repository
             
             if(!String.IsNullOrWhiteSpace(campus))
                 query.Filter = String.Format("campusCode eq '{0}'", campus);
+            if (filterDictionary != null)
+            {
+                string fromLocation;
+                string toLocation;
+                string startDateTime;
+                string returnDateTime;
+                if (filterDictionary.TryGetValue("fromLocation", out fromLocation))
+                {
+                    query.Filter += String.Format(" and fromLocation gt '{0}'", fromLocation);
+                }
+
+                if (filterDictionary.TryGetValue("toLocation", out toLocation))
+                {
+                    query.Filter += String.Format(" and toLocation gt '{0}'", toLocation);
+                }
+
+                if (filterDictionary.TryGetValue("startDateTime", out startDateTime))
+                {
+                    query.Filter += String.Format(" and startDateTime eq '{0}'", startDateTime);
+                }
+
+                if (filterDictionary.TryGetValue("returnDateTime", out returnDateTime))
+                {
+                    query.Filter += String.Format(" and returnDateTime eq '{0}'", returnDateTime);
+                }
+            }
 
             var result = await queryClient.SearchAsync(IndexName, query);
             IList<IEntity> list = new List<IEntity>();
@@ -57,6 +83,8 @@ namespace CampusNext.AzureSearch.Repository
                 {
                     Id = int.Parse(record.Properties["id"].ToString()),
                     StartDateTime = record.Properties["startDateTime"].ToString(),
+                    FromLocation = record.Properties["fromLocation"].ToString(),
+                    ToLocation = record.Properties["toLocation"].ToString(),
                     ReturnDateTime =
                         record.Properties["returnDateTime"] == null
                             ? string.Empty

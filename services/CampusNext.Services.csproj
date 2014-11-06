@@ -100,6 +100,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Spatial, Version=5.6.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\System.Spatial.5.6.2\lib\net40\System.Spatial.dll</HintPath>
@@ -206,6 +207,8 @@
     <Compile Include="Controllers\CampusController.cs" />
     <Compile Include="Controllers\CategoryCatalogController.cs" />
     <Compile Include="Controllers\CategoryCatalogOption.cs" />
+    <Compile Include="Controllers\ShareRideSearchController.cs" />
+    <Compile Include="Controllers\ShareRideSearchOption.cs" />
     <Compile Include="Controllers\TutorSearchOption.cs" />
     <Compile Include="Controllers\TutorSearchController.cs" />
     <Compile Include="Controllers\TextbookSearchController.cs" />

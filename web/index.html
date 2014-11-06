@@ -10,6 +10,9 @@
     <link href="content/toastr.min.css" rel="stylesheet" />
     <link href="css/spinner.css" rel="stylesheet" />
     <link href="css/icons.css" rel="stylesheet" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <link href="src/vendor/css/foundation-datepicker.css" rel="stylesheet" />
+    <link href="src/vendor/css/jquery-ui.css" rel="stylesheet" />
 
     <script src="src/vendor/js/modernizr.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -18,6 +21,8 @@
     <script src="src/vendor/js/metro.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.22/angular-route.js"></script>
+    <script src="src/vendor/js/date.js"></script>
+    <script src="src/vendor/js/foundation-datepicker.js"></script>
     <script type="text/javascript" src="src/app/js/app.js"></script>
 
     <!--Angular Services-->
@@ -47,7 +52,8 @@
     <script src="src/app/js/controllers/ShareRideDashboard.js"></script>
     <script src="src/app/js/controllers/ShareRideAdd.js"></script>
     <script src="src/app/js/controllers/ShareRideEdit.js"></script>
-    
+    <script src="src/app/js/controllers/ShareRideSearch.js"></script>
+
     <!--Angular Directives-->
     <script src="src/app/js/directives/PreferredCampus.js"></script>
     <script src="src/app/js/directives/Submit.js"></script>
@@ -64,7 +70,7 @@
                     <a href="/#/dashboard">{{loggedInUser.name}} <img src="images/edit_page.png" /></a>
                 </span>
                 <facebook-login-button></facebook-login-button>
-                
+
             </div>
             <div ng-controller="CampusCtrl" style="font-family: segoe ui" class="large-12 columns">
                 <a href="/">

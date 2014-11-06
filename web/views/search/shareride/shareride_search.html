@@ -1,0 +1,86 @@
+﻿<div class="large-12 medium-12 columns">
+    <div>
+        <h4>{{title}}</h4>
+    </div>
+    <form ng-submit="search()">
+        <div class="row">
+            <div class="medium-11 small-11 end columns">
+                <div class="row">
+                    <div class="date large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-3 columns">From: </div>
+                            <div class="small-9 columns">
+                                <input type="text" placeholder="From where to start" ng-model="fromLocation" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-3 columns">To: </div>
+                            <div class="small-9 columns">
+                                <input type="text" placeholder="Where you want to go" ng-model="toLocation" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="date large-6 columns" id="dp1" data-date-format="dd-mm-yyyy">
+                        <div class="row collapse">
+                            <div class="small-3 columns">Start: </div>
+                            <div class="small-7 columns">
+                                <input type="text" placeholder="Start date" ng-model="startDateTime" />
+                            </div>
+                            <div class="small-2 columns">
+                                <span class="prefix"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="date large-6 columns" id="dp2" data-date-format="dd-mm-yyyy">
+                        <div class="row collapse">
+                            <div class="small-3 columns">Return: </div>
+                            <div class="small-7 columns">
+                                <input type="text" placeholder="Return date" ng-model="returnDateTime" />
+                            </div>
+                            <div class="small-2 columns">
+                                <span class="prefix"><i class="fa fa-calendar"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-1 small-1 columns">
+                <button class="large" id="search">Go</button>
+            </div>
+        </div>      
+    </form>
+    <span class="searchStatus" ng-show="loading">
+        <div style="display:block" class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </span>
+    <ol>
+        <li class="g" ng-repeat="result in searchResults">
+            <div>
+                <h3 class="g">{{result.FromLocation}} to {{result.ToLocation}}</h3>
+                <span>Trip starts on </span><span>{{result.StartDateTime}}</span><span ng-show="result.ReturnDateTime"> and return on </span><span> {{result.ReturnDateTime}}</span>
+               
+                <div ng-show="result.Authors">Author(s): {{result.Authors}}</div>
+                <section>{{result.Description}}</section>
+                <button class="primary" ng-click="contactSeller('textbook', result.Id)">Contact Seller </button>
+            </div>
+        </li>
+    </ol>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('#dp1').fdatepicker();
+        $('#dp2').fdatepicker();
+    });
+</script>

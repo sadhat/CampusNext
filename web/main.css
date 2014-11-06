@@ -36,6 +36,10 @@ input[type], textarea, label {
     font-size: 14px;
 }
 
+input[type=text] {
+    padding-top: 1px;
+}
+
 input[type=search] {
     font-size: 20px;
 }
@@ -75,3 +79,5 @@ form[name="my"]  input.ng-valid.ng-dirty {
 form[name="my"]  textarea.ng-valid.ng-dirty {
     background-color: #78FA89;
 }
+
+

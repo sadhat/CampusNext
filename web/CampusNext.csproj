@@ -101,12 +101,15 @@
     <Content Include="src\app\js\controllers\ShareRideEdit.js" />
     <Content Include="src\app\js\controllers\ShareRideDashboard.js" />
     <Content Include="src\app\js\controllers\ShareRideAdd.js" />
+    <Content Include="src\app\js\controllers\ShareRideSearch.js" />
     <Content Include="src\app\js\controllers\TutorEdit.js" />
     <Content Include="src\app\js\controllers\TutorSearch.js" />
     <Content Include="src\app\js\controllers\TutorAdd.js" />
     <Content Include="src\app\js\directives\FormMessage.js" />
     <Content Include="src\app\js\directives\PreferredCampus.js" />
     <Content Include="src\app\js\directives\Submit.js" />
+    <Content Include="src\vendor\css\foundation-datepicker.css" />
+    <Content Include="src\vendor\css\jquery-ui.css" />
     <Content Include="src\vendor\fonts\iconFont.eot" />
     <Content Include="src\vendor\fonts\iconFont.json" />
     <Content Include="src\vendor\fonts\iconFont.ttf" />
@@ -161,7 +164,9 @@
     <Content Include="src\vendor\images\spinner.gif" />
     <Content Include="src\vendor\images\star.png" />
     <Content Include="src\vendor\images\users.png" />
+    <Content Include="src\vendor\js\date.js" />
     <Content Include="src\vendor\js\facebookUtils.js" />
+    <Content Include="src\vendor\js\foundation-datepicker.js" />
     <Content Include="src\vendor\js\foundation.min.js" />
     <Content Include="src\vendor\js\metro.min.js" />
     <Content Include="src\vendor\js\modernizr.js" />
@@ -181,6 +186,7 @@
     <Content Include="views\authoring\textbook\textbook_edit.html" />
     <Content Include="views\authoring\textbook\textbook_add.html" />
     <Content Include="views\search\findtutor\findtutor_search.html" />
+    <Content Include="views\search\shareride\shareride_search.html" />
     <Content Include="views\search\textbook\textbook_search.html" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

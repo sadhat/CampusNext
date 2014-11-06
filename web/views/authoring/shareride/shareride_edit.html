@@ -24,7 +24,11 @@
                     <label for="startDate">Start:</label>
                 </div>
                 <div class="medium-10 small-3 end columns">
-                    <input type="text" ng-minlength="5" required id="startDate" placeholder="Start date time." maxlength="500" ng-model="startDateTime">
+                    <!--<input type="text" ng-minlength="5" required id="startDate" placeholder="Start date time." maxlength="500" ng-model="startDateTime">-->
+                    <div class="row date collapse" id="dp3" data-date-format="dd-mm-yyyy">
+                        <input style="width:20%" required class="small-3 columns" size="16" type="text" ng-model="startDateTime" readonly>
+                        <span style="width:5%" class="prefix small-2 columns end"><i class="fa fa-calendar"></i></span>
+                    </div>
                 </div>
             </div>
             <div class="row" ng-show="isRoundtrip">
@@ -32,7 +36,10 @@
                     <label for="returnDate">Return:</label>
                 </div>
                 <div class="medium-10 small-3 end columns">
-                    <input type="text" ng-minlength="5" ng-required="isRoundtrip === true" id="returnDate" placeholder="Return date time if it's a round trip'" maxlength="500" ng-model="returnDateTime">
+                    <div class="row date collapse" id="dp4" data-date-format="dd-mm-yyyy">
+                        <input ng-required="isRoundtrip" style="width:20%" class="small-3 columns" size="16" type="text" ng-model="returnDateTime" readonly>
+                        <span style="width:5%" class="prefix small-2 columns end"><i class="fa fa-calendar"></i></span>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -55,3 +62,10 @@
         </fieldset>
     </form>
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#dp3').fdatepicker();
+        $('#dp4').fdatepicker();
+    });
+</script>
