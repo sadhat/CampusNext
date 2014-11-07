@@ -67,12 +67,14 @@
     <Compile Include="AzureSearchCredential.cs" />
     <Compile Include="AzureSearchCrudOperationTests\ShareRideCrudTests.cs" />
     <Compile Include="AzureSearchCrudOperationTests\FindTutorCrudTests.cs" />
+    <Compile Include="AzureSearchIndexTests\RentalIndexTests.cs" />
     <Compile Include="AzureSearchIndexTests\ShareRideIndexTests.cs" />
     <Compile Include="AzureSearchIndexTests\FindTutorIndexTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AzureSearchIndexTests\TextbookIndexTests.cs" />
     <Compile Include="AzureSearchCrudOperationTests\TextbookCrudTests.cs" />
     <Compile Include="CommunicationTests.cs" />
+    <Compile Include="SqlSearchTests\RentalTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CampusNext.AzureSearch\CampusNext.AzureSearch.csproj">
@@ -82,6 +84,10 @@
     <ProjectReference Include="..\CampusNext.Communication\CampusNext.Communication.csproj">
       <Project>{9b166ce1-cad4-4f12-9ea3-fa76a51ff5eb}</Project>
       <Name>CampusNext.Communication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CampusNext.DataAccess\CampusNext.DataAccess.csproj">
+      <Project>{46361320-FC56-4264-8BFD-D62FC87C99AD}</Project>
+      <Name>CampusNext.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\CampusNext.Entity\CampusNext.Entity.csproj">
       <Project>{f5fe4eb9-d381-407a-8fa2-2c302540ccb8}</Project>

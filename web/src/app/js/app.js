@@ -32,6 +32,11 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    controller: 'TutorSearchCtrl'
 	});
 
+	$routeProvider.when('/rentalsearch', {
+	    templateUrl: './views/search/rental/rental_search.html',
+	    controller: 'RentalSearchCtrl'
+	});
+
 	$routeProvider.when('/shareridesearch', {
 	    templateUrl: './views/search/shareride/shareride_search.html',
 	    controller: 'ShareRideSearchCtrl'
@@ -92,6 +97,20 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    controller: 'ShareRideEditCtrl'
 	});
 
+	$routeProvider.when('/auth/rental/', {
+	    templateUrl: './views/authoring/rent/dashboard_rent.html',
+	    controller: 'RentalDashboardCtrl'
+	});
+
+	$routeProvider.when('/rentadd', {
+	    templateUrl: './views/authoring/rent/rent_add.html',
+	    controller: 'RentalAddCtrl'
+	});
+
+	$routeProvider.when('/rentedit/:id', {
+	    templateUrl: './views/authoring/rent/rent_edit.html',
+	    controller: 'RentalEditCtrl'
+	});
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location', function ($q, $location) {
 return {
@@ -105,11 +124,9 @@ return {
         if (rejection.status === 401) {
             console.log("Response Error 401", rejection);
             toastr.error("Unauthorized access. Please login again. Remember to close all your browser!");
-            sessionStorage.removeItem("accessToken");
         }
         if (rejection.exceptionType == "Facebook.FacebookOAuthException") {
             toastr.error('Your session expired. Please login again');
-            sessionStorage.removeItem("accessToken");
             $location.path('/');
         }
         return $q.reject(rejection);

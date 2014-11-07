@@ -54,9 +54,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Indexer\RentalIndex.cs" />
     <Compile Include="Indexer\ShareRide.cs" />
     <Compile Include="Indexer\FindTutorIndex.cs" />
     <Compile Include="Repository\AzureSearchFindTutorRepository.cs" />
+    <Compile Include="Repository\AzureSearchRentalRepository.cs" />
     <Compile Include="Repository\AzureSearchShareRideRepository.cs" />
     <Compile Include="Utility\AzureSearchHelper.cs" />
     <Compile Include="Indexer\IIndexer.cs" />

@@ -67,6 +67,7 @@
     <Build Include="scripts\tables\Message.sql" />
     <Build Include="scripts\tables\FindTutor.sql" />
     <Build Include="scripts\tables\ShareRide.sql" />
+    <Build Include="scripts\tables\Rental.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CampusNext.Products.local.xml" />

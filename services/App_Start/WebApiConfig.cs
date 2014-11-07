@@ -16,7 +16,8 @@ namespace CampusNext.Services
             var builder = new ODataConventionModelBuilder();    
             builder.EntitySet<Textbook>("TextbookSearch");
             builder.EntitySet<FindTutor>("TutorSearch");
-            builder.EntitySet<ShareRide>("ShareRideSearch"); 
+            builder.EntitySet<ShareRide>("ShareRideSearch");
+            builder.EntitySet<Rental>("RentalSearch");
             return builder.GetEdmModel();    
 
         }

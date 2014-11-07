@@ -1,0 +1,44 @@
+﻿<div>
+    <form name="my">
+        <fieldset ng-disabled="isSaving">
+            <preferredcampus></preferredcampus>
+            <form-message></form-message>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="address">Address:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <textarea required class="error" rows="3" cols="5" id="address" placeholder="Address of your rental" ng-model="address"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="rent">Rent:</label>
+                </div>
+                <div class="medium-10 small-3 end columns">
+                    <input type="text" id="rent" placeholder="Rental in $" maxlength="15" ng-model="rent">
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="room">Rooms:</label>
+                </div>
+                <div class="medium-2 small-2 end columns">
+                    <select id="room" ng-model="rooms">
+                        <option ng-repeat="item in [1,2,3,4,5]" value="{{item}}">{{item}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="medium-2 small-1 end columns">
+                    <label for="description">Description:</label>
+                </div>
+                <div class="medium-10 small-11 columns">
+                    <textarea required class="error" id="description" rows="10" cols="20" placeholder="Description what to offer. Example, pat friendly, smoke free, utility included etc." ng-model="description"></textarea>
+                </div>
+            </div>
+            <br />
+            <submit></submit>
+        </fieldset>
+    </form>
+</div>

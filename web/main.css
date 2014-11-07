@@ -48,6 +48,9 @@ input[type="checkbox"] {
     margin: 0;
 }
 
+textarea.error {
+    margin-bottom: 10px;
+}
 h4, span{
 display: inline;
 }

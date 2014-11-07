@@ -12,16 +12,19 @@ namespace CampusNext.DataAccess.Repository
             IAzureSearchRepository azureSearchTextbookRepository = new AzureSearchTextbookRepository();
             IAzureSearchRepository azureSearchFindTutorRepository = new AzureSearchFindTutorRepository();
             IAzureSearchRepository azureSearchShareRiderRepository = new AzureSearchShareRideRepository();
+            var rentalRepository = new RentalRepository();
             var tasks = new List<Task<int>> {
                 azureSearchTextbookRepository.Count("textbook", campusCode), 
                 azureSearchFindTutorRepository.Count("findtutor", campusCode),
-                azureSearchShareRiderRepository.Count("shareride", campusCode)
+                azureSearchShareRiderRepository.Count("shareride", campusCode),
+                rentalRepository.CountAsync(campusCode)
             };
             var doneTasks = await Task.WhenAll(tasks);
             
             var countTextbook = doneTasks[0];
             var countTutor = doneTasks[1];
             var countShareRide = doneTasks[2];
+            var rental = doneTasks[3];
 
             var categoryCatalog = new CategoryCatalog
             {
@@ -41,7 +44,7 @@ namespace CampusNext.DataAccess.Repository
                 {
                     Id = 3,
                     Name = "room for rent",
-                    Count = 0
+                    Count = rental
                 },
                 CategoryCampusLifeEvents = new CategoryInfo
                 {

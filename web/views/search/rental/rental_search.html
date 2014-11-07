@@ -1,0 +1,82 @@
+﻿<div class="large-12 medium-12 columns">
+    <div>
+        <h4>{{title}}</h4>
+    </div>
+    <form ng-submit="search()">
+        <div class="row">
+            <div class="medium-11 small-11 end columns">
+                <div class="row">
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-2 columns">From: </div>
+                            <div class="small-10 columns">
+                                <input type="text" placeholder="Rent range from..." ng-model="rentRangeFrom" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="large-6 columns">
+                        <div class="row collapse">
+                            <div class="small-2 columns">To: </div>
+                            <div class="small-10 columns">
+                                <input type="text" placeholder="...rent range to" ng-model="rentRangeTo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="row collapse">
+                            <div class="large-1 columns">
+                                <div>
+                                    Rooms:
+                                </div>
+                            </div>
+                            <div class="large-2 columns">
+                                <div>
+                                    <select id="room" ng-model="rooms">
+                                        <option ng-repeat="item in [1,2,3,4,5]" value="{{item}}">{{item}}</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="large-1 columns">
+                                &nbsp;
+                            </div>
+                            <div class="large-8 columns end">
+                                <div>
+                                    <div>
+                                        <input type="text" placeholder="Anything useful you want to search..." ng-model="additionalInfo" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="medium-1 small-1 columns">
+                <button class="large" id="search">Go</button>
+            </div>
+        </div>      
+    </form>
+    <span class="searchStatus" ng-show="loading">
+        <div style="display:block" class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </span>
+    <ol>
+        <li class="g" ng-repeat="result in searchResults">
+            <div>
+                <h3 class="g">{{result.Address}}</h3>
+                <span>Rent </span><span>{{result.Rent}}</span><span ng-show="result.Rooms"> available rooms </span><span> {{result.Rooms}}</span>
+               
+                <section>{{result.Description}}</section>
+                <button class="primary" ng-click="contactSeller('rental', result.Id)">Contact Seller </button>
+            </div>
+        </li>
+    </ol>
+</div>

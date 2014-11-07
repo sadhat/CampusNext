@@ -1,0 +1,13 @@
+﻿CREATE TABLE [dbo].[Rental]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Address] NVARCHAR(500) NOT NULL, 
+    [Rent] NVARCHAR(100) NULL, 
+    [Rooms] INT NULL DEFAULT 0,
+	[UserId] VARCHAR(100) NOT NULL, 
+    [CampusCode] NCHAR(10) NULL, 
+    [CreatedDate] DATETIME NULL DEFAULT GETDATE(), 
+    [ModifiedDate] DATETIME NULL DEFAULT GETDATE(), 
+    [LikeCount] INT NOT NULL DEFAULT 0, 
+    [Description] NVARCHAR(2000) NULL 
+)
