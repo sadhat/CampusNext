@@ -55,7 +55,7 @@ namespace CampusNext.AzureSearch.Repository
                 {
                     Id = int.Parse(record.Properties["id"].ToString()),
                     Description = record.Properties["description"].ToString(),
-                    Rate = record.Properties["rate"].ToString(),
+                    Rate = record.Properties["rate"] == null ? string.Empty : record.Properties["rate"].ToString(),
                     Course =
                         record.Properties["course"] == null
                             ? string.Empty
