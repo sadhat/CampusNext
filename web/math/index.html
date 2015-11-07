@@ -33,6 +33,7 @@
 				$scope.$watchGroup(['firstNumber','secondNumber','result','operator'], function(){
 					var firstNumber = parseInt($scope.firstNumber);
 					var secondNumber = parseInt($scope.secondNumber);
+				    var result = 0;
 					switch($scope.operator){
 						case "+":
 							result = firstNumber + secondNumber;
@@ -95,7 +96,7 @@
 	<body ng-app="mathApp" ng-controller="AddingController" ng-class="myClass">
 		<br/><br/>
 		<div class="container center">
-			<input id="firstNumber" ng-model="firstNumber" type="text"/> <span ng-bind-html="operatorDisplay | rawHtml"></span> <input ng-model="secondNumber" type="text"/> = <input ng-model="result" type="text"/>
+			<input id="firstNumber" ng-model="firstNumber" type="number"/> <span ng-bind-html="operatorDisplay | rawHtml"></span> <input ng-model="secondNumber" type="number"/> = <input ng-model="result" type="number"/>
 			<br/><br/>
 			<div><img ng-src="{{imageSrc}}" ng-click="clear()" /></div>
 			<br/>
