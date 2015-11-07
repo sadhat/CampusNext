@@ -1,0 +1,105 @@
+<html>
+	<head>
+		<title>My Math Tutor</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+		<style>
+			body{
+				font-size: 500%;
+			}
+			input{
+				width: 150px;
+			}
+			.red{
+				background-color: red;
+			}
+			.green{
+				background-color: green;
+			}
+			.center{
+				text-align: center;
+			}
+		</style>
+		<script>
+			var mathApp = angular.module("mathApp",[]);
+			mathApp.filter('rawHtml', ['$sce', function($sce){
+				return function(val) {
+					return $sce.trustAsHtml(val);
+				};
+			}]);
+			mathApp.controller("AddingController", function($scope, $window){
+				$scope.$watchGroup(['firstNumber','secondNumber','result','operator'], function(){
+					var firstNumber = parseInt($scope.firstNumber);
+					var secondNumber = parseInt($scope.secondNumber);
+					switch($scope.operator){
+						case "+":
+							result = firstNumber + secondNumber;
+							$scope.operatorDisplay = "+";
+							break;
+						case "-":
+							result = firstNumber - secondNumber;
+							$scope.operatorDisplay = "-";
+							break;
+						case "*":
+							result = firstNumber * secondNumber;
+							$scope.operatorDisplay = "x";
+							break;
+						case "/":
+							result = firstNumber / secondNumber;
+							$scope.operatorDisplay = "&divide;";
+							break;
+					}
+					$scope.isCorrect = result === parseInt($scope.result);
+					if($scope.isCorrect){
+						$scope.myClass = "green";
+						$scope.imageSrc = "happy-icon.png";
+					}
+					else{
+						$scope.myClass = "red";
+						$scope.imageSrc = "sad-icon.png";
+					}
+					$scope.clear = function(){
+						$scope.firstNumber = "";
+						$scope.secondNumber = "";
+						$scope.result = "";
+						var element = $window.document.getElementById("firstNumber");
+						if(element){
+							element.focus();
+						}
+					}
+				})
+				$scope.operator = "+";
+				$scope.changeOperator = function(op){
+					$scope.operator = op;
+					switch($scope.operator){
+						case "+":
+							$scope.operatorDisplay = "+";
+							break;
+						case "-":
+							$scope.operatorDisplay = "-";
+							break;
+						case "*":
+							$scope.operatorDisplay = "x";
+							break;
+						case "/":
+							$scope.operatorDisplay = "&divide;";
+							break;
+					}
+				}
+				
+			});
+		</script>
+	</head>
+	<body ng-app="mathApp" ng-controller="AddingController" ng-class="myClass">
+		<br/><br/>
+		<div class="container center">
+			<input id="firstNumber" ng-model="firstNumber" type="text"/> <span ng-bind-html="operatorDisplay | rawHtml"></span> <input ng-model="secondNumber" type="text"/> = <input ng-model="result" type="text"/>
+			<br/><br/>
+			<div><img ng-src="{{imageSrc}}" ng-click="clear()" /></div>
+			<br/>
+			<input type="button" ng-click="changeOperator('+')" value="+"/><input type="button" ng-click="changeOperator('-')" value="-"/><input type="button" ng-click="changeOperator('*')" value="x"/><input type="button" ng-click="changeOperator('/')" value="&divide;"/>
+		</div>
+	</body>
+</html>
