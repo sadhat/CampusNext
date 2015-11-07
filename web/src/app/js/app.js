@@ -111,6 +111,10 @@ campusNextApp.config(['$routeProvider', function ($routeProvider) {
 	    templateUrl: './views/authoring/rent/rent_edit.html',
 	    controller: 'RentalEditCtrl'
 	});
+
+	$routeProvider.when('/notimplemented', {
+	    controller: 'NotImplementedCtrl'
+	});
 }])
 .factory('authHttpResponseInterceptor', ['$q', '$location', function ($q, $location) {
 return {

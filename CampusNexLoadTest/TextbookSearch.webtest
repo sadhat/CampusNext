@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebTest Name="WebTest1" Id="82f67286-1490-4019-a471-70c878b3808e" Owner="" Priority="2147483647" Enabled="True" CssProjectStructure="" CssIteration="" Timeout="0" WorkItemIds="" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" Description="" CredentialUserName="" CredentialPassword="" PreAuthenticate="True" Proxy="default" StopOnError="False" RecordedResultFile="WebTest1.1745017f-6282-47e4-a36a-2dde99966de6.rec.webtestresult" ResultsLocale="">
+  <Items>
+    <Request Method="GET" Guid="0a28dea5-26e8-45e4-bf7a-8b1d686ef8f0" Version="1.1" Url="http://api.bing.com/qsml.aspx" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="query" Value="cam" RecordedValue="cam" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="market" Value="en-US" RecordedValue="en-US" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="FORM" Value="U162GD" RecordedValue="U162GD" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="PC" Value="U162G" RecordedValue="U162G" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="maxwidth" Value="32765" RecordedValue="32765" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="rowheight" Value="26" RecordedValue="26" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sectionHeight" Value="260" RecordedValue="260" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="1832f69e-bf2c-4c71-84eb-f66f161841a6" Version="1.1" Url="http://campusnext.azurewebsites.net/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://campusnext.azurewebsites.net/" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="1b12a875-aac9-434f-86ec-ec2987dde2ca" Version="1.1" Url="https://campusnext.azurewebsites.net/views/facebookLoginPartial.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/plain, */*" />
+            <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="657b3407-08e0-47eb-bc60-bc06535abd54" Version="1.1" Url="https://campusnext.azurewebsites.net/src/app/data/campuses/campuses.json" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/plain, */*" />
+            <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="7d558155-5d44-47bd-8587-cbc5c95c4860" Version="1.1" Url="https://campusnext.azurewebsites.net/views/home.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/plain, */*" />
+            <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+    </Request>
+    <Request Method="GET" Guid="659fdbea-1c6b-47df-a30c-5ad765afc795" Version="1.1" Url="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js?version=41#channel=f17aab653a1dfb&amp;origin=https%3A%2F%2Fcampusnext.azurewebsites.net" ReportingName="" IgnoreHttpStatusCode="False">
+      <QueryStringParameters>
+        <QueryStringParameter Name="version" Value="41" RecordedValue="41" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="origin" Value="https%3A%2F%2Fcampusnext.azurewebsites.net" RecordedValue="https%3A%2F%2Fcampusnext.azurewebsites.net" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="6ca0760a-a45b-411e-b524-3a40517604f2" Version="1.1" Url="https://www.facebook.com/connect/ping" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js?version=41#cb=f9c8b3bc39a7ac&amp;domain=campusnext.azurewebsites.net&amp;origin=https%3A%2F%2Fcampusnext.azurewebsites.net%2Ff17aab653a1dfb&amp;relation=parent&amp;error=unknown_user" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client_id" Value="739926446075188" RecordedValue="739926446075188" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="domain" Value="campusnext.azurewebsites.net" RecordedValue="campusnext.azurewebsites.net" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="origin" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="redirect_uri" Value="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df9c8b3bc39a7ac%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff17aab653a1dfb%26relation%3Dparent" RecordedValue="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df9c8b3bc39a7ac%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff17aab653a1dfb%26relation%3Dparent" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="response_type" Value="token%2Csigned_request%2Ccode" RecordedValue="token%2Csigned_request%2Ccode" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sdk" Value="joey" RecordedValue="joey" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="89fa69a0-398d-4520-8b3e-f6cfa6044807" Version="1.1" Url="https://www.facebook.com/connect/ping" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js?version=41#cb=f458491862bb4f&amp;domain=campusnext.azurewebsites.net&amp;origin=https%3A%2F%2Fcampusnext.azurewebsites.net%2Ff17aab653a1dfb&amp;relation=parent&amp;error=unknown_user" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client_id" Value="739926446075188" RecordedValue="739926446075188" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="domain" Value="campusnext.azurewebsites.net" RecordedValue="campusnext.azurewebsites.net" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="origin" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="redirect_uri" Value="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df458491862bb4f%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff17aab653a1dfb%26relation%3Dparent" RecordedValue="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df458491862bb4f%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff17aab653a1dfb%26relation%3Dparent" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="response_type" Value="token%2Csigned_request%2Ccode" RecordedValue="token%2Csigned_request%2Ccode" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sdk" Value="joey" RecordedValue="joey" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="7b247f8b-8ee2-4eb8-912f-d23ace94e6a3" Version="1.1" Url="https://campusnextservices.azurewebsites.net/api/CategoryCatalog/" ThinkTime="4" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="campusName" Value="UofT" RecordedValue="UofT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="1238c535-c926-4498-80d3-af96e1a98166" Version="1.1" Url="https://campusnext.azurewebsites.net/views/search/textbook/textbook_search.html" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="2f25fea0-e61c-4adf-b7f5-66c7b09da8ae" Version="1.1" Url="https://campusnextservices.azurewebsites.net/odata/TextbookSearch/" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="keyword" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="campusName" Value="UofT" RecordedValue="UofT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="a9ea0e9e-6b9e-4f08-9525-0a43687d7a05" Version="1.1" Url="https://campusnextservices.azurewebsites.net/api/CategoryCatalog/" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="campusName" Value="UofT" RecordedValue="UofT" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="0010b851-768b-4f39-8d53-db0581b74556" Version="1.1" Url="https://campusnext.azurewebsites.net/views/authoring/profile/campus_selected.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="d985e89c-eecf-45a3-b308-416dc8ad5665" Version="1.1" Url="https://campusnext.azurewebsites.net/src/app/data/campuses/campuses.json" ThinkTime="8" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="362fc784-57e4-4209-9afb-61177bc01054" Version="1.1" Url="https://campusnext.azurewebsites.net/" ThinkTime="1" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="Windows-1252" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <DependentRequests>
+        <Request Method="GET" Guid="2dfdfc1f-492a-42eb-a902-5548d896ac7f" Version="1.1" Url="https://campusnext.azurewebsites.net/views/facebookLoginPartial.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/plain, */*" />
+            <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+          </Headers>
+        </Request>
+        <Request Method="GET" Guid="691d36e2-7541-41b9-860c-d713f1ac75e3" Version="1.1" Url="https://campusnext.azurewebsites.net/src/app/data/campuses/campuses.json" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+          <Headers>
+            <Header Name="Accept" Value="application/json, text/plain, */*" />
+            <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+          </Headers>
+        </Request>
+      </DependentRequests>
+      <Headers>
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="3f577add-9507-4a7f-8f3d-6f63fa66fdb2" Version="1.1" Url="https://www.facebook.com/connect/ping" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js?version=41#cb=f9e0d817190f32&amp;domain=campusnext.azurewebsites.net&amp;origin=https%3A%2F%2Fcampusnext.azurewebsites.net%2Ff2a8847f3a2c3d&amp;relation=parent&amp;error=unknown_user" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client_id" Value="739926446075188" RecordedValue="739926446075188" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="domain" Value="campusnext.azurewebsites.net" RecordedValue="campusnext.azurewebsites.net" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="origin" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="redirect_uri" Value="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df9e0d817190f32%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff2a8847f3a2c3d%26relation%3Dparent" RecordedValue="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df9e0d817190f32%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff2a8847f3a2c3d%26relation%3Dparent" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="response_type" Value="token%2Csigned_request%2Ccode" RecordedValue="token%2Csigned_request%2Ccode" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sdk" Value="joey" RecordedValue="joey" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="f7b6a0b2-96f1-49f9-b31a-3490a86f08fd" Version="1.1" Url="https://www.facebook.com/connect/ping" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="https://s-static.ak.facebook.com/connect/xd_arbiter/QjK2hWv6uak.js?version=41#cb=f36cbfa0d3d094c&amp;domain=campusnext.azurewebsites.net&amp;origin=https%3A%2F%2Fcampusnext.azurewebsites.net%2Ff2a8847f3a2c3d&amp;relation=parent&amp;error=unknown_user" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="client_id" Value="739926446075188" RecordedValue="739926446075188" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="domain" Value="campusnext.azurewebsites.net" RecordedValue="campusnext.azurewebsites.net" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="origin" Value="1" RecordedValue="1" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="redirect_uri" Value="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df36cbfa0d3d094c%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff2a8847f3a2c3d%26relation%3Dparent" RecordedValue="https%3A%2F%2Fs-static.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FQjK2hWv6uak.js%3Fversion%3D41%23cb%3Df36cbfa0d3d094c%26domain%3Dcampusnext.azurewebsites.net%26origin%3Dhttps%253A%252F%252Fcampusnext.azurewebsites.net%252Ff2a8847f3a2c3d%26relation%3Dparent" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="response_type" Value="token%2Csigned_request%2Ccode" RecordedValue="token%2Csigned_request%2Ccode" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="sdk" Value="joey" RecordedValue="joey" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="b5a45dfb-ed1e-4c35-87c8-cca73732f7c4" Version="1.1" Url="https://campusnext.azurewebsites.net/views/home.html" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="441b7746-9e42-4f9f-b354-bec2017592bc" Version="1.1" Url="https://campusnextservices.azurewebsites.net/api/CategoryCatalog/" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="campusName" Value="UND" RecordedValue="UND" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="c071b546-7819-4a6f-94b4-93ae9618704b" Version="1.1" Url="https://campusnext.azurewebsites.net/views/search/textbook/textbook_search.html" ThinkTime="2" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+    </Request>
+    <Request Method="GET" Guid="cb356404-7247-4d5f-84a6-7e82a8cf932b" Version="1.1" Url="https://campusnextservices.azurewebsites.net/odata/TextbookSearch/" ThinkTime="3" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="keyword" Value="" RecordedValue="" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+        <QueryStringParameter Name="campusName" Value="UND" RecordedValue="UND" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+    <Request Method="GET" Guid="6dc796fe-3e99-4e05-9037-20aa58ceae8d" Version="1.1" Url="https://campusnextservices.azurewebsites.net/api/CategoryCatalog/" ThinkTime="0" Timeout="300" ParseDependentRequests="True" FollowRedirects="True" RecordResult="True" Cache="False" ResponseTimeGoal="0" Encoding="utf-8" ExpectedHttpStatusCode="0" ExpectedResponseUrl="" ReportingName="" IgnoreHttpStatusCode="False">
+      <Headers>
+        <Header Name="Accept" Value="application/json, text/plain, */*" />
+        <Header Name="Referer" Value="https://campusnext.azurewebsites.net/" />
+      </Headers>
+      <QueryStringParameters>
+        <QueryStringParameter Name="campusName" Value="UND" RecordedValue="UND" CorrelationBinding="" UrlEncode="False" UseToGroupResults="False" />
+      </QueryStringParameters>
+    </Request>
+  </Items>
+  <ValidationRules>
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidateResponseUrl, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response URL" Description="Validates that the response URL after redirects are followed is the same as the recorded response URL.  QueryString parameters are ignored." Level="Low" ExectuionOrder="BeforeDependents" />
+    <ValidationRule Classname="Microsoft.VisualStudio.TestTools.WebTesting.Rules.ValidationRuleResponseTimeGoal, Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" DisplayName="Response Time Goal" Description="Validates that the response time for the request is less than or equal to the response time goal as specified on the request.  Response time goals of zero will be ignored." Level="Low" ExectuionOrder="AfterDependents">
+      <RuleParameters>
+        <RuleParameter Name="Tolerance" Value="0" />
+      </RuleParameters>
+    </ValidationRule>
+  </ValidationRules>
+</WebTest>

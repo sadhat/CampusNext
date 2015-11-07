@@ -107,6 +107,7 @@
     <Content Include="src\app\js\controllers\RentalEdit.js" />
     <Content Include="src\app\js\controllers\TutorEdit.js" />
     <Content Include="src\app\js\controllers\RentalSearch.js" />
+    <Content Include="src\app\js\controllers\NotImplemented.js" />
     <Content Include="src\app\js\controllers\TutorSearch.js" />
     <Content Include="src\app\js\controllers\TutorAdd.js" />
     <Content Include="src\app\js\directives\FormMessage.js" />
