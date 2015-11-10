@@ -73,14 +73,14 @@
     <Content Include="images\schools\logo\UT.jpg" />
     <Content Include="math\happy-icon.png" />
     <Content Include="math\sad-icon.png" />
-    <Content Include="word\happy-icon.png" />
     <Content Include="math\index.html" />
-    <Content Include="word\sad-icon.png" />
     <Content Include="packages.config" />
     <Content Include="content\toastr.scss" />
     <Content Include="content\toastr.less" />
+    <Content Include="word\happy-icon.png" />
     <Content Include="word\index.html" />
     <Content Include="word\pickWord.js" />
+    <Content Include="word\sad-icon.png" />
     <Content Include="word\style.css" />
     <None Include="Properties\PublishProfiles\CampusNext.pubxml" />
     <Content Include="app.css" />
