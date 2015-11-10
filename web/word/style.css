@@ -1,0 +1,44 @@
+﻿.ng-enter {
+    -webkit-transition: 1s;
+    transition: 3s;
+    opacity: 0;
+}
+
+.ng-enter-active {
+    opacity: 1;
+}
+
+
+
+.ng-leave {
+    -webkit-transition: 1s;
+    transition: 2s;
+}
+
+.ng-leave-active {
+    opacity: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
+
+body {
+    font-size: 500%;
+}
+
+.center {
+    text-align: center;
+}
+
+.word {
+    font-size: 800%;
+}
