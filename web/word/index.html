@@ -22,9 +22,11 @@
               $scope.$watch("enterWord", function () {
                   if ($scope.enterWord && $scope.enterWord.toUpperCase() === $scope.word.toUpperCase()) {
                       $scope.myClass = "green";
+                      $scope.imageSrc = "happy-icon.png";
                   }
                   else {
                       $scope.myClass = "red";
+                      $scope.imageSrc = "sad-icon.png";
                   }
               });
               $scope.startSlide = function () {
@@ -37,6 +39,7 @@
                   $scope.startSlide();
               };
               $scope.regen = function () {
+                  $scope.enterWord = "";
                   $scope.word = pickWord(wordDictionary)();
                   $scope.names.pop();
                   $scope.names.push({ name: $scope.word });
@@ -56,8 +59,9 @@
             <li ng-repeat="user in names">
                 <div class="word">{{user.name}}</div>
             </li>
-
         </ul>
+        <br /><br />
+        <div><img ng-src="{{imageSrc}}" ng-click="clear()" /></div>
     </div>
 </body>
 </html>
