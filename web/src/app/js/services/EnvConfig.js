@@ -14,12 +14,12 @@
                     }
                 },
                 prod: {
-                    host: 'campusnext.azurewebsites.net',
+                    host: 'flopmvp.com',
                     config: {
                         /**
              * Add any config properties you want in here for this environment
              */
-                        apiroot: 'https://campusnextservices.azurewebsites.net/'
+                        apiroot: 'https://flopmvp.com/'
                     }
                 }
             },
