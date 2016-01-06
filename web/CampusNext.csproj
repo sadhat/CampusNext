@@ -82,6 +82,7 @@
     <Content Include="word\pickWord.js" />
     <Content Include="word\sad-icon.png" />
     <Content Include="word\style.css" />
+    <Content Include="806A9AF5E479FD40998EA8792EFCAFA9.www.flopmvp.com" />
     <None Include="Properties\PublishProfiles\CampusNext.pubxml" />
     <Content Include="app.css" />
     <Content Include="app.min.css">
